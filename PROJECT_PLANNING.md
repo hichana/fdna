@@ -1,11 +1,66 @@
 # PROJECT SUMMARY
-- Flow DNA strands are primitives for other experiences on Flow
+- Flow DNA strands are building blocks for experiences on Flow
 - a Flow DNA strand comprises nft type base pairs as an ordered and immutable sequence that can only ever be created once
-- any holder of one or more Flow NFTs can potentially claim a Flow DNA strand
-- users can select and reorder NFTs from their Flow wallet to create a Flow DNA strand
+- any holder of two or more Flow NFTs can potentially claim a Flow DNA strand
+- users can select and reorder NFTs from their Flow wallet to create the two parallel helices of their Flow DNA strand
 - on-chain helper functions and sample Cadence scripts allow any Flow ecosystem project to easily query Flow DNA data from users
+- people who are new to Web3 can find links to the many great Flow marketplaces so they can buy NFTs and build their DNA strands
+
+# BUILD APPROACH
+- scaffold app with basic emulator contracts deployment
+- build overflow emulator setup automation, adding transactions and scrips to confirm basic app requirements
+- scaffold web app
+- build basic app use case placeholder UI elements
+- connect UI elements to flow scripts and transactions
+- build out layout, design, artwork
+- create hackathon submission
 
 # REQUIREMENTS
+- external
+    - as soon as one or more exampleNFT contracts are suitable, need to submit to testnet nft catalog
+- .env
+    - contains all appropriate env vars suffixed if necessary with environment (emulator, testnet, mainnet)
+- fcl config
+    - has conditional loading of config based on env var
+- app
+    - sets env var in dev scripts
+    - sets up env var in dev scripts
+    - has method for constructing mint transaction code for variable data received from nft catalog via user dna building process
+    - has configuration for using aliased paths in web app modules
+    - has helper to replace string imports to allow for using cadence inside svelte
+    - integrates tailwind css
+    - makes a .env available for use in web app and flow.json
+    - integrates prettier, svelte prettier plugin
+    - includes ignore files for git and prettier
+- UI
+    - user can login using Blocto and other wallets
+    - user can see a CTA to start building a Flow NFT collection -- includes descriptive text about this project and Web3/Flow, links to marketplaces and projects, and to the four OG Bases FLOATS
+    - user can see a list of all NFT projects for which their wallet contains a collection that is registered in the nft catalog
+    - user can expand the list of NFT projects to reveal the NFTs and their metadata (displays image) from their wallet
+    - user can toggle a checkbox next to each of their NFTs to select or deselect any number of their NFTs to include when building their Flow DNA strand
+    - selected NFTs appear can be arranged inside of two vertical dnd palletes to signify they are "base pairs"
+    - users can click/tap drag NFT data between vertical dnd to build and rearrange base pairs
+    - with each re-arrange of base pairs, user is informed whether or not that permutation of Flow DNA for either side is taken or not
+    - user can mint their Flow DNA strand, showing transaction status throughout the process and providing a link to the transaction on flowscan
+    - user can see a card representing their Flow DNA strand with a list of the DNA string identifiers from each strand
+- app testing/automation (all use overflow)
+    - has a testing utils that can be used with an integration test
+    - basic integration test to test DNA building and minting
+    - setup script registers projects to the nft-catalog and demonstrates the whole minting process
+    - scripts automate processes on testnet and mainnet
+    - has testnet scripts and transactions
+        - setup account to receive royalties
+        - give demo user NFTs 
+- project submission to hackathon
+    - precise presentation deck and short/understandable demo video
+        - video is 2-3 minutes long
+        - presentation deck is not more than 10 slides long
+    - link to github repo
+    - link to live version of project
+        - web app
+        - flowscan account with smart contracts
+- OG Bases FLOATs (created on testnet)
+    - four limited FLOATs ("A", "G", "C", "T") that anyone can get to bootstrap their NFT collection and start building Flow DNA right away
 - testnet deployment
     - populates test user with exampleNFTs in their wallet
 - emulator
@@ -15,30 +70,45 @@
 - repo/docs
     - scripts examples walkthrough for pulling DNA data
     - examples of how DNA data can be leveraged across NFT experiences
-- UI
-    - user can see a list of all NFT projects for which their wallet contains a collection that is registered in the nft catalog
-    - user can expand the list to reveal the NFTs and their metadata (displays image) from their wallet
-    - user can toggle a checkbox next to each of their NFTs to select or deselect any number of their NFTs to build a Flow DNA strand
-    - selected NFTs appear on a horizontal dnd pallete
-    - user can drag selected NFTs from the pallet into either strand1 or strand2 and then reorder as needed
-    - upon each reordering of either strand1 or strand2, a frontend script checks whether or not that permuation is taken and informs the user
-    - user can mint their Flow DNA strand
-    - user can see a card representing their Flow DNA strand with a list of the DNA string identifiers from each strand
-    - overflow setup script registers projects to the nft-catalog and demonstrates the whole minting process
-    - overflow scripts automate processes on testnet and mainnet
-- smart contracts
-    - Strand.cdc
+- smart contracts and scripts/transactions
+    - NFTCatalog, NFTCatalogAdmin, NFTRetrieval (not deployed to testnet)
+        - get nfts in account
+        - get nfts in account from ids
+    - Strand
+        - can mint nfts
+        - on contract init
+            - sets royalty receiver(s)
+            - sets NFT sales payment receiver
+            - gives deployer admin resources
+        - has admin resource given to deployer with functions to
+            - start or pause minting (checked by minter)
+            - change nft royalty receiver
+            - change nft payment receiver
+        - nft stores nft-catalog data for each NFT added to the DNA
         - integrates DNA data with the metadata standard Traits view
         - maintains a registry of DNA strands as strings that are comma-separated list of fully qualified identifiers, ex: A.[address].[contract-name].[nft-id]
             - key is strand string and value is a struct representing minter data, like wallet address, timestamp
         - admin can set the mint price in Flow tokens
         - NFT resource members include
             - a 'basePairs' [[String]] member to represent the ordered double-stranded/helix in DNA
-            - a string representation of each strand ('strand1' and 'strand2'), where the string is a comma-separated list of fully qualified identifiers, ex: A.[address].[contract-name].[nft-id]
+            - a string representation of each strand ('helix1' and 'helix2'), where the string is a comma-separated list of fully qualified identifiers, ex: A.[address].[contract-name].[nft-id]
         - minter
             - constructs each DNA strand's concatenated string identifier and checks it against the registry, panicing if it already exists in the registry
             - when constructing the DNA strands, adds each ref or ref string to a strand1 and strand2 array, checks length of both, panicking if the length of each is different
         - provides public methods for retrieving DNA records
+            - function provides getting data in 'base pairs', [[String]]
+    - ExampleNFT.cdc
+        - has admin method to add nfts to catalog for emulator
+        - has method to set up royalty receiver
+        - has tx to give demo user NFTs
+- project artwork
+    - NFT art (single image for all)
+    - Strand.cdc metadata art
+    - ExampleNFT.cdc metadata art
+- project repo
+    - includes instructions for judges to deploy and run the app locally and on testnet
+- project deployment (vercel)
+    - includes appropriately scoped env var for flow_env, and any others that may use conditional logic
 
 # ICEBOX/STRETCH REQUIREMENTS
 - query params to save user state
