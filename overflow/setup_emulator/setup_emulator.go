@@ -17,4 +17,10 @@ func main() {
 		"STRAND/helloStrand").
 		Print()
 
+	// user1 self-initializes for demo NFTs
+	c.Tx(
+		"ExampleNFTs/initialize_account",
+		o.WithSigner("user1")).
+		Print()
+
 }
