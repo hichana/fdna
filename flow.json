@@ -6,6 +6,13 @@
 		}
 	},
 	"contracts": {
+        "Cats": {
+            "source": "./contracts/Cats.cdc",
+            "aliases": {
+                "emulator": "f8d6e0586b0a20c7",
+                "testnet": "$VITE_TESTNET_ACCOUNT"
+            }
+        },
         "FlowToken": {
             "source": "./contracts/core/FlowToken.cdc",
             "aliases": {
@@ -97,6 +104,7 @@
     "deployments": {
         "emulator": {
             "emulator-account": [
+                "Cats",
                 "MetadataViews",
                 "NFTCatalog",
                 "NFTCatalogAdmin",

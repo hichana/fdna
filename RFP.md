@@ -8,3 +8,8 @@
 - register example NFT projects to nft catalog, mint user1 demo NFTs
     - make six of them, cats, dogs, apples, oranges, black, white
         - make tx to give user1 some nfts from each
+            - steps to swap out name from ExampleNFT.cdc
+                - cmd d all the instances of contract name
+                - change metadata standard supplied data
+                - cmd d all storage path handles
+                - change minter storage path
