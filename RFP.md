@@ -13,6 +13,6 @@
                 - change metadata standard supplied data
                 - cmd d all storage path handles
                 - change minter storage path
-            - now mint nfts to exmaple user and register cats to nft catalog
+            -x now mint nfts to exmaple user and register cats to nft catalog
                 - need to set up initialize and royalty receiver
             - now add rest of contracts with same setup in script
