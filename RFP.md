@@ -6,3 +6,5 @@
         -x set up overflow
             -x need to add placeholder smart contract to run a script, use basic from flow playground
 - register example NFT projects to nft catalog, mint user1 demo NFTs
+    - make six of them, cats, dogs, apples, oranges, black, white
+        - make tx to give user1 some nfts from each
