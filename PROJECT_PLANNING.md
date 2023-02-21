@@ -35,7 +35,7 @@
     - has configuration for using aliased paths in web app modules
     - has helper to replace string imports to allow for using cadence inside svelte
     - integrates tailwind css
-    - makes a .env available for use in web app and flow.json
+    -x makes a .env available for use in web app and flow.json
     - integrates prettier, svelte prettier plugin
     - includes ignore files for git and prettier
 - UI
