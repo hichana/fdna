@@ -9,6 +9,7 @@ pub contract STRANDS: NonFungibleToken {
     access(account) var paymentRecipient: Address
     access(account) var royaltyReceivers: [MetadataViews.Royalty]
     access(account) var mintPrice: UFix64
+    access(account) var mintingIsPaused: Bool
 
     pub event ContractInitialized()
 
@@ -322,6 +323,20 @@ pub contract STRANDS: NonFungibleToken {
 
         }
 
+        pub fun pauseMinting() {
+            pre {
+                STRANDS.mintingIsPaused == false: "Minting is already paused!"
+            }
+            STRANDS.mintingIsPaused = true
+        }
+
+        pub fun resumeMinting() {
+            pre {
+                STRANDS.mintingIsPaused == true: "Minting is not already paused!"
+            }
+            STRANDS.mintingIsPaused = false
+        }
+
     }
 
     // function that both the contract init and transactions can use to construct royalty receivers for STRANDS
@@ -357,9 +372,15 @@ pub contract STRANDS: NonFungibleToken {
         return STRANDS.mintPrice
     }
 
+    // public function to get current mint price
+    pub fun getMintingStatus(): Bool {
+        return STRANDS.mintingIsPaused
+    }
+
     init() {
         // Initialize the total supply
         self.totalSupply = 0
+        self.mintingIsPaused = false
 
         self.paymentRecipient = self.account.address
 

@@ -9,7 +9,8 @@
         - fun to set payment recipient 
         - fun to set mint price
 - now build out DNA abstraction and other features
-    - need to buy NFT first
+    -x need to buy NFT first
+    - 
 
 
 

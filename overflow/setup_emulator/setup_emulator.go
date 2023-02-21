@@ -251,4 +251,14 @@ func main() {
 		o.WithSigner("user1")).
 		Print()
 
+	// ADMIN PAUSES AND RESUMES MINTING
+	c.Tx(
+		"STRANDS/pause_minting",
+		o.WithSigner("account")).
+		Print()
+	c.Tx(
+		"STRANDS/resume_minting",
+		o.WithSigner("account")).
+		Print()
+
 }
