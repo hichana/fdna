@@ -1,4 +1,4 @@
-import MetadataViews from "./core/MetadataViews.cdc"
+import MetadataViews from "./MetadataViews.cdc"
 
 // NFTCatalog
 //

@@ -22,9 +22,9 @@
     - contains all appropriate env vars suffixed if necessary with environment (emulator, testnet, mainnet)
 - fcl config
     - has conditional loading of config based on env var
-- flow config and deploy
+-x flow config and deploy
     -x init flow.json
-    - add core contracts to repo
+    -x add core contracts to repo
 - app
     - sets up env var in dev scripts
     - has method for constructing mint transaction code for variable data received from nft catalog via user dna building process
@@ -66,8 +66,8 @@
 - testnet deployment
     - populates test user with exampleNFTs in their wallet
 - emulator
+    -x manages accounts and testnet and mainnet deployments
     - deploys nft catalog with example NFT contracts registered to nft catalog
-    - manages accounts and testnet and mainnet deployments
     - demo user is issued example NFTs
 - repo/docs
     - scripts examples walkthrough for pulling DNA data

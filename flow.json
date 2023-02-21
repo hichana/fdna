@@ -59,6 +59,13 @@
                 "testnet": "631e88ae7f1d7c20",
                 "mainnet": "1d7e57aa55817448"
             }
+        },
+        "STRAND": {
+            "source": "./contracts/STRAND.cdc",
+            "aliases": {
+                "emulator": "f8d6e0586b0a20c7",
+                "testnet": "$VITE_TESTNET_ACCOUNT"
+            }
         }
     },
 	"networks": {
@@ -94,7 +101,8 @@
                 "NFTCatalog",
                 "NFTCatalogAdmin",
                 "NFTRetrieval",
-                "NonFungibleToken"
+                "NonFungibleToken",
+                "STRAND"
             ],
             "emulator-user1": []
         }
