@@ -8,11 +8,11 @@
 
 # BUILD APPROACH
 -x scaffold app with basic emulator contracts deployment
-- build overflow emulator setup automation, adding transactions and scrips to confirm basic app requirements
-    - develop contracts as I do this
+-x build overflow emulator setup automation, adding transactions and scrips to confirm basic app requirements
+    - develop contracts as much as possible I do this
 - scaffold web app
 - build basic app use case placeholder UI elements
-- connect UI elements to flow scripts and transactions
+- circle back to contracts, working on building data for string interpolated version of mint tx in frontend while also connecting UI elements to flow scripts and transactions
 - build out layout, design, artwork
 - create hackathon submission
 - checklist before testnet deploy/submission
@@ -54,7 +54,7 @@
     - basic integration test to test DNA building and minting
     -x setup script registers projects to the nft-catalog and demonstrates the whole minting process
     -x scripts automate processes on testnet
-    -x has testnet scripts and transactions
+    - has testnet scripts and transactions
         - setup account to receive royalties
         - give demo user NFTs 
     - tests

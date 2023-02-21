@@ -25,7 +25,7 @@
                 - 'strand2' (concatenated strings)
                 - 'doubleHelix' (array of arrays of fully qualified string identifiers)
             - will do a check for each completed 
-    - nft captures all nft-catalog data upon mint
+    - nft captures all nft-catalog data upon mint???
     - metadata traits view resolver pulls metadata about DNA and returns it
         - minter adds the data to 'metadata' member first
 
