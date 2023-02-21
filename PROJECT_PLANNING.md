@@ -18,7 +18,7 @@
 # REQUIREMENTS
 - external
     - as soon as one or more exampleNFT contracts are suitable, need to submit to testnet nft catalog
-- .env
+-x .env
     - contains all appropriate env vars suffixed if necessary with environment (emulator, testnet, mainnet)
 - fcl config
     - has conditional loading of config based on env var
