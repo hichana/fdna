@@ -14,7 +14,7 @@ func main() {
 
 	// TEST SCRIPT
 	c.Script(
-		"STRAND/helloStrand").
+		"STRANDS/helloStrand").
 		Print()
 
 	// USER1 SELF-INITIALIZES FOR DEMO NFTS

@@ -1,4 +1,4 @@
-pub contract STRAND {
+pub contract STRANDS {
 
     pub let greeting: String
 

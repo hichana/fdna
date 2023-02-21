@@ -77,7 +77,7 @@
     - NFTCatalog, NFTCatalogAdmin, NFTRetrieval (not deployed to testnet)
         - get nfts in account
         - get nfts in account from ids
-    - Strand
+    - Strands
         - can mint nfts
         - on contract init
             - sets royalty receiver(s)

@@ -95,8 +95,8 @@
                 "testnet": "$VITE_TESTNET_ACCOUNT"
             }
         },
-        "STRAND": {
-            "source": "./contracts/STRAND.cdc",
+        "STRANDS": {
+            "source": "./contracts/STRANDS.cdc",
             "aliases": {
                 "emulator": "f8d6e0586b0a20c7",
                 "testnet": "$VITE_TESTNET_ACCOUNT"
@@ -149,7 +149,7 @@
                 "NFTRetrieval",
                 "NonFungibleToken",
                 "Oranges",
-                "STRAND",
+                "STRANDS",
                 "White"
             ],
             "emulator-user1": []
