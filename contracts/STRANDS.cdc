@@ -256,7 +256,6 @@ pub contract STRANDS: NonFungibleToken {
     ///     
     pub fun mintNFT(
         recipient: &{NonFungibleToken.CollectionPublic},
-        royalties: [MetadataViews.Royalty],
         payment: @FungibleToken.Vault
     ) {
 

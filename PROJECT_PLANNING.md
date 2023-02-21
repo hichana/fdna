@@ -21,7 +21,7 @@
 
 # REQUIREMENTS
 - external
-    - as soon as one or more exampleNFT contracts are suitable, need to submit to testnet nft catalog
+    - as soon as one or more exampleNFT contracts are suitable and working as expected on emulator, need to submit to testnet nft catalog
 -x .env
     - contains all appropriate env vars suffixed if necessary with environment (emulator, testnet, mainnet)
 - fcl config
@@ -53,7 +53,7 @@
     - has a testing utils that can be used with an integration test
     - basic integration test to test DNA building and minting
     -x setup script registers projects to the nft-catalog and demonstrates the whole minting process
-    - scripts automate processes on testnet and mainnet
+    -x scripts automate processes on testnet
     -x has testnet scripts and transactions
         - setup account to receive royalties
         - give demo user NFTs 
@@ -70,10 +70,8 @@
         - web app
         - flowscan account with smart contracts
     - list of code used from other projects (ex. ExampleNFT, flow nft catalog scripts and transactions, etc.)
-- OG Bases FLOATs (created on testnet)
-    - four limited FLOATs ("A", "G", "C", "T") that anyone can get to bootstrap their NFT collection and start building Flow DNA right away
 - testnet deployment
-    - populates test user with exampleNFTs in their wallet
+    - script populates test user with exampleNFTs in their wallet
 -x emulator
     -x manages accounts and testnet and mainnet deployments
     -x deploys nft catalog with example NFT contracts registered to nft catalog
@@ -133,4 +131,7 @@
 
 # MAINNET
 - would need to process tx for mainnet service account to receive royalties
+- OG Bases FLOATs
+    - four limited FLOATs ("A", "G", "C", "T") that anyone can get to bootstrap their NFT collection and start building Flow DNA right away
+
  
