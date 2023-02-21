@@ -85,12 +85,12 @@
         - get nfts in account from ids
     - Strands
         - has appropriate events
-        - can mint nfts
-        - on contract init
-            - sets royalty receiver(s)
-            - sets NFT sales payment receiver
-            - gives deployer admin resources
-        - has admin resource given to deployer with functions to
+        -x can mint nfts
+        -x on contract init
+            -x sets royalty receiver(s)
+            -x sets NFT sales payment receiver
+            -x gives deployer admin resources
+        -x has admin resource given to deployer with functions to
             - start or pause minting (checked by minter)
             - change nft royalty receiver
             - change nft payment receiver

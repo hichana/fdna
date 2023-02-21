@@ -10,7 +10,24 @@
         - fun to set mint price
 - now build out DNA abstraction and other features
     -x need to buy NFT first
-    - 
+    - contract level has a registry of strings representing single side of a dna strand each
+        - should be a dnaStrands dict w/ key of string, and value of a DNASingleStrand struct, which contains things like 'sequenced' timestamp, 'sequencer' address
+    - minter checks the registry for a string key in the dnaStrands registry
+        - minter will need to receive an array of arrays of refs
+            - will iterate over them to create
+                - two separate strings, one for strand1 and other for strand2
+                - an array of arrays of fully qualified string identifiers (identifier + nft id)
+            - on each iteration 
+                - should check length of inner array -- should be 2 and panic if not
+                - recipient collection owner should equal nft reference owner
+            - should add to 'metadata' member on the nft
+                - 'strand1' (concatenated strings)
+                - 'strand2' (concatenated strings)
+                - 'doubleHelix' (array of arrays of fully qualified string identifiers)
+            - will do a check for each completed 
+    - nft captures all nft-catalog data upon mint
+    - metadata traits view resolver pulls metadata about DNA and returns it
+        - minter adds the data to 'metadata' member first
 
 
 
