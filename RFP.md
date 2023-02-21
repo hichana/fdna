@@ -1,3 +1,7 @@
+# SCAFFOLD WEB APP
+- bootstrap a svelte project into another folder, then drop into this repo
+
+
 # BUILD V1 OF STRANDS CONTRACT
 - fork over example nft and adjust
     -x needs a public minter funciton that accepts payments
