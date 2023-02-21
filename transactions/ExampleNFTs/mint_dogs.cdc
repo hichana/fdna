@@ -1,5 +1,5 @@
 import NonFungibleToken from "../../contracts/core/NonFungibleToken.cdc"
-import Cats from "../../contracts/Cats.cdc"
+import Dogs from "../../contracts/Dogs.cdc"
 import MetadataViews from "../../contracts/core/MetadataViews.cdc"
 import FungibleToken from "../../contracts/core/FungibleToken.cdc"
 
@@ -13,20 +13,20 @@ transaction(
     royaltyBeneficiaries: [Address] 
 ) {
 
-    let minter1: &Cats.NFTMinter
-    let recipientCollectionRef1: &{NonFungibleToken.CollectionPublic}
+    let minter: &Dogs.NFTMinter
+    let recipientCollectionRef: &{NonFungibleToken.CollectionPublic}
 
     let mintingIDBefore1: UInt64
 
     prepare(signer: AuthAccount) {
-        self.mintingIDBefore1 = Cats.totalSupply
+        self.mintingIDBefore1 = Dogs.totalSupply
 
-        self.minter1 = signer.borrow<&Cats.NFTMinter>(from: Cats.MinterStoragePath)
+        self.minter = signer.borrow<&Dogs.NFTMinter>(from: Dogs.MinterStoragePath)
             ?? panic("Account does not store an object at the specified path")
 
         // Borrow the recipient's public NFT collection reference
-        self.recipientCollectionRef1 = getAccount(recipient)
-            .getCapability(Cats.CollectionPublicPath)
+        self.recipientCollectionRef = getAccount(recipient)
+            .getCapability(Dogs.CollectionPublicPath)
             .borrow<&{NonFungibleToken.CollectionPublic}>()
             ?? panic("Could not get receiver reference to the NFT Collection")
 
@@ -60,8 +60,8 @@ transaction(
         }
 
         // Mint the NFT and deposit it to the recipient's collection
-        self.minter1.mintNFT(
-            recipient: self.recipientCollectionRef1,
+        self.minter.mintNFT(
+            recipient: self.recipientCollectionRef,
             name: name,
             description: description,
             thumbnail: thumbnail,
@@ -70,10 +70,10 @@ transaction(
     }
 
     post {
-        self.recipientCollectionRef1.getIDs().contains(self.mintingIDBefore1): "The next NFT ID should have been minted and delivered"
+        self.recipientCollectionRef.getIDs().contains(self.mintingIDBefore1): "The next NFT ID should have been minted and delivered"
         
         // note, this should be incremented according to num nfts given to someone
-        Cats.totalSupply == self.mintingIDBefore1 + 1: "The total supply should have been increased by 2"
+        Dogs.totalSupply == self.mintingIDBefore1 + 1: "The total supply should have been increased by 1"
     }
 }
  

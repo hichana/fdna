@@ -6,8 +6,29 @@
 		}
 	},
 	"contracts": {
+        "Apples": {
+            "source": "./contracts/Apples.cdc",
+            "aliases": {
+                "emulator": "f8d6e0586b0a20c7",
+                "testnet": "$VITE_TESTNET_ACCOUNT"
+            }
+        },
+        "Black": {
+            "source": "./contracts/Black.cdc",
+            "aliases": {
+                "emulator": "f8d6e0586b0a20c7",
+                "testnet": "$VITE_TESTNET_ACCOUNT"
+            }
+        },
         "Cats": {
             "source": "./contracts/Cats.cdc",
+            "aliases": {
+                "emulator": "f8d6e0586b0a20c7",
+                "testnet": "$VITE_TESTNET_ACCOUNT"
+            }
+        },
+        "Dogs": {
+            "source": "./contracts/Dogs.cdc",
             "aliases": {
                 "emulator": "f8d6e0586b0a20c7",
                 "testnet": "$VITE_TESTNET_ACCOUNT"
@@ -67,8 +88,22 @@
                 "mainnet": "1d7e57aa55817448"
             }
         },
+        "Oranges": {
+            "source": "./contracts/Oranges.cdc",
+            "aliases": {
+                "emulator": "f8d6e0586b0a20c7",
+                "testnet": "$VITE_TESTNET_ACCOUNT"
+            }
+        },
         "STRAND": {
             "source": "./contracts/STRAND.cdc",
+            "aliases": {
+                "emulator": "f8d6e0586b0a20c7",
+                "testnet": "$VITE_TESTNET_ACCOUNT"
+            }
+        },
+        "White": {
+            "source": "./contracts/White.cdc",
             "aliases": {
                 "emulator": "f8d6e0586b0a20c7",
                 "testnet": "$VITE_TESTNET_ACCOUNT"
@@ -104,13 +139,18 @@
     "deployments": {
         "emulator": {
             "emulator-account": [
+                "Apples",
+                "Black",
                 "Cats",
+                "Dogs",
                 "MetadataViews",
                 "NFTCatalog",
                 "NFTCatalogAdmin",
                 "NFTRetrieval",
                 "NonFungibleToken",
-                "STRAND"
+                "Oranges",
+                "STRAND",
+                "White"
             ],
             "emulator-user1": []
         }

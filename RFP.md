@@ -16,3 +16,7 @@
             -x now mint nfts to exmaple user and register cats to nft catalog
                 - need to set up initialize and royalty receiver
             - now add rest of contracts with same setup in script
+                -x replace things using abov list
+                -x update flow.json
+                - update setup script
+                    - replace thumbnail for each
