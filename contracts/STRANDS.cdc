@@ -352,6 +352,10 @@ pub contract STRANDS: NonFungibleToken {
 
     }
 
+    // public function to get current mint price
+    pub fun getMintPrice(): UFix64 {
+        return STRANDS.mintPrice
+    }
 
     init() {
         // Initialize the total supply

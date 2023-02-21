@@ -10,7 +10,7 @@ func main() {
 	flow_network := "embedded"
 
 	// create the overflow client
-	c := o.Overflow(o.WithNetwork(flow_network))
+	c := o.Overflow(o.WithNetwork(flow_network), o.WithFlowForNewUsers(1000.0))
 
 	// USER1 SELF-INITIALIZES FOR DEMO NFTS
 	c.Tx(
@@ -243,6 +243,12 @@ func main() {
 		o.WithArg("nftID", 0),
 		o.WithArg("publicPathIdentifier", "whiteCollection"),
 		o.WithSigner("account")).
+		Print()
+
+	// USER1 MINTS A STRANDS NFT
+	c.Tx(
+		"STRANDS/mint_nft",
+		o.WithSigner("user1")).
 		Print()
 
 }
