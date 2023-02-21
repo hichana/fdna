@@ -12,18 +12,18 @@ func main() {
 	// create the overflow client
 	c := o.Overflow(o.WithNetwork(flow_network))
 
-	// test script
+	// TEST SCRIPT
 	c.Script(
 		"STRAND/helloStrand").
 		Print()
 
-	// user1 self-initializes for demo NFTs
+	// USER1 SELF-INITIALIZES FOR DEMO NFTS
 	c.Tx(
 		"ExampleNFTs/initialize_account_all_demo_nfts",
 		o.WithSigner("user1")).
 		Print()
 
-	// service account self sets up with royalty receiver
+	// SERVICE ACCOUNT SELF SETS UP WITH ROYALTY RECEIVER
 	c.Tx(
 		"ExampleNFTs/set_up_royalty_receiver",
 		o.WithArg("vaultPath", "/storage/flowTokenVault"),
@@ -37,7 +37,7 @@ func main() {
 		"Royalty description"}
 	royalty_beneficiaries := []string{"account"}
 
-	// service account mints 2 demo NFTs for each demo contract to user1
+	// SERVICE ACCOUNT MINTS 2 DEMO NFTS FOR EACH DEMO CONTRACT TO USER1
 	// Cats
 	c.Tx(
 		"ExampleNFTs/mint_cats",
@@ -179,6 +179,74 @@ func main() {
 		o.WithArg("cuts", cuts),
 		o.WithArg("royaltyDescriptions", royalty_descriptions),
 		o.WithAddresses("royaltyBeneficiaries", royalty_beneficiaries...),
+		o.WithSigner("account")).
+		Print()
+
+	// REGISTER ALL DEMO NFT CONTRACTS WITH NFT CATALOG
+	c.Tx(
+		"NFTCatalog/add_to_nft_catalog_admin",
+		o.WithArg("collectionIdentifier", "Cats Collection"),
+		o.WithArg("contractName", "Cats"),
+		o.WithArg("contractAddress", "account"),
+		o.WithArg("nftTypeIdentifer", "A.f8d6e0586b0a20c7.Cats"),
+		o.WithArg("addressWithNFT", "user1"),
+		o.WithArg("nftID", 0),
+		o.WithArg("publicPathIdentifier", "catsCollection"),
+		o.WithSigner("account")).
+		Print()
+	c.Tx(
+		"NFTCatalog/add_to_nft_catalog_admin",
+		o.WithArg("collectionIdentifier", "Dogs Collection"),
+		o.WithArg("contractName", "Dogs"),
+		o.WithArg("contractAddress", "account"),
+		o.WithArg("nftTypeIdentifer", "A.f8d6e0586b0a20c7.Dogs"),
+		o.WithArg("addressWithNFT", "user1"),
+		o.WithArg("nftID", 0),
+		o.WithArg("publicPathIdentifier", "dogsCollection"),
+		o.WithSigner("account")).
+		Print()
+	c.Tx(
+		"NFTCatalog/add_to_nft_catalog_admin",
+		o.WithArg("collectionIdentifier", "Apples Collection"),
+		o.WithArg("contractName", "Apples"),
+		o.WithArg("contractAddress", "account"),
+		o.WithArg("nftTypeIdentifer", "A.f8d6e0586b0a20c7.Apples"),
+		o.WithArg("addressWithNFT", "user1"),
+		o.WithArg("nftID", 0),
+		o.WithArg("publicPathIdentifier", "applesCollection"),
+		o.WithSigner("account")).
+		Print()
+	c.Tx(
+		"NFTCatalog/add_to_nft_catalog_admin",
+		o.WithArg("collectionIdentifier", "Oranges Collection"),
+		o.WithArg("contractName", "Oranges"),
+		o.WithArg("contractAddress", "account"),
+		o.WithArg("nftTypeIdentifer", "A.f8d6e0586b0a20c7.Oranges"),
+		o.WithArg("addressWithNFT", "user1"),
+		o.WithArg("nftID", 0),
+		o.WithArg("publicPathIdentifier", "orangesCollection"),
+		o.WithSigner("account")).
+		Print()
+	c.Tx(
+		"NFTCatalog/add_to_nft_catalog_admin",
+		o.WithArg("collectionIdentifier", "Black Collection"),
+		o.WithArg("contractName", "Black"),
+		o.WithArg("contractAddress", "account"),
+		o.WithArg("nftTypeIdentifer", "A.f8d6e0586b0a20c7.Black"),
+		o.WithArg("addressWithNFT", "user1"),
+		o.WithArg("nftID", 0),
+		o.WithArg("publicPathIdentifier", "blackCollection"),
+		o.WithSigner("account")).
+		Print()
+	c.Tx(
+		"NFTCatalog/add_to_nft_catalog_admin",
+		o.WithArg("collectionIdentifier", "White Collection"),
+		o.WithArg("contractName", "White"),
+		o.WithArg("contractAddress", "account"),
+		o.WithArg("nftTypeIdentifer", "A.f8d6e0586b0a20c7.White"),
+		o.WithArg("addressWithNFT", "user1"),
+		o.WithArg("nftID", 0),
+		o.WithArg("publicPathIdentifier", "whiteCollection"),
 		o.WithSigner("account")).
 		Print()
 

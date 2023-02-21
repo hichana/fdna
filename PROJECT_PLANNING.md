@@ -48,9 +48,9 @@
 - app testing/automation (all use overflow)
     - has a testing utils that can be used with an integration test
     - basic integration test to test DNA building and minting
-    - setup script registers projects to the nft-catalog and demonstrates the whole minting process
+    -x setup script registers projects to the nft-catalog and demonstrates the whole minting process
     - scripts automate processes on testnet and mainnet
-    - has testnet scripts and transactions
+    -x has testnet scripts and transactions
         - setup account to receive royalties
         - give demo user NFTs 
 - project submission to hackathon
@@ -66,10 +66,10 @@
     - four limited FLOATs ("A", "G", "C", "T") that anyone can get to bootstrap their NFT collection and start building Flow DNA right away
 - testnet deployment
     - populates test user with exampleNFTs in their wallet
-- emulator
+-x emulator
     -x manages accounts and testnet and mainnet deployments
-    - deploys nft catalog with example NFT contracts registered to nft catalog
-    - demo user is issued example NFTs
+    -x deploys nft catalog with example NFT contracts registered to nft catalog
+    -x demo user is issued example NFTs
 - repo/docs
     - scripts examples walkthrough for pulling DNA data
     - examples of how DNA data can be leveraged across NFT experiences
@@ -102,7 +102,7 @@
             - function provides getting data in 'base pairs', [[String]]
         - metadata
             - number of base pairs
-    - ExampleNFT.cdc
+    - ExampleNFTs (Cats, Dogs, etc.)
         - has admin method to add nfts to catalog for emulator
         - has method to set up royalty receiver
         - has tx to give demo user NFTs
