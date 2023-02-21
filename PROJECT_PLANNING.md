@@ -33,8 +33,8 @@
     - integrates prettier, svelte prettier plugin
     - includes ignore files for git and prettier
 - UI
-    - user can login using Blocto and other wallets
     - user can see a CTA to start building a Flow NFT collection -- includes descriptive text about this project and Web3/Flow, links to marketplaces and projects, and to the four OG Bases FLOATS
+    - user can login using Blocto and other wallets
     - user can see a list of all NFT projects for which their wallet contains a collection that is registered in the nft catalog
     - user can expand the list of NFT projects to reveal the NFTs and their metadata (displays image) from their wallet
     - user can toggle a checkbox next to each of their NFTs to select or deselect any number of their NFTs to include when building their Flow DNA strand
@@ -97,6 +97,8 @@
             - when constructing the DNA strands, adds each ref or ref string to a strand1 and strand2 array, checks length of both, panicking if the length of each is different
         - provides public methods for retrieving DNA records
             - function provides getting data in 'base pairs', [[String]]
+        - metadata
+            - number of base pairs
     - ExampleNFT.cdc
         - has admin method to add nfts to catalog for emulator
         - has method to set up royalty receiver
@@ -111,6 +113,8 @@
     - includes appropriately scoped env var for flow_env, and any others that may use conditional logic
 
 # ICEBOX/STRETCH REQUIREMENTS
+- use AuthAccount (in minter) to verify person minting actually owns the NFTs rather than just checking resource owner and comparing against deposit collection address
+- web app background cylces between green, purple, blue and yellow
 - query params to save user state
 - when minting, uses some kind of confetti with double helix art
 - in my submission, include a dev.to post called 'the story of FLOW DNA' where I talk about over-engineering a solution with my recursive node structure for The FLOASIS, and why I chose to re-do/build it from the ground up and offer to other builders. "Because concatenated strings just looked yucky to me"
