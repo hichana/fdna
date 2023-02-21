@@ -22,8 +22,10 @@
     - contains all appropriate env vars suffixed if necessary with environment (emulator, testnet, mainnet)
 - fcl config
     - has conditional loading of config based on env var
+- flow config and deploy
+    -x init flow.json
+    - add core contracts to repo
 - app
-    - sets env var in dev scripts
     - sets up env var in dev scripts
     - has method for constructing mint transaction code for variable data received from nft catalog via user dna building process
     - has configuration for using aliased paths in web app modules
