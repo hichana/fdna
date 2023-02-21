@@ -1,3 +1,14 @@
+# BUILD V1 OF STRANDS CONTRACT
+- fork over example nft and adjust
+    -x needs a public minter funciton that accepts payments
+    -x construct name, royalties
+    -x add ipfs path and display view
+    -x make minter public and receive payment
+    -x  needs an admin resource
+        - fun to set royalty receivers when minting
+        - fun to set payment recipient 
+        - fun to set mint price
+
 
 
 
@@ -28,3 +39,4 @@
     -x register all demo NFT projects in nft catalog
 
 
+ 

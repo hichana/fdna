@@ -12,11 +12,6 @@ func main() {
 	// create the overflow client
 	c := o.Overflow(o.WithNetwork(flow_network))
 
-	// TEST SCRIPT
-	c.Script(
-		"STRANDS/helloStrand").
-		Print()
-
 	// USER1 SELF-INITIALIZES FOR DEMO NFTS
 	c.Tx(
 		"ExampleNFTs/initialize_account_all_demo_nfts",

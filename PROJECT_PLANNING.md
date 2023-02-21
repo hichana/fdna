@@ -7,13 +7,17 @@
 - people who are new to Web3 can find links to the many great Flow marketplaces so they can buy NFTs and build their DNA strands
 
 # BUILD APPROACH
-- scaffold app with basic emulator contracts deployment
+-x scaffold app with basic emulator contracts deployment
 - build overflow emulator setup automation, adding transactions and scrips to confirm basic app requirements
+    - develop contracts as I do this
 - scaffold web app
 - build basic app use case placeholder UI elements
 - connect UI elements to flow scripts and transactions
 - build out layout, design, artwork
 - create hackathon submission
+- checklist before testnet deploy/submission
+    - must have collection and NFT artwork created and links added to STRANDS, all other metadata strings must be right
+    - in minter, update mint strings for thumbnail and thumbnail path
 
 # REQUIREMENTS
 - external
@@ -53,6 +57,10 @@
     -x has testnet scripts and transactions
         - setup account to receive royalties
         - give demo user NFTs 
+    - tests
+        - admin can change payment recipient
+        - admin can change royalty receivers
+        - admin cna change mint price
 - project submission to hackathon
     - precise presentation deck and short/understandable demo video
         - video is 2-3 minutes long
@@ -78,6 +86,7 @@
         - get nfts in account
         - get nfts in account from ids
     - Strands
+        - has appropriate events
         - can mint nfts
         - on contract init
             - sets royalty receiver(s)
@@ -124,3 +133,4 @@
 
 # MAINNET
 - would need to process tx for mainnet service account to receive royalties
+ 
