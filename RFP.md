@@ -39,6 +39,7 @@
             - tx template
                 - needs to replace part for imports and collection borrows, then mint NFT
         - verify can view collectino and nft images in frontend, then submit all demo contracts to testnet nft catalog
+            - view in console, check images
         - add the check on DNA uniqueness, verify in emulator
         - add the check that recipient colleciton owner same as each NFT refs owner
             
