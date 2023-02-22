@@ -1,5 +1,6 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vitest/config';
+import path from 'path';
 
 export default defineConfig({
 	plugins: [sveltekit()],
@@ -10,6 +11,8 @@ export default defineConfig({
 		alias: {
 			// isomorphic-fetch installed to mitigate error with svelte accessing emulator
 			'node-fetch': 'isomorphic-fetch',
+			'#lib': path.resolve('./src/lib'),
+			'#lib/*': path.resolve('./src/lib/*'),
 		}
 	}
 });

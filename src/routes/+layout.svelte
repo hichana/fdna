@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
-    import { user } from '../lib/stores';
-    import { unauthenticate, logIn } from '../lib/actions';
+	import { user } from '#lib/stores';
+	import { unauthenticate, logIn } from '#lib/actions';
 </script>
 
 <nav class="bg-gray-800">

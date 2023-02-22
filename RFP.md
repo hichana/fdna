@@ -2,9 +2,9 @@
 -x bootstrap a svelte project into another folder, then drop into this repo
     -x tailwind
     -x confirm prettier, lint, typescript build
-    - fcl config
+    -x fcl config
         - first add user login
-    - aliased paths
+    -x aliased paths
 
 
 # BUILD V1 OF STRANDS CONTRACT
