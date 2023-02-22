@@ -25,7 +25,7 @@
     - as soon as one or more exampleNFT contracts are suitable and working as expected on emulator, need to submit to testnet nft catalog
 -x .env
     - contains all appropriate env vars suffixed if necessary with environment (emulator, testnet, mainnet)
-- fcl config
+-x fcl config
     - has conditional loading of config based on env var
 -x flow config and deploy
     -x init flow.json

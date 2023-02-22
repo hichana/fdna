@@ -5,6 +5,8 @@
     -x fcl config
         - first add user login
     -x aliased paths
+- conduct basic functionality to mint dna
+    - pull user wallet nft data
 
 
 # BUILD V1 OF STRANDS CONTRACT
