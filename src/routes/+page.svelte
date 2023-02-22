@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { get } from 'svelte/store';
-    import { user } from '#lib/stores';
+    import { user, strandA, strandB } from '#lib/stores';
 	import { getUserNFTIDs } from '#lib/actions';
 	import type { UserNFTIDs } from '../types';
 	import NFTsDetail from '#components/NFTsDetail.svelte';
+	import DND from '#components/DND.svelte';
 
     let userNFTIDs: UserNFTIDs | null = null;
     async function setUserNFTIDs() {
@@ -24,3 +25,7 @@
         {/each}
     {/if}
 </div>
+
+
+<DND listName="strandA" items={$strandA}/>
+<DND listName="strandB" items={$strandB}/>
