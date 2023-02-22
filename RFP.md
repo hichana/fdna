@@ -27,6 +27,8 @@
             - should iterate over both strand a and b to create a non-duplicated list of
                 - imports
                 - collection borrows (first start off with making collection let name just be the fully qualified identifier, so will be making more collection borrows than actually needed, but fine for now. Add way to optimize this to icebox)
+            - tx template
+                - needs to replace part for imports and collection borrows, then mint NFT
             
 
 
