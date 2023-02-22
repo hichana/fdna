@@ -14,6 +14,8 @@ export default defineConfig({
 			'#lib': path.resolve('./src/lib'),
 			'#lib/*': path.resolve('./src/lib/*'),
 			'#queries': path.resolve('./scripts'),
+			'#components': path.resolve('./src/components'),
+			'#components/*': path.resolve('./src/components/*'),
 		}
 	}
 });

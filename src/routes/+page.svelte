@@ -3,6 +3,7 @@
     import { user } from '#lib/stores';
 	import { getUserNFTIDs } from '#lib/actions';
 	import type { UserNFTIDs } from '../types';
+	import NFTsDetail from '#components/NFTsDetail.svelte';
 
     let userNFTIDs: UserNFTIDs | null = null;
     $: console.log("userNFTIDs:", userNFTIDs)
@@ -18,4 +19,10 @@
 
 </script>
 
-<h1 class="text-3xl font-bold underline bg-red-400 ">Hello world!</h1>
+<div>
+    {#if userNFTIDs}
+        {#each Object.entries(userNFTIDs) as [collectionName, nftIDs]}
+            <NFTsDetail {collectionName} {nftIDs} />
+        {/each}
+    {/if}
+</div>
