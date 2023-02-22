@@ -6,8 +6,8 @@ import (
 
 func main() {
 
-	// flow_network := "emulator"
-	flow_network := "embedded"
+	flow_network := "emulator"
+	// flow_network := "embedded"
 
 	// create the overflow client
 	c := o.Overflow(o.WithNetwork(flow_network), o.WithFlowForNewUsers(1000.0))

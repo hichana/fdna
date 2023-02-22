@@ -5,5 +5,11 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
+	},
+	resolve: {
+		alias: {
+			// isomorphic-fetch installed to mitigate error with svelte accessing emulator
+			'node-fetch': 'isomorphic-fetch',
+		}
 	}
 });

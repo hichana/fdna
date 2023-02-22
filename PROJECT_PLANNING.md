@@ -18,6 +18,7 @@
 - checklist before testnet deploy/submission
     - must have collection and NFT artwork created and links added to STRANDS, all other metadata strings must be right
     - in minter, update mint strings for thumbnail and thumbnail path
+    - in fcl config, change app.detail.icon
 
 # REQUIREMENTS
 - external

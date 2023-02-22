@@ -1,14 +1,31 @@
-<script>
+<script lang="ts">
 	import '../app.css';
+    import { user } from '../lib/stores';
+    import { unauthenticate, logIn } from '../lib/actions';
 </script>
 
 <nav class="bg-gray-800">
-    <button
-        type="button"
-        class=" bg-gray-800 p-1 text-orange-500 hover:text-white focus:outline-none"
-    >
-        Sign up / Login
-    </button>
+    {#if $user}
+        {#if $user?.loggedIn}
+            <button
+                on:click={unauthenticate}
+                type="button"
+            >
+                <span class="sr-only">Log out</span>
+                Log out
+            </button>
+        {:else}
+            <button
+                on:click={logIn}
+                type="button"
+            >
+                <span class="sr-only">Log In/Sign Up</span>
+                Log in/Sign up
+            </button>
+        {/if}
+    {:else}
+        <p>Loading login status##########################3</p>
+    {/if}
 </nav>
 
 <main>
