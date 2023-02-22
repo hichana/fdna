@@ -16,6 +16,18 @@
             -x add dnd
     -x use checkbox data in parallel dnds, add rearrange to state
     - figure out string interpolated tx code construction with dnds data
+        - start w/ nft contract, minter
+            - should take in
+                - recipient collection cap
+                - standA refs
+                - strandB refs
+                - payment
+            - for now just print strand a and b to emulator log
+        - interpolated tx
+            - should iterate over both strand a and b to create a non-duplicated list of
+                - imports
+                - collection borrows (first start off with making collection let name just be the fully qualified identifier, so will be making more collection borrows than actually needed, but fine for now. Add way to optimize this to icebox)
+            
 
 
 # BUILD V1 OF STRANDS CONTRACT
