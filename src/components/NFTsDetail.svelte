@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { get } from 'svelte/store';
 	import { slide } from 'svelte/transition';
-    import { user, selectedNFTs } from '#lib/stores';
+    import { user, strandA, strandB } from '#lib/stores';
 
     import { getUserNFTs } from '#lib/actions';
 
@@ -19,15 +19,34 @@
 			const currentUser = get(user);
 			if (currentUser !== null) {
                 userNFTs = await getUserNFTs(currentUser.addr, collectionName, nftIDs)
-                selectedNFTs.update((prevSelectedNFTs) => ({
-                    ...prevSelectedNFTs,
-                    [collectionName]: []
-                }))
             }
         }
     }
 
     $: console.log("userNFTs:", userNFTs);
+
+    function handleCheck(event: { target: any; }) {
+        const { target } = event;
+        const { value } = target;
+        const userNFT = userNFTs.find(nft => nft.id === value);
+
+        if (target.checked) {
+        strandA.update((prev) => {
+            return([
+                ...prev,
+                userNFT
+            ])})
+
+        } else {
+            strandA.update((prev) => ([
+                ...prev.filter((nft: { id: string; }) => nft.id !== userNFT.id)
+            ]))
+            strandB.update((prev) => ([
+                ...prev.filter((nft: { id: string; }) => nft.id !== userNFT.id)
+            ]))
+        }
+    }
+
 </script>
 
 <div class="border-b border-gray-200 bg-yellow-200 p-6">
@@ -75,16 +94,16 @@
 	{#if filterIsOpen}
 		<div class="pt-6" transition:slide>
 			<div class="space-y-4">
-				{#each userNFTs as nft}
+				{#each userNFTs as nftData}
 					<div class="flex items-center">
 						<input
-							id={nft.id}
+							id={nftData.id}
 							type="checkbox"
-                            bind:group={$selectedNFTs[collectionName]}
-							value={nft}
+                            on:change={handleCheck}
+                            bind:value={nftData.id}
 							class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
 						/>
-						<label for={nft.id} class="ml-3 text-sm text-gray-600">UUID: {nft.id}, NFT ID: {nft.nftID}, name: {nft.name}</label>
+						<label for={nftData.id} class="ml-3 text-sm text-gray-600">UUID: {nftData.id}, NFT ID: {nftData.nftID}, name: {nftData.name}</label>
 					</div>
 				{/each}
 			</div>

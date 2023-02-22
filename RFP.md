@@ -9,8 +9,10 @@
     - get and display data
         -x pull user wallet nft data
         -x instead need user nft ids for all their collection views
-        - display as accordion with checkboxes, make on hover pull invididual collection nft data
-        - add check to state
+        -x display as accordion with checkboxes, make on hover pull invididual collection nft data
+        -x add check to writable state
+        - have reactive data from writable state to populate first DND
+            - first make the reactive state make a single array
 
     - use checkbox data in parallel dnds, add rearrange to state
     - figure out string interpolated tx code construction with dnds data

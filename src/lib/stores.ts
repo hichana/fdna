@@ -5,7 +5,12 @@ user.subscribe((value) => {
     console.log('user store changed', value);
 })
 
-export const selectedNFTs = writable<any>({});
-selectedNFTs.subscribe((value) => {
-    console.log('selectedNFTs store changed', value);
+export const strandA = writable<any>([]);
+strandA.subscribe((value) => {
+    console.log("strandA Store:", value);
+})
+
+export const strandB = writable<any>([]);
+strandB.subscribe((value) => {
+    console.log("strandB Store:", value);
 })

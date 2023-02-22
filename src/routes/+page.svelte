@@ -6,8 +6,6 @@
 	import NFTsDetail from '#components/NFTsDetail.svelte';
 
     let userNFTIDs: UserNFTIDs | null = null;
-    $: console.log("userNFTIDs:", userNFTIDs)
-
     async function setUserNFTIDs() {
         const currentUser = get(user);
         if (currentUser !== null) {
