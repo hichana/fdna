@@ -330,7 +330,6 @@ pub contract STRANDS: NonFungibleToken {
         metadata["strandB"] = strandBStr
 
         // base pairs
-
         var basePairsLoop = 0
         let basePairs: [[Base]] = []
         for strand in strandA {

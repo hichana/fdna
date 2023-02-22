@@ -1,10 +1,12 @@
 import * as fcl from '@onflow/fcl';
 import { configureFCL } from './config';
 import { browser } from '$app/environment';
-import { user } from './stores';
-import { replaceCDCImports } from './helpers';
+import { get } from 'svelte/store';
+import { user, strandA, strandB } from './stores';
+import { constructNFTCollectionCode, replaceCDCImports } from './helpers';
 import GET_NFT_IDS_IN_ACCOUNT from '#queries/NFTCatalog/get_nft_ids_in_account.cdc?raw';
 import GET_NFTS_IN_ACCOUNT_FROM_IDS from '#queries/NFTCatalog/get_nfts_in_account_from_ids.cdc?raw';
+import MINT_NFT_INTERPOLATE from '#mutations/STRANDS/mint_nft_interpolate.cdc?raw';
 
 configureFCL();
 
@@ -85,3 +87,82 @@ export const getUserNFTs = async (userAddr: string, collectionName: string, nftI
     }
 }
 
+export const buySTRAND = async (
+    mintPrice: string
+) => {
+    const strandANfts = get(strandA);
+    const strandBNfts = get(strandB);
+
+    const importStrings: string[] = [];
+    const collectionBorrowBlocks: string[] = []
+
+    strandANfts.forEach((nft: any) => {
+
+        // construct the import string
+        const collectionTypeID = nft.publicLinkedType.type.type.typeID;
+        const collectionTypeIDParts = collectionTypeID.split(".");
+        const importString = `import ${collectionTypeIDParts[2]} from 0x${collectionTypeIDParts[1]}`;
+
+        // if the import string is not already in the array, add it
+        !importStrings.includes(importString) && importStrings.push(importString)
+
+        collectionBorrowBlocks.push(
+            constructNFTCollectionCode(
+                "strandA",
+                nft.publicLinkedType.type.typeID,
+                nft.storagePath.identifier,
+                nft.nftID
+            )
+        )
+
+    })
+
+    strandBNfts.forEach((nft: any) => {
+
+        // construct the import string
+        const collectionTypeID = nft.publicLinkedType.type.type.typeID;
+        const collectionTypeIDParts = collectionTypeID.split(".");
+        const importString = `import ${collectionTypeIDParts[2]} from 0x${collectionTypeIDParts[1]}`;
+
+        // if the import string is not already in the array, add it
+        !importStrings.includes(importString) && importStrings.push(importString)
+
+        collectionBorrowBlocks.push(
+            constructNFTCollectionCode(
+                "strandB",
+                nft.publicLinkedType.type.typeID,
+                nft.storagePath.identifier,
+                nft.nftID
+            )
+        )
+
+    })
+
+    const allImportStrings = importStrings.map(block => `${block}\n`).join('');
+    const allCollectionBorrowBlocks = collectionBorrowBlocks.map(block => `${block}\n`).join('');
+    const importsInectedTxCode = MINT_NFT_INTERPOLATE.replace(/\/\/ <imports>\n/g, allImportStrings);
+    const collectionBorrowBlocksInectedTxCode = importsInectedTxCode.replace(/\/\/ <collections>\n/g, allCollectionBorrowBlocks);
+    const txCode = replaceCDCImports(collectionBorrowBlocksInectedTxCode);
+    
+    const transactionId = await fcl.mutate({
+        cadence: txCode,
+        args: (arg: any, t: any) => [
+            arg(mintPrice, t.UFix64)
+        ],
+        payer: fcl.authz,
+        proposer: fcl.authz,
+        authorizations: [fcl.authz]
+    });
+
+    fcl
+        .tx(transactionId)
+        .subscribe(
+            (res: {
+                errorMessage: string | null;
+                statusCode: number | null;
+                status: number | null;
+            }) => {
+                console.log('Buy NFT transaction response:', res);
+            }
+        );
+}

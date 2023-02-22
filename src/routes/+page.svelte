@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { get } from 'svelte/store';
     import { user, strandA, strandB } from '#lib/stores';
-	import { getUserNFTIDs } from '#lib/actions';
+	import { getUserNFTIDs, buySTRAND } from '#lib/actions';
 	import type { UserNFTIDs } from '../types';
 	import NFTsDetail from '#components/NFTsDetail.svelte';
 	import DND from '#components/DND.svelte';
@@ -29,3 +29,11 @@
 
 <DND listName="strandA" items={$strandA}/>
 <DND listName="strandB" items={$strandB}/>
+
+<!-- TODO: make a script that pulls mint price from on-chain and displays in UI and uses here -->
+<button
+    on:click={() => {
+        buySTRAND("10.0");
+    }}
+    >Buy NFT
+</button>

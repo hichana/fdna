@@ -28,11 +28,18 @@
                 - payment
         -x make emulator work with an emulator only tx first
         - interpolated tx
+            -x first make a button that calls a buy tx
+                - should take in
+                    - strand a
+                    - strand b
+                    - mint price
             - should iterate over both strand a and b to create a non-duplicated list of
                 - imports
                 - collection borrows (first start off with making collection let name just be the fully qualified identifier, so will be making more collection borrows than actually needed, but fine for now. Add way to optimize this to icebox)
             - tx template
                 - needs to replace part for imports and collection borrows, then mint NFT
+        - add the check on DNA uniqueness, verify in emulator
+        - add the check that recipient colleciton owner same as each NFT refs owner
             
 
 

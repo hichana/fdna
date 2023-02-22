@@ -124,6 +124,7 @@
     - includes appropriately scoped env var for flow_env, and any others that may use conditional logic
 
 # ICEBOX/STRETCH REQUIREMENTS
+- if time refactor string interpolation to not make redundant collection borrows
 - use AuthAccount (in minter) to verify person minting actually owns the NFTs rather than just checking resource owner and comparing against deposit collection address
 - web app background cylces between green, purple, blue and yellow
 - query params to save user state

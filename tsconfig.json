@@ -14,6 +14,8 @@
 			"#lib/*": ["./src/lib/*"],
 			"#queries": ["./scripts"],
 			"#queries/*": ["./scripts/*"],
+			"#mutations": ["./transactions"],
+			"#mutations/*": ["./transactions/*"],
 			"#components": ["./src/components"],
 			"#components/*": ["./src/components/*"],
 		}
