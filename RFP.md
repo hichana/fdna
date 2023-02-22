@@ -1,9 +1,10 @@
 # SCAFFOLD WEB APP
 -x bootstrap a svelte project into another folder, then drop into this repo
     -x tailwind
-    - aliased paths
-    - confirm prettier, lint, typescript build
+    -x confirm prettier, lint, typescript build
     - fcl config
+        - first add user login
+    - aliased paths
 
 
 # BUILD V1 OF STRANDS CONTRACT
