@@ -17,12 +17,16 @@
     -x use checkbox data in parallel dnds, add rearrange to state
     - figure out string interpolated tx code construction with dnds data
         - start w/ nft contract, minter
-            - should take in
+            -x nft should have
+                - two string members and one array of array of a struct called a Base which will contain a Type and ID
+            -x metadata resolver
+                - should consume the new data members (does by default)
+            -x should take in
                 - recipient collection cap
                 - standA refs
                 - strandB refs
                 - payment
-            - for now just print strand a and b to emulator log
+        -x make emulator work with an emulator only tx first
         - interpolated tx
             - should iterate over both strand a and b to create a non-duplicated list of
                 - imports

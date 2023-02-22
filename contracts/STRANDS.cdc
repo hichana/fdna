@@ -20,6 +20,16 @@ pub contract STRANDS: NonFungibleToken {
     pub let CollectionPublicPath: PublicPath
     pub let AdminStoragePath: StoragePath
 
+    pub struct Base {
+        pub let type: Type
+        pub let id: UInt64
+
+        init(type: Type, id: UInt64) {
+            self.type = type
+            self.id = id
+        }
+    }
+
     pub resource NFT: NonFungibleToken.INFT, MetadataViews.Resolver {
         
         pub let id: UInt64
@@ -30,6 +40,10 @@ pub contract STRANDS: NonFungibleToken {
         pub let thumbnailPath: String
         access(self) let royalties: [MetadataViews.Royalty]
         access(self) let metadata: {String: AnyStruct}
+
+        pub let strandA: String
+        pub let strandB: String
+        access(self) let basePairs: [[Base]]
     
         init(
             id: UInt64,
@@ -39,6 +53,9 @@ pub contract STRANDS: NonFungibleToken {
             thumbnailPath: String,
             royalties: [MetadataViews.Royalty],
             metadata: {String: AnyStruct},
+            strandA: String,
+            strandB: String,
+            basePairs: [[Base]]
         ) {
             self.id = id
             self.name = name
@@ -47,6 +64,9 @@ pub contract STRANDS: NonFungibleToken {
             self.thumbnailPath = thumbnailPath
             self.royalties = royalties
             self.metadata = metadata
+            self.strandA = strandA
+            self.strandB = strandB
+            self.basePairs = basePairs
         }
 
         /// @return An array of Types defining the implemented views. 
@@ -257,6 +277,8 @@ pub contract STRANDS: NonFungibleToken {
     ///     
     pub fun mintNFT(
         recipient: &{NonFungibleToken.CollectionPublic},
+        strandA: [&NonFungibleToken.NFT],
+        strandB: [&NonFungibleToken.NFT],
         payment: @FungibleToken.Vault
     ) {
 
@@ -269,6 +291,63 @@ pub contract STRANDS: NonFungibleToken {
         metadata["mintedBlock"] = currentBlock.height
         metadata["mintedTime"] = currentBlock.timestamp
         metadata["minter"] = recipient.owner!.address
+
+        // construct DNA
+        // strandA
+        var strandAStr = ""
+        var strandALoop = 0
+        let strandALength = strandA.length
+        for strand in strandA {
+            strandALoop = strandALoop + 1
+            let strandID = strand.id
+            let dot = "."
+            let appendID = dot.concat(strandID.toString())
+            let fullyQualifiedStrandID = strand.getType().identifier.concat(appendID)
+            strandAStr = strandAStr.concat(fullyQualifiedStrandID)
+
+            if strandALoop < strandALength {
+                strandAStr = strandAStr.concat(",")
+            }
+        }
+        metadata["strandA"] = strandAStr
+
+        // strandB
+        var strandBStr = ""
+        var strandBLoop = 0
+        let strandBLength = strandB.length
+        for strand in strandB {
+            strandBLoop = strandBLoop + 1
+            let strandID = strand.id
+            let dot = "."
+            let appendID = dot.concat(strandID.toString())
+            let fullyQualifiedStrandID = strand.getType().identifier.concat(appendID)
+            strandBStr = strandBStr.concat(fullyQualifiedStrandID)
+
+            if strandBLoop < strandBLength {
+                strandBStr = strandBStr.concat(",")
+            }
+        }
+        metadata["strandB"] = strandBStr
+
+        // base pairs
+
+        var basePairsLoop = 0
+        let basePairs: [[Base]] = []
+        for strand in strandA {
+            let strandABase = Base(
+                type: strand.getType(),
+                id: strand.id
+            )
+            let strandBBase = Base(
+                type: strandB[basePairsLoop].getType(),
+                id: strandB[basePairsLoop].id
+            )
+
+            basePairs.append([strandABase, strandBBase])
+
+            basePairsLoop = basePairsLoop + 1
+        }
+        metadata["basePairs"] = basePairs
 
         // construct NFT name
         let nftNamePrefix = "STRANDS #"
@@ -290,6 +369,9 @@ pub contract STRANDS: NonFungibleToken {
             thumbnailPath:"[TODO_ADD-THUMBNAIL-PATH]",
             royalties: self.royaltyReceivers,
             metadata: metadata,
+            strandA: strandAStr,
+            strandB: strandBStr,
+            basePairs: basePairs
         )
 
         // deposit it in the recipient's account using their reference

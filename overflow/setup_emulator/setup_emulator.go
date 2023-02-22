@@ -6,8 +6,8 @@ import (
 
 func main() {
 
-	flow_network := "emulator"
-	// flow_network := "embedded"
+	// flow_network := "emulator"
+	flow_network := "embedded"
 
 	// create the overflow client
 	c := o.Overflow(o.WithNetwork(flow_network), o.WithFlowForNewUsers(1000.0))
@@ -245,9 +245,26 @@ func main() {
 		o.WithSigner("account")).
 		Print()
 
+	strand_a_identifiers_names := []string{
+		"Dogs",
+		"Cats"}
+
+	strand_a_ids := []uint64{0, 0}
+
+	strand_b_identifiers_names := []string{
+		"apples",
+		"oranges"}
+
+	strand_b_ids := []uint64{0, 0}
+
 	// SERVICE ACCOUNT MINTS A STRANDS NFT
 	c.Tx(
-		"STRANDS/mint_nft",
+		"STRANDS/mint_nft_emulator_only",
+		o.WithArg("strandA", strand_a_identifiers_names),
+		o.WithArg("strandAIDs", strand_a_ids),
+		o.WithArg("strandB", strand_b_identifiers_names),
+		o.WithArg("strandBIDs", strand_b_ids),
+		o.WithArg("mintPrice", 10.0),
 		o.WithSigner("account")).
 		Print()
 
