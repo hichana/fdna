@@ -38,9 +38,12 @@
                 - collection borrows (first start off with making collection let name just be the fully qualified identifier, so will be making more collection borrows than actually needed, but fine for now. Add way to optimize this to icebox)
             - tx template
                 - needs to replace part for imports and collection borrows, then mint NFT
-        - verify can view collectino and nft images in frontend, then submit all demo contracts to testnet nft catalog
-            - view in console, check images
+        -x verify can view collectino and nft images in frontend, then submit all demo contracts to testnet nft catalog
+            -x view in console, check images
+            -x deploy
+            -x give testnet user1 nfts
         - add the check on DNA uniqueness, verify in emulator
+            - 
         - add the check that recipient colleciton owner same as each NFT refs owner
             
 

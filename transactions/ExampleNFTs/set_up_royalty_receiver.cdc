@@ -9,11 +9,10 @@ transaction(vaultPath: StoragePath) {
             panic("A vault for the specified fungible token path does not exist")
         }
 
-        let capability = signer.link<&{FungibleToken.Receiver, FungibleToken.Balance}>(
+        signer.link<&{FungibleToken.Receiver, FungibleToken.Balance}>(
             MetadataViews.getRoyaltyReceiverPublicPath(),
             target: vaultPath
-        )!
+        )
 
-        if !capability.check() { panic("Beneficiary capability is not valid!") }
     }
 }

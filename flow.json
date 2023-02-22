@@ -134,6 +134,16 @@
 				"hashAlgorithm": "$TESTNET_ACCOUNT_HASH_ALGO",
 				"privateKey": "$TESTNET_ACCOUNT_PRIVATE_KEY"
 			}
+		},
+		"testnet-user1": {
+			"address": "$TESTNET_USER1",
+			"key": {
+				"type": "hex",
+				"index": 0,
+				"signatureAlgorithm": "$TESTNET_USER1_SIG_ALGO",
+				"hashAlgorithm": "$TESTNET_USER1_HASH_ALGO",
+				"privateKey": "$TESTNET_USER1_PRIVATE_KEY"
+			}
 		}
 	},
 	"deployments": {
@@ -153,6 +163,16 @@
 				"White"
 			],
 			"emulator-user1": []
-		}
+		},
+        "testnet": {
+            "testnet-account": [
+                "Apples",
+                "Black",
+                "Cats",
+                "Dogs",
+                "Oranges",
+                "White"
+            ]
+        }
 	}
 }
