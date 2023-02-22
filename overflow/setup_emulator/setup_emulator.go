@@ -12,10 +12,10 @@ func main() {
 	// create the overflow client
 	c := o.Overflow(o.WithNetwork(flow_network), o.WithFlowForNewUsers(1000.0))
 
-	// USER1 SELF-INITIALIZES FOR DEMO NFTS
+	// SERVICE ACCOUNT SELF-INITIALIZES FOR DEMO NFTS
 	c.Tx(
 		"ExampleNFTs/initialize_account_all_demo_nfts",
-		o.WithSigner("user1")).
+		o.WithSigner("account")).
 		Print()
 
 	// SERVICE ACCOUNT SELF SETS UP WITH ROYALTY RECEIVER
@@ -32,11 +32,11 @@ func main() {
 		"Royalty description"}
 	royalty_beneficiaries := []string{"account"}
 
-	// SERVICE ACCOUNT MINTS 2 DEMO NFTS FOR EACH DEMO CONTRACT TO USER1
+	// SERVICE ACCOUNT MINTS 2 DEMO NFTS FOR EACH DEMO CONTRACT TO SELF
 	// Cats
 	c.Tx(
 		"ExampleNFTs/mint_cats",
-		o.WithArg("recipient", "user1"),
+		o.WithArg("recipient", "account"),
 		o.WithArg("name", "Cats NFT"),
 		o.WithArg("description", "Cats are cute but sometimes unpredictable."),
 		o.WithArg("thumbnail", "https://cdn.theatlantic.com/thumbor/W544GIT4l3z8SG-FMUoaKpFLaxE=/0x131:2555x1568/1600x900/media/img/mt/2017/06/shutterstock_319985324/original.jpg"),
@@ -47,7 +47,7 @@ func main() {
 		Print()
 	c.Tx(
 		"ExampleNFTs/mint_cats",
-		o.WithArg("recipient", "user1"),
+		o.WithArg("recipient", "account"),
 		o.WithArg("name", "Cats NFT"),
 		o.WithArg("description", "Cats are cute but sometimes unpredictable."),
 		o.WithArg("thumbnail", "https://cdn.theatlantic.com/thumbor/W544GIT4l3z8SG-FMUoaKpFLaxE=/0x131:2555x1568/1600x900/media/img/mt/2017/06/shutterstock_319985324/original.jpg"),
@@ -60,7 +60,7 @@ func main() {
 	// Dogs
 	c.Tx(
 		"ExampleNFTs/mint_dogs",
-		o.WithArg("recipient", "user1"),
+		o.WithArg("recipient", "account"),
 		o.WithArg("name", "Cats NFT"),
 		o.WithArg("description", "Cats are cute but sometimes unpredictable."),
 		o.WithArg("thumbnail", "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-732x549.jpg"),
@@ -71,7 +71,7 @@ func main() {
 		Print()
 	c.Tx(
 		"ExampleNFTs/mint_dogs",
-		o.WithArg("recipient", "user1"),
+		o.WithArg("recipient", "account"),
 		o.WithArg("name", "Cats NFT"),
 		o.WithArg("description", "Cats are cute but sometimes unpredictable."),
 		o.WithArg("thumbnail", "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-732x549.jpg"),
@@ -84,7 +84,7 @@ func main() {
 	// Apples
 	c.Tx(
 		"ExampleNFTs/mint_apples",
-		o.WithArg("recipient", "user1"),
+		o.WithArg("recipient", "account"),
 		o.WithArg("name", "Cats NFT"),
 		o.WithArg("description", "Cats are cute but sometimes unpredictable."),
 		o.WithArg("thumbnail", "https://www.collinsdictionary.com/images/full/apple_158989157.jpg"),
@@ -95,7 +95,7 @@ func main() {
 		Print()
 	c.Tx(
 		"ExampleNFTs/mint_apples",
-		o.WithArg("recipient", "user1"),
+		o.WithArg("recipient", "account"),
 		o.WithArg("name", "Cats NFT"),
 		o.WithArg("description", "Cats are cute but sometimes unpredictable."),
 		o.WithArg("thumbnail", "https://www.collinsdictionary.com/images/full/apple_158989157.jpg"),
@@ -108,7 +108,7 @@ func main() {
 	// Oranges
 	c.Tx(
 		"ExampleNFTs/mint_oranges",
-		o.WithArg("recipient", "user1"),
+		o.WithArg("recipient", "account"),
 		o.WithArg("name", "Cats NFT"),
 		o.WithArg("description", "Cats are cute but sometimes unpredictable."),
 		o.WithArg("thumbnail", "https://i5.walmartimages.ca/images/Enlarge/234/6_r/6000191272346_R.jpg"),
@@ -119,7 +119,7 @@ func main() {
 		Print()
 	c.Tx(
 		"ExampleNFTs/mint_oranges",
-		o.WithArg("recipient", "user1"),
+		o.WithArg("recipient", "account"),
 		o.WithArg("name", "Cats NFT"),
 		o.WithArg("description", "Cats are cute but sometimes unpredictable."),
 		o.WithArg("thumbnail", "https://i5.walmartimages.ca/images/Enlarge/234/6_r/6000191272346_R.jpg"),
@@ -132,7 +132,7 @@ func main() {
 	// Black
 	c.Tx(
 		"ExampleNFTs/mint_black",
-		o.WithArg("recipient", "user1"),
+		o.WithArg("recipient", "account"),
 		o.WithArg("name", "Cats NFT"),
 		o.WithArg("description", "Cats are cute but sometimes unpredictable."),
 		o.WithArg("thumbnail", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_Wallpaper.jpg/2560px-Black_Wallpaper.jpg"),
@@ -143,7 +143,7 @@ func main() {
 		Print()
 	c.Tx(
 		"ExampleNFTs/mint_black",
-		o.WithArg("recipient", "user1"),
+		o.WithArg("recipient", "account"),
 		o.WithArg("name", "Cats NFT"),
 		o.WithArg("description", "Cats are cute but sometimes unpredictable."),
 		o.WithArg("thumbnail", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_Wallpaper.jpg/2560px-Black_Wallpaper.jpg"),
@@ -156,7 +156,7 @@ func main() {
 	// White
 	c.Tx(
 		"ExampleNFTs/mint_white",
-		o.WithArg("recipient", "user1"),
+		o.WithArg("recipient", "account"),
 		o.WithArg("name", "Cats NFT"),
 		o.WithArg("description", "Cats are cute but sometimes unpredictable."),
 		o.WithArg("thumbnail", "https://i.ytimg.com/vi/QggJzZdIYPI/mqdefault.jpg"),
@@ -167,7 +167,7 @@ func main() {
 		Print()
 	c.Tx(
 		"ExampleNFTs/mint_white",
-		o.WithArg("recipient", "user1"),
+		o.WithArg("recipient", "account"),
 		o.WithArg("name", "Cats NFT"),
 		o.WithArg("description", "Cats are cute but sometimes unpredictable."),
 		o.WithArg("thumbnail", "https://i.ytimg.com/vi/QggJzZdIYPI/mqdefault.jpg"),
@@ -184,7 +184,7 @@ func main() {
 		o.WithArg("contractName", "Cats"),
 		o.WithArg("contractAddress", "account"),
 		o.WithArg("nftTypeIdentifer", "A.f8d6e0586b0a20c7.Cats"),
-		o.WithArg("addressWithNFT", "user1"),
+		o.WithArg("addressWithNFT", "account"),
 		o.WithArg("nftID", 0),
 		o.WithArg("publicPathIdentifier", "catsCollection"),
 		o.WithSigner("account")).
@@ -195,7 +195,7 @@ func main() {
 		o.WithArg("contractName", "Dogs"),
 		o.WithArg("contractAddress", "account"),
 		o.WithArg("nftTypeIdentifer", "A.f8d6e0586b0a20c7.Dogs"),
-		o.WithArg("addressWithNFT", "user1"),
+		o.WithArg("addressWithNFT", "account"),
 		o.WithArg("nftID", 0),
 		o.WithArg("publicPathIdentifier", "dogsCollection"),
 		o.WithSigner("account")).
@@ -206,7 +206,7 @@ func main() {
 		o.WithArg("contractName", "Apples"),
 		o.WithArg("contractAddress", "account"),
 		o.WithArg("nftTypeIdentifer", "A.f8d6e0586b0a20c7.Apples"),
-		o.WithArg("addressWithNFT", "user1"),
+		o.WithArg("addressWithNFT", "account"),
 		o.WithArg("nftID", 0),
 		o.WithArg("publicPathIdentifier", "applesCollection"),
 		o.WithSigner("account")).
@@ -217,7 +217,7 @@ func main() {
 		o.WithArg("contractName", "Oranges"),
 		o.WithArg("contractAddress", "account"),
 		o.WithArg("nftTypeIdentifer", "A.f8d6e0586b0a20c7.Oranges"),
-		o.WithArg("addressWithNFT", "user1"),
+		o.WithArg("addressWithNFT", "account"),
 		o.WithArg("nftID", 0),
 		o.WithArg("publicPathIdentifier", "orangesCollection"),
 		o.WithSigner("account")).
@@ -228,7 +228,7 @@ func main() {
 		o.WithArg("contractName", "Black"),
 		o.WithArg("contractAddress", "account"),
 		o.WithArg("nftTypeIdentifer", "A.f8d6e0586b0a20c7.Black"),
-		o.WithArg("addressWithNFT", "user1"),
+		o.WithArg("addressWithNFT", "account"),
 		o.WithArg("nftID", 0),
 		o.WithArg("publicPathIdentifier", "blackCollection"),
 		o.WithSigner("account")).
@@ -239,19 +239,19 @@ func main() {
 		o.WithArg("contractName", "White"),
 		o.WithArg("contractAddress", "account"),
 		o.WithArg("nftTypeIdentifer", "A.f8d6e0586b0a20c7.White"),
-		o.WithArg("addressWithNFT", "user1"),
+		o.WithArg("addressWithNFT", "account"),
 		o.WithArg("nftID", 0),
 		o.WithArg("publicPathIdentifier", "whiteCollection"),
 		o.WithSigner("account")).
 		Print()
 
-	// USER1 MINTS A STRANDS NFT
+	// SERVICE ACCOUNT MINTS A STRANDS NFT
 	c.Tx(
 		"STRANDS/mint_nft",
-		o.WithSigner("user1")).
+		o.WithSigner("account")).
 		Print()
 
-	// ADMIN PAUSES AND RESUMES MINTING
+	// SERVICE ACCOUNT PAUSES AND RESUMES MINTING
 	c.Tx(
 		"STRANDS/pause_minting",
 		o.WithSigner("account")).

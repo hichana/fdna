@@ -13,6 +13,7 @@ export default defineConfig({
 			'node-fetch': 'isomorphic-fetch',
 			'#lib': path.resolve('./src/lib'),
 			'#lib/*': path.resolve('./src/lib/*'),
+			'#queries': path.resolve('./scripts'),
 		}
 	}
 });

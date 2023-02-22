@@ -6,7 +6,10 @@
         - first add user login
     -x aliased paths
 - conduct basic functionality to mint dna
-    - pull user wallet nft data
+    - pull user wallet nft data, display as accordion with checkboxes, add check to state
+        
+    - use checkbox data in parallel dnds, add rearrange to state
+    - figure out string interpolated tx code construction with dnds data
 
 
 # BUILD V1 OF STRANDS CONTRACT

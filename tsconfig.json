@@ -12,6 +12,8 @@
 		"paths": {
 			"#lib": ["./src/lib"],
 			"#lib/*": ["./src/lib/*"],
+			"#queries": ["./scripts"],
+			"#queries/*": ["./scripts/*"],
 		}
 
 	}
