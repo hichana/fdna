@@ -27,7 +27,7 @@
                 - strandB refs
                 - payment
         -x make emulator work with an emulator only tx first
-        - interpolated tx
+        -x interpolated tx
             -x first make a button that calls a buy tx
                 - should take in
                     - strand a
