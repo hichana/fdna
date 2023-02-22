@@ -6,110 +6,110 @@
 		}
 	},
 	"contracts": {
-        "Apples": {
-            "source": "./contracts/Apples.cdc",
-            "aliases": {
-                "emulator": "f8d6e0586b0a20c7",
-                "testnet": "$VITE_TESTNET_ACCOUNT"
-            }
-        },
-        "Black": {
-            "source": "./contracts/Black.cdc",
-            "aliases": {
-                "emulator": "f8d6e0586b0a20c7",
-                "testnet": "$VITE_TESTNET_ACCOUNT"
-            }
-        },
-        "Cats": {
-            "source": "./contracts/Cats.cdc",
-            "aliases": {
-                "emulator": "f8d6e0586b0a20c7",
-                "testnet": "$VITE_TESTNET_ACCOUNT"
-            }
-        },
-        "Dogs": {
-            "source": "./contracts/Dogs.cdc",
-            "aliases": {
-                "emulator": "f8d6e0586b0a20c7",
-                "testnet": "$VITE_TESTNET_ACCOUNT"
-            }
-        },
-        "FlowToken": {
-            "source": "./contracts/core/FlowToken.cdc",
-            "aliases": {
-                "emulator": "0ae53cb6e3f42a79",
-                "testnet": "7e60df042a9c0868",
-                "mainnet": "1654653399040a61"
-            }
-        },
-        "FungibleToken": {
-            "source": "./contracts/core/FungibleToken.cdc",
-            "aliases": {
-                "emulator": "ee82856bf20e2aa6",
-                "testnet": "9a0766d93b6608b7",
-                "mainnet": "f233dcee88fe0abe"
-            }
-        },
-        "MetadataViews": {
-            "source": "./contracts/core/MetadataViews.cdc",
-            "aliases": {
-                "emulator": "f8d6e0586b0a20c7",
-                "testnet": "631e88ae7f1d7c20",
-                "mainnet": "1d7e57aa55817448"
-            }
-        },
-        "NFTCatalog": {
-            "source": "./contracts/core/NFTCatalog.cdc",
-            "aliases": {
-                "emulator": "f8d6e0586b0a20c7",
-                "testnet": "324c34e1c517e4db",
-                "mainnet": "49a7cda3a1eecc29"
-            }
-        },
-        "NFTCatalogAdmin": {
-            "source": "./contracts/core/NFTCatalogAdmin.cdc",
-            "aliases": {
-                "emulator": "f8d6e0586b0a20c7"
-            }
-        },
-        "NFTRetrieval": {
-            "source": "./contracts/core/NFTRetrieval.cdc",
-            "aliases": {
-                "emulator": "f8d6e0586b0a20c7",
-                "testnet": "324c34e1c517e4db",
-                "mainnet": "49a7cda3a1eecc29"
-            }
-        },
-        "NonFungibleToken": {
-            "source": "./contracts/core/NonFungibleToken.cdc",
-            "aliases": {
-                "emulator": "f8d6e0586b0a20c7",
-                "testnet": "631e88ae7f1d7c20",
-                "mainnet": "1d7e57aa55817448"
-            }
-        },
-        "Oranges": {
-            "source": "./contracts/Oranges.cdc",
-            "aliases": {
-                "emulator": "f8d6e0586b0a20c7",
-                "testnet": "$VITE_TESTNET_ACCOUNT"
-            }
-        },
-        "STRANDS": {
-            "source": "./contracts/STRANDS.cdc",
-            "aliases": {
-                "emulator": "f8d6e0586b0a20c7",
-                "testnet": "$VITE_TESTNET_ACCOUNT"
-            }
-        },
-        "White": {
-            "source": "./contracts/White.cdc",
-            "aliases": {
-                "emulator": "f8d6e0586b0a20c7",
-                "testnet": "$VITE_TESTNET_ACCOUNT"
-            }
-        }
-    },
+		"Apples": {
+			"source": "./contracts/Apples.cdc",
+			"aliases": {
+				"emulator": "f8d6e0586b0a20c7",
+				"testnet": "$VITE_TESTNET_ACCOUNT"
+			}
+		},
+		"Black": {
+			"source": "./contracts/Black.cdc",
+			"aliases": {
+				"emulator": "f8d6e0586b0a20c7",
+				"testnet": "$VITE_TESTNET_ACCOUNT"
+			}
+		},
+		"Cats": {
+			"source": "./contracts/Cats.cdc",
+			"aliases": {
+				"emulator": "f8d6e0586b0a20c7",
+				"testnet": "$VITE_TESTNET_ACCOUNT"
+			}
+		},
+		"Dogs": {
+			"source": "./contracts/Dogs.cdc",
+			"aliases": {
+				"emulator": "f8d6e0586b0a20c7",
+				"testnet": "$VITE_TESTNET_ACCOUNT"
+			}
+		},
+		"FlowToken": {
+			"source": "./contracts/core/FlowToken.cdc",
+			"aliases": {
+				"emulator": "0ae53cb6e3f42a79",
+				"testnet": "7e60df042a9c0868",
+				"mainnet": "1654653399040a61"
+			}
+		},
+		"FungibleToken": {
+			"source": "./contracts/core/FungibleToken.cdc",
+			"aliases": {
+				"emulator": "ee82856bf20e2aa6",
+				"testnet": "9a0766d93b6608b7",
+				"mainnet": "f233dcee88fe0abe"
+			}
+		},
+		"MetadataViews": {
+			"source": "./contracts/core/MetadataViews.cdc",
+			"aliases": {
+				"emulator": "f8d6e0586b0a20c7",
+				"testnet": "631e88ae7f1d7c20",
+				"mainnet": "1d7e57aa55817448"
+			}
+		},
+		"NFTCatalog": {
+			"source": "./contracts/core/NFTCatalog.cdc",
+			"aliases": {
+				"emulator": "f8d6e0586b0a20c7",
+				"testnet": "324c34e1c517e4db",
+				"mainnet": "49a7cda3a1eecc29"
+			}
+		},
+		"NFTCatalogAdmin": {
+			"source": "./contracts/core/NFTCatalogAdmin.cdc",
+			"aliases": {
+				"emulator": "f8d6e0586b0a20c7"
+			}
+		},
+		"NFTRetrieval": {
+			"source": "./contracts/core/NFTRetrieval.cdc",
+			"aliases": {
+				"emulator": "f8d6e0586b0a20c7",
+				"testnet": "324c34e1c517e4db",
+				"mainnet": "49a7cda3a1eecc29"
+			}
+		},
+		"NonFungibleToken": {
+			"source": "./contracts/core/NonFungibleToken.cdc",
+			"aliases": {
+				"emulator": "f8d6e0586b0a20c7",
+				"testnet": "631e88ae7f1d7c20",
+				"mainnet": "1d7e57aa55817448"
+			}
+		},
+		"Oranges": {
+			"source": "./contracts/Oranges.cdc",
+			"aliases": {
+				"emulator": "f8d6e0586b0a20c7",
+				"testnet": "$VITE_TESTNET_ACCOUNT"
+			}
+		},
+		"STRANDS": {
+			"source": "./contracts/STRANDS.cdc",
+			"aliases": {
+				"emulator": "f8d6e0586b0a20c7",
+				"testnet": "$VITE_TESTNET_ACCOUNT"
+			}
+		},
+		"White": {
+			"source": "./contracts/White.cdc",
+			"aliases": {
+				"emulator": "f8d6e0586b0a20c7",
+				"testnet": "$VITE_TESTNET_ACCOUNT"
+			}
+		}
+	},
 	"networks": {
 		"emulator": "127.0.0.1:3569",
 		"mainnet": "access.mainnet.nodes.onflow.org:9000",
@@ -125,34 +125,34 @@
 			"address": "01cf0e2f2f715450",
 			"key": "b0566e46eea9982b6ce836e51f61b4b305695a6866016f330f294155c9508425"
 		},
-        "testnet-account": {
-            "address": "$VITE_TESTNET_ACCOUNT",
-            "key":{
-                "type": "hex",
-                "index": 0,
-                "signatureAlgorithm": "$TESTNET_ACCOUNT_SIG_ALGO",
-                "hashAlgorithm": "$TESTNET_ACCOUNT_HASH_ALGO",
-                "privateKey": "$TESTNET_ACCOUNT_PRIVATE_KEY"
-            }
-        }
+		"testnet-account": {
+			"address": "$VITE_TESTNET_ACCOUNT",
+			"key": {
+				"type": "hex",
+				"index": 0,
+				"signatureAlgorithm": "$TESTNET_ACCOUNT_SIG_ALGO",
+				"hashAlgorithm": "$TESTNET_ACCOUNT_HASH_ALGO",
+				"privateKey": "$TESTNET_ACCOUNT_PRIVATE_KEY"
+			}
+		}
 	},
-    "deployments": {
-        "emulator": {
-            "emulator-account": [
-                "Apples",
-                "Black",
-                "Cats",
-                "Dogs",
-                "MetadataViews",
-                "NFTCatalog",
-                "NFTCatalogAdmin",
-                "NFTRetrieval",
-                "NonFungibleToken",
-                "Oranges",
-                "STRANDS",
-                "White"
-            ],
-            "emulator-user1": []
-        }
-    }
+	"deployments": {
+		"emulator": {
+			"emulator-account": [
+				"Apples",
+				"Black",
+				"Cats",
+				"Dogs",
+				"MetadataViews",
+				"NFTCatalog",
+				"NFTCatalogAdmin",
+				"NFTRetrieval",
+				"NonFungibleToken",
+				"Oranges",
+				"STRANDS",
+				"White"
+			],
+			"emulator-user1": []
+		}
+	}
 }
