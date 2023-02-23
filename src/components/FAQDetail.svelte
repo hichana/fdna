@@ -1,10 +1,9 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
 
-    export let faqPair: {q: string, a: string};
+	export let faqPair: { q: string; a: string };
 
 	let filterIsOpen = false;
-
 </script>
 
 <div class="border-b border-gray-200 bg-yellow-200 p-6">
@@ -50,9 +49,9 @@
 	{#if filterIsOpen}
 		<div class="pt-6" transition:slide>
 			<div class="space-y-4">
-                <div class="flex items-center">
-                    {faqPair.a}
-                </div>
+				<div class="flex items-center">
+					{faqPair.a}
+				</div>
 			</div>
 		</div>
 	{/if}

@@ -19,12 +19,12 @@
 	setUserNFTIDs();
 </script>
 
-<Container>
+<!-- <Container>
     <CTA />
-</Container>
+</Container> -->
 
 <Container>
-    <div>
+    <div class="bg-slate-400 rounded-2xl border-8 border-black">
         {#if userNFTIDs}
             {#each Object.entries(userNFTIDs) as [collectionName, nftIDs]}
                 <NFTsDetail {collectionName} {nftIDs} />

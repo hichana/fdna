@@ -38,5 +38,5 @@
 </nav>
 
 <main>
-    <slot />
+	<slot />
 </main>
