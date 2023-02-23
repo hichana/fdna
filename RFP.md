@@ -62,7 +62,8 @@ B: 233892348343
     _,-'"
  ,-',' `.`-.
 
-
+    - do
+        - in UI, last section will just be some stats in text form, then some text like "This is the point you might expect a 3D animation of a pack opening and fire spewing out or something like that, but almost everything about STRANDS is on-chain, so what we did was etch the following double helix of DNA onto your transaction code that minted your NFT here (make sure you save the link), and we also add real (but not really) DNA strands to the metadata of your NFT. Check them out here on Flowview. Thanks for minting a STRANDS NFT!!!
 
 
 
