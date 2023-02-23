@@ -1,3 +1,3 @@
-export interface UserNFTIDs{
+export interface UserNFTIDs {
 	[key: string]: number[];
 }

@@ -14,11 +14,11 @@ export default defineConfig({
 			'#lib': path.resolve('./src/lib'),
 			'#lib/*': path.resolve('./src/lib/*'),
 			'#queries': path.resolve('./scripts'),
-  			'#queries/*': path.resolve('/scripts/*'),
+			'#queries/*': path.resolve('/scripts/*'),
 			'#mutations': path.resolve('./transactions'),
 			'#mutations/*': path.resolve('/transactions/*'),
 			'#components': path.resolve('./src/components'),
-			'#components/*': path.resolve('./src/components/*'),
+			'#components/*': path.resolve('./src/components/*')
 		}
 	}
 });
