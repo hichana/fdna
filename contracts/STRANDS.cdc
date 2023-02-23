@@ -289,9 +289,10 @@ pub contract STRANDS: NonFungibleToken {
         let metadata: {String: AnyStruct} = {}
         let currentBlock = getCurrentBlock()
         let currentTimestamp = currentBlock.timestamp
+        let recipientCollectionOwnerAddress = recipient.owner!.address
         metadata["mintedBlock"] = currentBlock.height
         metadata["mintedTime"] = currentTimestamp
-        metadata["minter"] = recipient.owner!.address
+        metadata["minter"] = recipientCollectionOwnerAddress
 
         // construct DNA
         let dot = "."
@@ -301,6 +302,11 @@ pub contract STRANDS: NonFungibleToken {
         let strandALength = strandA.length
 
         for strandABase in strandA {
+
+            if strandABase.owner!.address != recipientCollectionOwnerAddress {
+                panic("Base NFTs must be owned by the owner of the recipient collection")
+            }
+
             strandALoop = strandALoop + 1
             let strandAID = strandABase.id
             let appendAID = dot.concat(strandAID.toString())
@@ -330,6 +336,11 @@ pub contract STRANDS: NonFungibleToken {
         let strandBLength = strandB.length
 
         for strandBBase in strandB {
+
+            if strandBBase.owner!.address != recipientCollectionOwnerAddress {
+                panic("Base NFTs must be owned by the owner of the recipient collection")
+            }
+
             strandBLoop = strandBLoop + 1
             let strandBID = strandBBase.id
             let appendBID = dot.concat(strandBID.toString())
