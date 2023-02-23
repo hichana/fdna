@@ -42,13 +42,17 @@
             -x view in console, check images
             -x deploy
             -x give testnet user1 nfts
-        - add the check on DNA uniqueness against registry, verify in emulator
+        -x add the check on DNA uniqueness against registry, verify in emulator
+            - add registry of DNA strands as strings that are comma-separated list of fully qualified identifiers, ex: A.[address].[contract-name].[nft-id]
+                -x key is strand string and value is a struct representing minter data, like wallet address, timestamp
+                    - actually, just make it key as strand and value as minted timestamp
+                -x registry should have methods to get its data
+                    - keys
+                    - a value
         - checks to make sure num refs is two or more and an even number
         - add the check that recipient colleciton owner same as each NFT refs owner
         - nft should store appropriate catalog data w/o being too redundant with the catalog
         - double check that metadata form dna is being added and resolved properly via metadata standard
-        - add registry of DNA strands as strings that are comma-separated list of fully qualified identifiers, ex: A.[address].[contract-name].[nft-id]
-            - key is strand string and value is a struct representing minter data, like wallet address, timestamp
         - add public methods for retrieving DNA records
             - function provides getting data in 'base pairs', [[String]]
 

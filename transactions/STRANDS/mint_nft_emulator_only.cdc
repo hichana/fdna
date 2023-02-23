@@ -25,44 +25,44 @@ transaction(strandA: [String], strandAIDs: [UInt64], strandB: [String], strandBI
         for nft in strandA {
             switch nft {
                 case "Apples":
-                    let applesCollection = signer.borrow<&Apples.Collection{Apples.ExampleNFTCollectionPublic, NonFungibleToken.CollectionPublic, MetadataViews.ResolverCollection}>(
+                    let applesACollection = signer.borrow<&Apples.Collection{Apples.ExampleNFTCollectionPublic, NonFungibleToken.CollectionPublic, MetadataViews.ResolverCollection}>(
                         from: Apples.CollectionStoragePath
                     ) ?? panic("Cannot borrow Apples collection capability from signer")
 
-                    let applesNFT = applesCollection.borrowNFT(id: strandAIDs[loopAIndex])
+                    let applesANFT = applesACollection.borrowNFT(id: strandAIDs[loopAIndex])
 
-                    if applesNFT != nil {
-                        self.strandARefs.append(applesNFT)
+                    if applesANFT != nil {
+                        self.strandARefs.append(applesANFT)
                     }
                 case "Oranges":
-                    let applesCollection = signer.borrow<&Oranges.Collection{Oranges.ExampleNFTCollectionPublic, NonFungibleToken.CollectionPublic, MetadataViews.ResolverCollection}>(
+                    let orangesACollection = signer.borrow<&Oranges.Collection{Oranges.ExampleNFTCollectionPublic, NonFungibleToken.CollectionPublic, MetadataViews.ResolverCollection}>(
                         from: Oranges.CollectionStoragePath
                     ) ?? panic("Cannot borrow Oranges collection capability from signer")
 
-                    let orangesNFT = applesCollection.borrowNFT(id: strandAIDs[loopAIndex])
+                    let orangesANFT = orangesACollection.borrowNFT(id: strandAIDs[loopAIndex])
 
-                    if orangesNFT != nil {
-                        self.strandARefs.append(orangesNFT)
+                    if orangesANFT != nil {
+                        self.strandARefs.append(orangesANFT)
                     }
                 case "Dogs":
-                    let dogsCollection = signer.borrow<&Dogs.Collection{Dogs.ExampleNFTCollectionPublic, NonFungibleToken.CollectionPublic, MetadataViews.ResolverCollection}>(
+                    let dogsACollection = signer.borrow<&Dogs.Collection{Dogs.ExampleNFTCollectionPublic, NonFungibleToken.CollectionPublic, MetadataViews.ResolverCollection}>(
                         from: Dogs.CollectionStoragePath
                     ) ?? panic("Cannot borrow Dogs collection capability from signer")
 
-                    let dogsNFT = dogsCollection.borrowNFT(id: strandAIDs[loopAIndex])
+                    let dogsANFT = dogsACollection.borrowNFT(id: strandAIDs[loopAIndex])
 
-                    if dogsNFT != nil {
-                        self.strandARefs.append(dogsNFT)
+                    if dogsANFT != nil {
+                        self.strandARefs.append(dogsANFT)
                     }
                 case "Cats":
-                    let catsCollection = signer.borrow<&Cats.Collection{Cats.ExampleNFTCollectionPublic, NonFungibleToken.CollectionPublic, MetadataViews.ResolverCollection}>(
+                    let catsACollection = signer.borrow<&Cats.Collection{Cats.ExampleNFTCollectionPublic, NonFungibleToken.CollectionPublic, MetadataViews.ResolverCollection}>(
                         from: Cats.CollectionStoragePath
                     ) ?? panic("Cannot borrow Cats collection capability from signer")
 
-                    let catsNFT = catsCollection.borrowNFT(id: strandAIDs[loopAIndex])
+                    let catsANFT = catsACollection.borrowNFT(id: strandAIDs[loopAIndex])
 
-                    if catsNFT != nil {
-                        self.strandARefs.append(catsNFT)
+                    if catsANFT != nil {
+                        self.strandARefs.append(catsANFT)
                     }
                default:
                     panic("Can't find NFT.")
@@ -71,47 +71,47 @@ transaction(strandA: [String], strandAIDs: [UInt64], strandB: [String], strandBI
         }
 
         var loopBIndex = 0 
-        for nft in strandA {
+        for nft in strandB {
             switch nft {
                 case "Apples":
-                    let applesCollection = signer.borrow<&Apples.Collection{Apples.ExampleNFTCollectionPublic, NonFungibleToken.CollectionPublic, MetadataViews.ResolverCollection}>(
+                    let applesBCollection = signer.borrow<&Apples.Collection{Apples.ExampleNFTCollectionPublic, NonFungibleToken.CollectionPublic, MetadataViews.ResolverCollection}>(
                         from: Apples.CollectionStoragePath
                     ) ?? panic("Cannot borrow Apples collection capability from signer")
 
-                    let applesNFT = applesCollection.borrowNFT(id: strandBIDs[loopBIndex])
+                    let applesBNFT = applesBCollection.borrowNFT(id: strandBIDs[loopBIndex])
 
-                    if applesNFT != nil {
-                        self.strandBRefs.append(applesNFT)
+                    if applesBNFT != nil {
+                        self.strandBRefs.append(applesBNFT)
                     }
                 case "Oranges":
-                    let applesCollection = signer.borrow<&Oranges.Collection{Oranges.ExampleNFTCollectionPublic, NonFungibleToken.CollectionPublic, MetadataViews.ResolverCollection}>(
+                    let orangesBCollection = signer.borrow<&Oranges.Collection{Oranges.ExampleNFTCollectionPublic, NonFungibleToken.CollectionPublic, MetadataViews.ResolverCollection}>(
                         from: Oranges.CollectionStoragePath
                     ) ?? panic("Cannot borrow Oranges collection capability from signer")
 
-                    let orangesNFT = applesCollection.borrowNFT(id: strandBIDs[loopBIndex])
+                    let orangesBNFT = orangesBCollection.borrowNFT(id: strandBIDs[loopBIndex])
 
-                    if orangesNFT != nil {
-                        self.strandBRefs.append(orangesNFT)
+                    if orangesBNFT != nil {
+                        self.strandBRefs.append(orangesBNFT)
                     }
                 case "Dogs":
-                    let dogsCollection = signer.borrow<&Dogs.Collection{Dogs.ExampleNFTCollectionPublic, NonFungibleToken.CollectionPublic, MetadataViews.ResolverCollection}>(
+                    let dogsBCollection = signer.borrow<&Dogs.Collection{Dogs.ExampleNFTCollectionPublic, NonFungibleToken.CollectionPublic, MetadataViews.ResolverCollection}>(
                         from: Dogs.CollectionStoragePath
                     ) ?? panic("Cannot borrow Dogs collection capability from signer")
 
-                    let dogsNFT = dogsCollection.borrowNFT(id: strandBIDs[loopBIndex])
+                    let dogsBNFT = dogsBCollection.borrowNFT(id: strandBIDs[loopBIndex])
 
-                    if dogsNFT != nil {
-                        self.strandBRefs.append(dogsNFT)
+                    if dogsBNFT != nil {
+                        self.strandBRefs.append(dogsBNFT)
                     }
                 case "Cats":
-                    let catsCollection = signer.borrow<&Cats.Collection{Cats.ExampleNFTCollectionPublic, NonFungibleToken.CollectionPublic, MetadataViews.ResolverCollection}>(
+                    let catsBCollection = signer.borrow<&Cats.Collection{Cats.ExampleNFTCollectionPublic, NonFungibleToken.CollectionPublic, MetadataViews.ResolverCollection}>(
                         from: Cats.CollectionStoragePath
                     ) ?? panic("Cannot borrow Cats collection capability from signer")
 
-                    let catsNFT = catsCollection.borrowNFT(id: strandBIDs[loopBIndex])
+                    let catsBNFT = catsBCollection.borrowNFT(id: strandBIDs[loopBIndex])
 
-                    if catsNFT != nil {
-                        self.strandBRefs.append(catsNFT)
+                    if catsBNFT != nil {
+                        self.strandBRefs.append(catsBNFT)
                     }
                default:
                     panic("Can't find NFT.")

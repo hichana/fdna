@@ -252,8 +252,8 @@ func main() {
 	strand_a_ids := []uint64{0, 0}
 
 	strand_b_identifiers_names := []string{
-		"apples",
-		"oranges"}
+		"Apples",
+		"Oranges"}
 
 	strand_b_ids := []uint64{0, 0}
 

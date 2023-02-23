@@ -79,6 +79,7 @@
     - scripts examples walkthrough for pulling DNA data
     - examples of how DNA data can be leveraged across NFT experiences
 - smart contracts and scripts/transactions
+    - contracts have sufficient comments to present the abstraction of DNA in a contract for appropriately
     -x NFTCatalog, NFTCatalogAdmin, NFTRetrieval (not deployed to testnet)
         - get nfts in account
         - get nfts in account from ids

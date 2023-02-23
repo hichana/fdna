@@ -10,6 +10,7 @@ pub contract STRANDS: NonFungibleToken {
     access(account) var royaltyReceivers: [MetadataViews.Royalty]
     access(account) var mintPrice: UFix64
     access(account) var mintingIsPaused: Bool
+    access(contract) let strands: {String: UFix64}
 
     pub event ContractInitialized()
 
@@ -281,52 +282,74 @@ pub contract STRANDS: NonFungibleToken {
         strandB: [&NonFungibleToken.NFT],
         payment: @FungibleToken.Vault
     ) {
-
         pre {
             payment.balance >= STRANDS.mintPrice: "Payment must be at least the price of the NFT"
         }
 
         let metadata: {String: AnyStruct} = {}
         let currentBlock = getCurrentBlock()
+        let currentTimestamp = currentBlock.timestamp
         metadata["mintedBlock"] = currentBlock.height
-        metadata["mintedTime"] = currentBlock.timestamp
+        metadata["mintedTime"] = currentTimestamp
         metadata["minter"] = recipient.owner!.address
 
         // construct DNA
+        let dot = "."
         // strandA
         var strandAStr = ""
         var strandALoop = 0
         let strandALength = strandA.length
-        for strand in strandA {
+
+        for strandABase in strandA {
             strandALoop = strandALoop + 1
-            let strandID = strand.id
-            let dot = "."
-            let appendID = dot.concat(strandID.toString())
-            let fullyQualifiedStrandID = strand.getType().identifier.concat(appendID)
-            strandAStr = strandAStr.concat(fullyQualifiedStrandID)
+            let strandAID = strandABase.id
+            let appendAID = dot.concat(strandAID.toString())
+            let fullyQualifiedStrandAID = strandABase.getType().identifier.concat(appendAID)
+            let constructedStrandA = strandAStr.concat(fullyQualifiedStrandAID)
+            strandAStr = constructedStrandA
 
             if strandALoop < strandALength {
                 strandAStr = strandAStr.concat(",")
             }
         }
+
+        // check if the constructed strand already exists in the strands registry
+        if STRANDS.strands[strandAStr] != nil {
+            panic("Strand A already exists in the registry")
+        }
+
+        // add this strand to the registry
+        STRANDS.strands.insert(key: strandAStr, currentTimestamp)
+
+        // add to metadata
         metadata["strandA"] = strandAStr
 
         // strandB
         var strandBStr = ""
         var strandBLoop = 0
         let strandBLength = strandB.length
-        for strand in strandB {
+
+        for strandBBase in strandB {
             strandBLoop = strandBLoop + 1
-            let strandID = strand.id
-            let dot = "."
-            let appendID = dot.concat(strandID.toString())
-            let fullyQualifiedStrandID = strand.getType().identifier.concat(appendID)
-            strandBStr = strandBStr.concat(fullyQualifiedStrandID)
+            let strandBID = strandBBase.id
+            let appendBID = dot.concat(strandBID.toString())
+            let fullyQualifiedStrandBID = strandBBase.getType().identifier.concat(appendBID)
+            let constructedStrandB = strandBStr.concat(fullyQualifiedStrandBID)
+            strandBStr = constructedStrandB
 
             if strandBLoop < strandBLength {
                 strandBStr = strandBStr.concat(",")
             }
         }
+
+        // check if the constructed strand already exists in the strands registry
+        if STRANDS.strands[strandBStr] != nil {
+            panic("Strand B already exists in the registry")
+        }
+        // add this strand to the registry
+        STRANDS.strands.insert(key: strandBStr, currentTimestamp)
+        
+        // add to metadata
         metadata["strandB"] = strandBStr
 
         // base pairs
@@ -458,10 +481,20 @@ pub contract STRANDS: NonFungibleToken {
         return STRANDS.mintingIsPaused
     }
 
+    // public function to get strands registry keys
+    pub fun getStrandsRegistryKeys(): [String] {
+        return STRANDS.strands.keys
+    }
+    // public function to get a strands registry timestamp
+    pub fun getStrandRegistryTimestamp(strandID: String): UFix64? {
+        return STRANDS.strands[strandID]
+    }
+
     init() {
         // Initialize the total supply
         self.totalSupply = 0
         self.mintingIsPaused = false
+        self.strands = {}
 
         self.paymentRecipient = self.account.address
 
