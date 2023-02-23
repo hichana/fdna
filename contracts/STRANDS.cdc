@@ -44,6 +44,9 @@ pub contract STRANDS: NonFungibleToken {
 
         pub let strandA: String
         pub let strandB: String
+        pub let strandAIdentifiers: String
+        pub let strandBIdentifiers: String
+
         access(self) let basePairs: [[Base]]
     
         init(
@@ -56,6 +59,8 @@ pub contract STRANDS: NonFungibleToken {
             metadata: {String: AnyStruct},
             strandA: String,
             strandB: String,
+            strandAIdentifiers: String,
+            strandBIdentifiers: String,
             basePairs: [[Base]]
         ) {
             self.id = id
@@ -67,6 +72,8 @@ pub contract STRANDS: NonFungibleToken {
             self.metadata = metadata
             self.strandA = strandA
             self.strandB = strandB
+            self.strandAIdentifiers = strandAIdentifiers
+            self.strandBIdentifiers = strandBIdentifiers
             self.basePairs = basePairs
         }
 
@@ -278,8 +285,8 @@ pub contract STRANDS: NonFungibleToken {
     ///     
     pub fun mintNFT(
         recipient: &{NonFungibleToken.CollectionPublic},
-        strandA: [&NonFungibleToken.NFT],
-        strandB: [&NonFungibleToken.NFT],
+        strandARefs: [&NonFungibleToken.NFT],
+        strandBRefs: [&NonFungibleToken.NFT],
         payment: @FungibleToken.Vault
     ) {
         pre {
@@ -298,83 +305,97 @@ pub contract STRANDS: NonFungibleToken {
         let dot = "."
         let dnaSegment = "_.--''``'--._"
         // strandA
-        var strandAStr = ""
+        var strandAIdentifiers = ""
+        var strandA = ""
         var strandALoop = 0
-        let strandALength = strandA.length
+        let strandALength = strandARefs.length
 
-        for strandABase in strandA {
+        for strandABase in strandARefs {
 
             if strandABase.owner!.address != recipientCollectionOwnerAddress {
                 panic("Base NFTs must be owned by the owner of the recipient collection")
             }
 
             strandALoop = strandALoop + 1
+
+            // build strandA identifiers string
             let strandAID = strandABase.id
             let appendAID = dot.concat(strandAID.toString())
             let fullyQualifiedStrandAID = strandABase.getType().identifier.concat(appendAID)
-            let constructedStrandA = strandAStr.concat(fullyQualifiedStrandAID)
-            strandAStr = constructedStrandA
+            let constructedStrandA = strandAIdentifiers.concat(fullyQualifiedStrandAID)
+            strandAIdentifiers = constructedStrandA
 
             if strandALoop < strandALength {
-                strandAStr = strandAStr.concat(",")
+                strandAIdentifiers = strandAIdentifiers.concat(",")
             }
+
+            // build strandA DNA
+            strandA = strandA.concat(dnaSegment)
         }
 
         // check if the constructed strand already exists in the strands registry
-        if STRANDS.strands[strandAStr] != nil {
+        if STRANDS.strands[strandAIdentifiers] != nil {
             panic("Strand A already exists in the registry")
         }
 
         // add this strand to the registry
-        STRANDS.strands.insert(key: strandAStr, currentTimestamp)
+        STRANDS.strands.insert(key: strandAIdentifiers, currentTimestamp)
 
         // add to metadata
-        metadata["strandA"] = strandAStr
+        metadata["strandAIdentifiers"] = strandAIdentifiers
+        metadata["strandA"] = strandA
 
         // strandB
-        var strandBStr = ""
+        var strandBIdentifiers = ""
+        var strandB = ""
         var strandBLoop = 0
-        let strandBLength = strandB.length
+        let strandBLength = strandBRefs.length
 
-        for strandBBase in strandB {
+        for strandBBase in strandBRefs {
 
             if strandBBase.owner!.address != recipientCollectionOwnerAddress {
                 panic("Base NFTs must be owned by the owner of the recipient collection")
             }
 
             strandBLoop = strandBLoop + 1
+
+            // build strandB identifiers string
             let strandBID = strandBBase.id
             let appendBID = dot.concat(strandBID.toString())
             let fullyQualifiedStrandBID = strandBBase.getType().identifier.concat(appendBID)
-            let constructedStrandB = strandBStr.concat(fullyQualifiedStrandBID)
-            strandBStr = constructedStrandB
+            let constructedStrandB = strandBIdentifiers.concat(fullyQualifiedStrandBID)
+            strandBIdentifiers = constructedStrandB
 
             if strandBLoop < strandBLength {
-                strandBStr = strandBStr.concat(",")
+                strandBIdentifiers = strandBIdentifiers.concat(",")
             }
+
+            // build strandB DNA
+            strandB = strandB.concat(dnaSegment)
         }
 
         // check if the constructed strand already exists in the strands registry
-        if STRANDS.strands[strandBStr] != nil {
+        if STRANDS.strands[strandBIdentifiers] != nil {
             panic("Strand B already exists in the registry")
         }
         // add this strand to the registry
-        STRANDS.strands.insert(key: strandBStr, currentTimestamp)
+        STRANDS.strands.insert(key: strandBIdentifiers, currentTimestamp)
         
         // add to metadata
-        metadata["strandB"] = strandBStr
+        metadata["strandBIdentifiers"] = strandBIdentifiers
+        metadata["strandB"] = strandB
 
         // base pairs
         var basePairsLoop = 0
         let basePairs: [[Base]] = []
-        for strand in strandA {
+        for strand in strandARefs {
             let strandABase = Base(
                 type: strand.getType(),
                 id: strand.id
             )
             let strandBBase = Base(
-                type: strandB[basePairsLoop].getType(),
-                id: strandB[basePairsLoop].id
+                type: strandBRefs[basePairsLoop].getType(),
+                id: strandBRefs[basePairsLoop].id
             )
 
             basePairs.append([strandABase, strandBBase])
@@ -403,8 +424,10 @@ pub contract STRANDS: NonFungibleToken {
             thumbnailPath:"[TODO_ADD-THUMBNAIL-PATH]",
             royalties: self.royaltyReceivers,
             metadata: metadata,
-            strandA: strandAStr,
-            strandB: strandBStr,
+            strandA: strandA,
+            strandB: strandB,
+            strandAIdentifiers: strandAIdentifiers,
+            strandBIdentifiers: strandBIdentifiers,
             basePairs: basePairs
         )
 

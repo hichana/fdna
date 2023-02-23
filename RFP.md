@@ -45,7 +45,11 @@
 
 
     - do
-        - change strandA and strandB metadata members to be strandAStrings and strandBStrings
+        -x make minter get params strandARefs
+        -x change mint tx code
+        -x change strandA and strandB metadata members to be strandAStrings and strandBStrings
+        -x construct the N length dna strands as strandA and strandB
+        - run setup script with script to get metadata, inspect manually
         - make a new strandA and strandB that are just N concatenations of the dnaSegment
         - construct the double helix in svelte frontend "this unique double helix has also been etched onto your transaction code to mint your NFT"
         - etch double helix into tx code

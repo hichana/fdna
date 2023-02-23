@@ -38,6 +38,7 @@
     -x integrates prettier, svelte prettier plugin
     -x includes ignore files for git and prettier
 - functional UI
+    - has project artwork that is image of ascii dna???
     - user can see a CTA to start building a Flow NFT collection -- includes descriptive text about this project and Web3/Flow, links to marketplaces and projects, and to the four OG Bases FLOATS
     -x user can login using Blocto and other wallets
     - user can see a list of all NFT projects for which their wallet contains a collection that is registered in the nft catalog

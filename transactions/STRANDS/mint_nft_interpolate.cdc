@@ -39,8 +39,8 @@ transaction(mintPrice: UFix64) {
     execute {
         STRANDS.mintNFT(
             recipient: self.buyerCollection,
-            strandA: self.strandARefs,
-            strandB: self.strandBRefs,
+            strandARefs: self.strandARefs,
+            strandBRefs: self.strandBRefs,
             payment: <- self.buyerPaymentVault.withdraw(amount: self.mintPrice)
         )
     }

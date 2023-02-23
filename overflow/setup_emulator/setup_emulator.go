@@ -285,19 +285,4 @@ func main() {
 		o.WithArg("id", 0)).
 		Print()
 
-	// // CHECK IF MINTING UNEVENT NUMBER BASE PAIR IS POSSIBLE
-	// strand_c_identifiers_names := []string{
-	// 	"Apples"}
-
-	// strand_c_ids := []uint64{0}
-	// c.Tx(
-	// 	"STRANDS/mint_nft_emulator_only",
-	// 	o.WithArg("strandA", strand_a_identifiers_names),
-	// 	o.WithArg("strandAIDs", strand_a_ids),
-	// 	o.WithArg("strandB", strand_c_identifiers_names),
-	// 	o.WithArg("strandBIDs", strand_c_ids),
-	// 	o.WithArg("mintPrice", 10.0),
-	// 	o.WithSigner("account")).
-	// 	Print()
-
 }
