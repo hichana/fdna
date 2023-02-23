@@ -10,7 +10,7 @@
     -x make a generic container to be used for cta, build and mint sections
         - to start, split out the accordion, dnd and link into three of them
     -x make the dnds be horizontal
-    - add CTA
+    -x add CTA
 
 
 

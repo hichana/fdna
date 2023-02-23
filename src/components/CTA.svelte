@@ -29,6 +29,7 @@
             </div>
             <p class="absolute text-6xl leading-10 text-center text-gray-800" style="left: 43px; top: 16px;">NFT</p>
         </div>
+        <div class="border border-black" style="width: 715px; height: 1px;"/>
         <div class="relative" style="width: 755px; height: 506px;">
             <p class="w-96 absolute text-xl font-semibold leading-7 text-gray-800" style="left: 26px; top: 0px;">STRAND DNA, like real DNA, can be totally unique to us, to who we, to our identity. To be a part of this experience, you should first learn more:</p>
             <p class="absolute text-6xl leading-10 text-center text-gray-800" style="left: 573px; top: 20px;">faq</p>
