@@ -26,7 +26,7 @@
 </script>
 
 <section
-	class="w-1/2 h-120 inline-flex flex-col space-y-2.5 items-center justify-center px-4 py-11 bg-black bg-opacity-30 border rounded-3xl border-black"
+	class="w-1/2 h-120 inline-flex flex-col space-y-2.5 items-center justify-start px-4 py-11 bg-black bg-opacity-30 border rounded-3xl border-black"
 	use:dndzone={{ items, flipDurationMs }}
 	on:consider={handleDndConsider}
 	on:finalize={handleDndFinalize}
