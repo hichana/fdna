@@ -26,28 +26,21 @@
 </script>
 
 <section
+    class="w-1/2 h-120 inline-flex flex-col space-y-2.5 items-center justify-center px-4 py-11 bg-black bg-opacity-30 border rounded-3xl border-black"
 	use:dndzone={{ items, flipDurationMs }}
 	on:consider={handleDndConsider}
 	on:finalize={handleDndFinalize}
 >
 	{#each items as item (item.id)}
-		<div animate:flip={{ duration: flipDurationMs }}>
-			UUID: {item.id} , Name: {item.name}
-		</div>
+        <div 
+            class="inline-flex space-x-3.5 items-center justify-center px-5 py-1.5 bg-gray-300 rounded-full"
+            animate:flip={{ duration: flipDurationMs }}
+        >
+            <div class="w-7 h-7 bg-red-600 rounded-full"/>
+            <div class="inline-flex flex-col space-y-0.5 items-start justify-center">
+                <p class="text-sm font-semibold leading-tight">NFT {item.id}</p>
+                <p class="text-xs font-light leading-none">{item.name}</p>
+            </div>
+        </div>
 	{/each}
 </section>
-
-<style>
-	section {
-		width: 50%;
-		border: 1px solid black;
-		overflow: scroll;
-		height: 120px;
-	}
-	div {
-		width: 50%;
-		padding: 0.2em;
-		border: 1px solid blue;
-		margin: 0.15em 0;
-	}
-</style>

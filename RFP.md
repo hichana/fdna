@@ -11,7 +11,12 @@
         - to start, split out the accordion, dnd and link into three of them
     -x make the dnds be horizontal
     -x add CTA
-    - make the FAQ accordion
+    -x make the FAQ accordion
+    - work on the dnd
+        - should have a minimum height
+        - should grow as items are added
+        - should not have scroll
+        - should be two parallel columns that fill in the container with space around
 
 
 

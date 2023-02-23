@@ -34,7 +34,7 @@
 </Container>
 
 <Container>
-    <div class="flex flex-row">
+    <div class="flex flex-row bg-red-400">
         <DND listName="strandA" items={$strandA} />
         <DND listName="strandB" items={$strandB} />
     </div>
