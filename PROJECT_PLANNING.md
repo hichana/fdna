@@ -21,7 +21,7 @@
     - in fcl config, change app.detail.icon
 
 # REQUIREMENTS
-- external
+-x external
     - as soon as one or more exampleNFT contracts are suitable and working as expected on emulator, need to submit to testnet nft catalog
 -x .env
     - contains all appropriate env vars suffixed if necessary with environment (emulator, testnet, mainnet)
@@ -30,15 +30,14 @@
 -x flow config and deploy
     -x init flow.json
     -x add core contracts to repo
-- app
-    - sets up env var in dev scripts
-    - has method for constructing mint transaction code for variable data received from nft catalog via user dna building process
-    - has configuration for using aliased paths in web app modules
-    - has helper to replace string imports to allow for using cadence inside svelte
-    - integrates tailwind css
+-x app
+    -x has method for constructing mint transaction code for variable data received from nft catalog via user dna building process
+    -x has configuration for using aliased paths in web app modules
+    -x has helper to replace string imports to allow for using cadence inside svelte
+    -x integrates tailwind css
     -x makes a .env available for use in web app and flow.json
-    - integrates prettier, svelte prettier plugin
-    - includes ignore files for git and prettier
+    -x integrates prettier, svelte prettier plugin
+    -x includes ignore files for git and prettier
 - UI
     - user can see a CTA to start building a Flow NFT collection -- includes descriptive text about this project and Web3/Flow, links to marketplaces and projects, and to the four OG Bases FLOATS
     - user can login using Blocto and other wallets
@@ -53,15 +52,14 @@
 - app testing/automation (all use overflow)
     - has a testing utils that can be used with an integration test
     - basic integration test to test DNA building and minting
-    -x setup script registers projects to the nft-catalog and demonstrates the whole minting process
-    -x scripts automate processes on testnet
-    - has testnet scripts and transactions
-        - setup account to receive royalties
-        - give demo user NFTs 
-    - tests
         - admin can change payment recipient
         - admin can change royalty receivers
         - admin cna change mint price
+    -x setup script registers projects to the nft-catalog and demonstrates the whole minting process
+    -x scripts automate processes on testnet
+    -x has testnet scripts and transactions
+        - setup account to receive royalties
+        - give demo user NFTs 
 - project submission to hackathon
     - precise presentation deck and short/understandable demo video
         - video is 2-3 minutes long
@@ -81,7 +79,7 @@
     - scripts examples walkthrough for pulling DNA data
     - examples of how DNA data can be leveraged across NFT experiences
 - smart contracts and scripts/transactions
-    - NFTCatalog, NFTCatalogAdmin, NFTRetrieval (not deployed to testnet)
+    -x NFTCatalog, NFTCatalogAdmin, NFTRetrieval (not deployed to testnet)
         - get nfts in account
         - get nfts in account from ids
     - Strands
@@ -100,7 +98,7 @@
         - maintains a registry of DNA strands as strings that are comma-separated list of fully qualified identifiers, ex: A.[address].[contract-name].[nft-id]
             - key is strand string and value is a struct representing minter data, like wallet address, timestamp
         - admin can set the mint price in Flow tokens
-        - NFT resource members include
+        -x NFT resource members include
             - a 'basePairs' [[String]] member to represent the ordered double-stranded/helix in DNA
             - a string representation of each strand ('helix1' and 'helix2'), where the string is a comma-separated list of fully qualified identifiers, ex: A.[address].[contract-name].[nft-id]
         - minter
@@ -110,7 +108,7 @@
             - function provides getting data in 'base pairs', [[String]]
         - metadata
             - number of base pairs
-    - ExampleNFTs (Cats, Dogs, etc.)
+    -x ExampleNFTs (Cats, Dogs, etc.)
         - has admin method to add nfts to catalog for emulator
         - has method to set up royalty receiver
         - has tx to give demo user NFTs
