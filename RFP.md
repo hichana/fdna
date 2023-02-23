@@ -49,13 +49,35 @@
         -x change mint tx code
         -x change strandA and strandB metadata members to be strandAStrings and strandBStrings
         -x construct the N length dna strands as strandA and strandB
-        - run setup script with script to get metadata, inspect manually
-        - make a new strandA and strandB that are just N concatenations of the dnaSegment
-        - construct the double helix in svelte frontend "this unique double helix has also been etched onto your transaction code to mint your NFT"
+        -x make a new strandA and strandB that are just N concatenations of the dnaSegment
+        -x run setup script with script to get metadata, inspect manually
         - etch double helix into tx code
             - "your unique double helix DNA has been etched onto your transaction to mint your NFT"
             - will simply be N concatenations of this, but will instead be fully qualified identifiers
             A: 233892348343
+            - in interpolation helper
+                - construct the fully qualified identifier in the loop over nfts, append with A.
+                - can do?
+                    - first
+                        - add each to own array. Then have two separate but ordered arrays
+                        - or, add first loop as single member arrays in an array, then second loop can index into the array and append/push
+                            - this gives me array pairs in an array
+                    - second
+                        - loop over the array of arrays to construct a new array of double helix segment, add each to a new array
+                    - third
+                        - use same pattern as allImportStrings to construct
+                    - fourth
+                        - add new flag in cdc interpolated string
+                    - fifth
+                        - .replace appropriately
+                    - sixth
+                        - look at dev wallet code to see the constructed tx
+                    
+                    
+
+
+
+
 B: 233892348343
  `-.`. ,',-'
     _,-'"
@@ -65,6 +87,7 @@ B: 233892348343
  `-.`. ,',-'
     _,-'"
  ,-',' `.`-.
+        - construct the double helix in svelte frontend "this unique double helix has also been etched onto your transaction code to mint your NFT"
 
     - do
         - in UI, last section will just be some stats in text form, then some text like "This is the point you might expect a 3D animation of a pack opening and fire spewing out or something like that, but almost everything about STRANDS is on-chain, so what we did was etch the following double helix of DNA onto your transaction code that minted your NFT here (make sure you save the link), and we also add real (but not really) DNA strands to the metadata of your NFT. Check them out here on Flowview. Thanks for minting a STRANDS NFT!!!
