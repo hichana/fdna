@@ -9,7 +9,7 @@ import Cats from "../../contracts/Cats.cdc"
 
 transaction(strandA: [String], strandAIDs: [UInt64], strandB: [String], strandBIDs: [UInt64], mintPrice: UFix64) {
 
-    let buyerCollection: &STRANDS.Collection{NonFungibleToken.CollectionPublic}
+    let buyerCollection: &{NonFungibleToken.CollectionPublic}
     var strandARefs: [&NonFungibleToken.NFT]
     var strandBRefs: [&NonFungibleToken.NFT]
     let mintPrice: UFix64
