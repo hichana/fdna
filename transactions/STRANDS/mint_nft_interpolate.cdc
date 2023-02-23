@@ -6,7 +6,7 @@ import STRANDS from "../../contracts/STRANDS.cdc"
 
 transaction(mintPrice: UFix64) {
 
-    let buyerCollection: &STRANDS.Collection{NonFungibleToken.CollectionPublic}
+    let buyerCollection: &{NonFungibleToken.CollectionPublic}
     var strandARefs: [&NonFungibleToken.NFT]
     var strandBRefs: [&NonFungibleToken.NFT]
     let mintPrice: UFix64
