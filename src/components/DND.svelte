@@ -36,7 +36,7 @@
 			class="w-full inline-flex space-x-3.5 items-center justify-center px-5 py-1.5 bg-gray-300 rounded-full"
 			animate:flip={{ duration: flipDurationMs }}
 		>
-            <img class="w-10 h-10 rounded-full" src={`${item.thumbnail}`} alt="Rounded avatar">
+			<img class="w-10 h-10 rounded-full" src={`${item.thumbnail}`} alt="Rounded avatar" />
 			<div class="inline-flex flex-col space-y-0.5 items-start justify-center">
 				<p class="text-sm font-semibold leading-tight">NFT {item.id}</p>
 				<p class="text-xs font-light leading-none">{item.name}</p>
