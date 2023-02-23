@@ -37,9 +37,9 @@
 </button>
 
 {#if $user?.addr}
-    <a
-        href={`https://testnet.flowview.app/account/${$user.addr}/collection/strandsCollection`}
-        target="_blank"
-        rel="noreferrer">See your STRANDS collection on Flowview</a
-    >
+	<a
+		href={`https://testnet.flowview.app/account/${$user.addr}/collection/strandsCollection`}
+		target="_blank"
+		rel="noreferrer">See your STRANDS collection on Flowview</a
+	>
 {/if}
