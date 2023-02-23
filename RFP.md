@@ -55,15 +55,17 @@
         -x add public methods for retrieving DNA records
             - function provides getting data in 'base pairs', [[String]]
             - note, this hsould be provided my metadata resolver
-        - nft should store appropriate catalog data w/o being too redundant with the catalog
+        -x nft should store appropriate catalog data w/o being too redundant with the catalog
             - a consumer of the data might be a frontend
                 - in a single script
                     - borrows NFT
                     - uses similar code to nft catalog script to get nfts data by ids
                 - would need a convenience method on 
-
-
+                - can't get metadata on generic NFT, can't trust caller to provide collection and nft data
+                    - should be up to a frontend to get this data
+            - abandoning this, can't figure out
         - double check that metadata form dna is being added and resolved properly via metadata standard
+            - add one of the metadata scripts and look at result
 
 
             

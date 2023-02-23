@@ -69,6 +69,7 @@
         - web app
         - flowscan account with smart contracts
     - list of code used from other projects (ex. ExampleNFT, flow nft catalog scripts and transactions, etc.)
+    - in description of challenges talk about wanting to save catalog data on-chian/nft but difficulties due to passing in NFT only ref
 - testnet deployment
     - script populates test user with exampleNFTs in their wallet
 -x emulator
