@@ -17,6 +17,8 @@
 	}
 
 	setUserNFTIDs();
+
+    const pairs = [["A", "T"], ["G", "C"]];
 </script>
 
 <!-- <Container>
@@ -57,3 +59,16 @@
         >
     {/if}
 </Container>
+
+<div class="flex flex-col">
+{#each pairs as pair}
+    <div class="flex">
+<pre>
+({pair[0]}        {pair[1]})
+ `-.`. ,',-'
+    _,-'"
+ ,-',' `.`-.
+  </pre>
+    </div>
+{/each}
+</div>
