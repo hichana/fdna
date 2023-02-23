@@ -251,22 +251,22 @@ func main() {
 
 	strand_a_ids := []uint64{0, 0}
 
-	// strand_b_identifiers_names := []string{
-	// 	"Apples",
-	// 	"Oranges"}
+	strand_b_identifiers_names := []string{
+		"Apples",
+		"Oranges"}
 
-	// strand_b_ids := []uint64{0, 0}
+	strand_b_ids := []uint64{0, 0}
 
-	// // SERVICE ACCOUNT MINTS A STRANDS NFT
-	// c.Tx(
-	// 	"STRANDS/mint_nft_emulator_only",
-	// 	o.WithArg("strandA", strand_a_identifiers_names),
-	// 	o.WithArg("strandAIDs", strand_a_ids),
-	// 	o.WithArg("strandB", strand_b_identifiers_names),
-	// 	o.WithArg("strandBIDs", strand_b_ids),
-	// 	o.WithArg("mintPrice", 10.0),
-	// 	o.WithSigner("account")).
-	// 	Print()
+	// SERVICE ACCOUNT MINTS A STRANDS NFT
+	c.Tx(
+		"STRANDS/mint_nft_emulator_only",
+		o.WithArg("strandA", strand_a_identifiers_names),
+		o.WithArg("strandAIDs", strand_a_ids),
+		o.WithArg("strandB", strand_b_identifiers_names),
+		o.WithArg("strandBIDs", strand_b_ids),
+		o.WithArg("mintPrice", 10.0),
+		o.WithSigner("account")).
+		Print()
 
 	// SERVICE ACCOUNT PAUSES AND RESUMES MINTING
 	c.Tx(
@@ -278,19 +278,19 @@ func main() {
 		o.WithSigner("account")).
 		Print()
 
-	// CHECK IF MINTING UNEVENT NUMBER BASE PAIR IS POSSIBLE
-	strand_c_identifiers_names := []string{
-		"Apples"}
+	// // CHECK IF MINTING UNEVENT NUMBER BASE PAIR IS POSSIBLE
+	// strand_c_identifiers_names := []string{
+	// 	"Apples"}
 
-	strand_c_ids := []uint64{0}
-	c.Tx(
-		"STRANDS/mint_nft_emulator_only",
-		o.WithArg("strandA", strand_a_identifiers_names),
-		o.WithArg("strandAIDs", strand_a_ids),
-		o.WithArg("strandB", strand_c_identifiers_names),
-		o.WithArg("strandBIDs", strand_c_ids),
-		o.WithArg("mintPrice", 10.0),
-		o.WithSigner("account")).
-		Print()
+	// strand_c_ids := []uint64{0}
+	// c.Tx(
+	// 	"STRANDS/mint_nft_emulator_only",
+	// 	o.WithArg("strandA", strand_a_identifiers_names),
+	// 	o.WithArg("strandAIDs", strand_a_ids),
+	// 	o.WithArg("strandB", strand_c_identifiers_names),
+	// 	o.WithArg("strandBIDs", strand_c_ids),
+	// 	o.WithArg("mintPrice", 10.0),
+	// 	o.WithSigner("account")).
+	// 	Print()
 
 }
