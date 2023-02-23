@@ -17,7 +17,6 @@
 	}
 
 	setUserNFTIDs();
-
 </script>
 
 <!-- <Container>
@@ -60,7 +59,11 @@
 </Container>
 
 <p>
-This is the point you might expect a 3D animation of a pack opening and fire spewing out or something like that, but almost everything about STRANDS is on-chain, so what we did was etch the following double helix of DNA onto your transaction code that minted your NFT here (make sure you save the link), and we also add real (but not really) DNA strands to the metadata of your NFT. Check them out here on Flowview. Thanks for minting a STRANDS NFT!!!
+	This is the point you might expect a 3D animation of a pack opening and fire spewing out or
+	something like that, but almost everything about STRANDS is on-chain, so what we did was etch the
+	following double helix of DNA onto your transaction code that minted your NFT here (make sure you
+	save the link), and we also add real (but not really) DNA strands to the metadata of your NFT.
+	Check them out here on Flowview. Thanks for minting a STRANDS NFT!!!
 </p>
 
 <!-- prettier-ignore -->
@@ -75,7 +78,7 @@ This is the point you might expect a 3D animation of a pack opening and fire spe
                 _,-'"
             ,-',' `.`-.
 A: {nft.publicLinkedType.type.type.typeID + "." + nft.id}
-B: {$strandB[i]?.publicLinkedType.type.type.typeID + "." + $strandB[i].id || ""}
+B: {$strandB[i] ? $strandB[i].publicLinkedType.type.type.typeID + "." + $strandB[i].id : "(add DNA here)"}
             `-.`. ,',-'
                 _,-'"
             ,-',' `.`-.

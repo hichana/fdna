@@ -90,13 +90,13 @@ export const buySTRAND = async (mintPrice: string) => {
 
 	const importStrings: string[] = [];
 	const collectionBorrowBlocks: string[] = [];
-    const fullyQualifiedIdentifierPairs: string[][] = [];
+	const fullyQualifiedIdentifierPairs: string[][] = [];
 
 	strandANfts.forEach((nft: any) => {
 		// construct the import string
 		const collectionTypeID = nft.publicLinkedType.type.type.typeID;
-        const fullyQualifiedIdentifier = collectionTypeID.concat(`.${nft.nftID}`);
-        fullyQualifiedIdentifierPairs.push([fullyQualifiedIdentifier])
+		const fullyQualifiedIdentifier = collectionTypeID.concat(`.${nft.nftID}`);
+		fullyQualifiedIdentifierPairs.push([fullyQualifiedIdentifier]);
 		const collectionTypeIDParts = collectionTypeID.split('.');
 		const importString = `import ${collectionTypeIDParts[2]} from 0x${collectionTypeIDParts[1]}`;
 
@@ -116,8 +116,8 @@ export const buySTRAND = async (mintPrice: string) => {
 	strandBNfts.forEach((nft: any, index: number) => {
 		// construct the import string
 		const collectionTypeID = nft.publicLinkedType.type.type.typeID;
-        const fullyQualifiedIdentifier = collectionTypeID.concat(`.${nft.nftID}`);
-        fullyQualifiedIdentifierPairs[index].push(fullyQualifiedIdentifier)
+		const fullyQualifiedIdentifier = collectionTypeID.concat(`.${nft.nftID}`);
+		fullyQualifiedIdentifierPairs[index].push(fullyQualifiedIdentifier);
 		const collectionTypeIDParts = collectionTypeID.split('.');
 		const importString = `import ${collectionTypeIDParts[2]} from 0x${collectionTypeIDParts[1]}`;
 
@@ -134,35 +134,33 @@ export const buySTRAND = async (mintPrice: string) => {
 		);
 	});
 
-    // console.log('fullyQualifiedIdentifierPairs:', fullyQualifiedIdentifierPairs);
-
-    // prettier-ignore
-    const doubleHelixSegments: string[] = [`
+	// prettier-ignore
+	const doubleHelixSegments: string[] = [`
 //    ##  ###  #       ## ### ##   #  ### ##   ## 
 //    # # # # # #     #    #  # # # # # # # # #   
-//    j# # # # ###      #   #  ##  ### # # # #  #  
+//    # # # # ###      #   #  ##  ### # # # #  #  
 //    # # # # # #       #  #  # # # # # # # #   # 
 //    ##  # # # #     ##   #  # # # # # # ##  ##  
 //
 //
 //    ##  ###  #       ## ### ##   #  ### ##   ## 
 //    # # # # # #     #    #  # # # # # # # # #   
-//    j# # # # ###      #   #  ##  ### # # # #  #  
+//    # # # # ###      #   #  ##  ### # # # #  #  
 //    # # # # # #       #  #  # # # # # # # #   # 
 //    ##  # # # #     ##   #  # # # # # # ##  ##  
 //
 //
 //    ##  ###  #       ## ### ##   #  ### ##   ## 
 //    # # # # # #     #    #  # # # # # # # # #   
-//    j# # # # ###      #   #  ##  ### # # # #  #  
+//    # # # # ###      #   #  ##  ### # # # #  #  
 //    # # # # # #       #  #  # # # # # # # #   # 
 //    ##  # # # #     ##   #  # # # # # # ##  ##  
 //
 //
     `]
 
-    // prettier-ignore
-    fullyQualifiedIdentifierPairs.forEach((pair) => {
+	// prettier-ignore
+	fullyQualifiedIdentifierPairs.forEach((pair) => {
         doubleHelixSegments.push(
                 `
  //               '-.'. ,',-'
@@ -188,12 +186,18 @@ export const buySTRAND = async (mintPrice: string) => {
         )
     });
 
-    const allDoubleHelixSegments = doubleHelixSegments.map((segment) => `${segment}\n`).join('');
-	const doubleHelixInectedTxCode = MINT_NFT_INTERPOLATE.replace(/\/\/ <dna>\n/g, allDoubleHelixSegments);
-    
+	const allDoubleHelixSegments = doubleHelixSegments.map((segment) => `${segment}\n`).join('');
+	const doubleHelixInectedTxCode = MINT_NFT_INTERPOLATE.replace(
+		/\/\/ <dna>\n/g,
+		allDoubleHelixSegments
+	);
+
 	const allImportStrings = importStrings.map((block) => `${block}\n`).join('');
 	const allCollectionBorrowBlocks = collectionBorrowBlocks.map((block) => `${block}\n`).join('');
-	const importsInectedTxCode = doubleHelixInectedTxCode.replace(/\/\/ <imports>\n/g, allImportStrings);
+	const importsInectedTxCode = doubleHelixInectedTxCode.replace(
+		/\/\/ <imports>\n/g,
+		allImportStrings
+	);
 	const collectionBorrowBlocksInectedTxCode = importsInectedTxCode.replace(
 		/\/\/ <collections>\n/g,
 		allCollectionBorrowBlocks
