@@ -492,6 +492,11 @@ pub contract STRANDS: NonFungibleToken {
         return STRANDS.mintingIsPaused
     }
 
+    // public function to get the whole strands registry
+    pub fun getStrandsRegistry(): {String: UFix64} {
+        return STRANDS.strands
+    }
+
     // public function to get strands registry keys
     pub fun getStrandsRegistryKeys(): [String] {
         return STRANDS.strands.keys
