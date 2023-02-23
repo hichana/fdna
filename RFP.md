@@ -66,11 +66,11 @@
                         - loop over the array of arrays to construct a new array of double helix segment, add each to a new array
                     -x third
                         - use same pattern as allImportStrings to construct
-                    - fourth
+                    -x fourth
                         - add new flag in cdc interpolated string
-                    - fifth
+                    -x fifth
                         - .replace appropriately
-                    - sixth
+                    -x sixth
                         - look at dev wallet code to see the constructed tx
                     
                     
@@ -87,9 +87,9 @@ B: 233892348343
  `-.`. ,',-'
     _,-'"
  ,-',' `.`-.
-        - construct the double helix in svelte frontend "this unique double helix has also been etched onto your transaction code to mint your NFT"
+        -x construct the double helix in svelte frontend "this unique double helix has also been etched onto your transaction code to mint your NFT"
 
-    - do
+    -x do
         - in UI, last section will just be some stats in text form, then some text like "This is the point you might expect a 3D animation of a pack opening and fire spewing out or something like that, but almost everything about STRANDS is on-chain, so what we did was etch the following double helix of DNA onto your transaction code that minted your NFT here (make sure you save the link), and we also add real (but not really) DNA strands to the metadata of your NFT. Check them out here on Flowview. Thanks for minting a STRANDS NFT!!!
 
 

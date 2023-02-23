@@ -18,10 +18,6 @@
 
 	setUserNFTIDs();
 
-	const pairs = [
-		['233892348343', '233892348343'],
-		['233892348343', '233892348343']
-	];
 </script>
 
 <!-- <Container>
@@ -63,29 +59,29 @@
 	{/if}
 </Container>
 
-<!-- <div class="flex-col">
-	{#each pairs as pair}
-		<div class="flex">
-			<pre>
- `-.`. ,',-'
-    _,-'"
- ,-',' `.`-.
-({pair[0]}        {pair[1]})
- `-.`. ,',-'
-    _,-'"
- ,-',' `.`-.</pre>
-		</div>
-	{/each}
-</div> -->
+<p>
+This is the point you might expect a 3D animation of a pack opening and fire spewing out or something like that, but almost everything about STRANDS is on-chain, so what we did was etch the following double helix of DNA onto your transaction code that minted your NFT here (make sure you save the link), and we also add real (but not really) DNA strands to the metadata of your NFT. Check them out here on Flowview. Thanks for minting a STRANDS NFT!!!
+</p>
+
+<!-- prettier-ignore -->
 <div class="flex-col">
-	{#each pairs as pair}
+	{#each $strandA as nft, i}
 		<div class="flex">
 			<pre>
-A: {pair[0]}
-B: {pair[1]}
- `-.`. ,',-'
-    _,-'"
- ,-',' `.`-.</pre>
+            `-.`. ,',-'
+                _,-'"
+            ,-',' `.`-.
+            `-.`. ,',-'
+                _,-'"
+            ,-',' `.`-.
+A: {nft.publicLinkedType.type.type.typeID + "." + nft.id}
+B: {$strandB[i]?.publicLinkedType.type.type.typeID + "." + $strandB[i].id || ""}
+            `-.`. ,',-'
+                _,-'"
+            ,-',' `.`-.
+            `-.`. ,',-'
+                _,-'"
+            ,-',' `.`-.</pre>
 		</div>
 	{/each}
 </div>
