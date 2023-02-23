@@ -1,3 +1,5 @@
+// <dna>
+
 import NonFungibleToken from "../../contracts/core/NonFungibleToken.cdc"
 import MetadataViews from "../../contracts/core/MetadataViews.cdc"
 import FlowToken from "../../contracts/core/FlowToken.cdc"

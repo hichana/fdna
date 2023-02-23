@@ -56,15 +56,15 @@
             - will simply be N concatenations of this, but will instead be fully qualified identifiers
             A: 233892348343
             - in interpolation helper
-                - construct the fully qualified identifier in the loop over nfts, append with A.
+                -x construct the fully qualified identifier in the loop over nfts, append with A.
                 - can do?
-                    - first
-                        - add each to own array. Then have two separate but ordered arrays
-                        - or, add first loop as single member arrays in an array, then second loop can index into the array and append/push
+                    -x first
+                        -no add each to own array. Then have two separate but ordered arrays
+                        -x or, add first loop as single member arrays in an array, then second loop can index into the array and append/push
                             - this gives me array pairs in an array
-                    - second
+                    -x second
                         - loop over the array of arrays to construct a new array of double helix segment, add each to a new array
-                    - third
+                    -x third
                         - use same pattern as allImportStrings to construct
                     - fourth
                         - add new flag in cdc interpolated string
