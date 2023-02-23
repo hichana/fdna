@@ -49,7 +49,8 @@
                 -x registry should have methods to get its data
                     - keys
                     - a value
-        - checks to make sure num refs is two or more and an even number
+        -x checks to make sure num refs is two or more and an even number
+            - don't need it, iterating over the strands to make base pairs will throw an index out of bounds error if an uneven number is passed in
         - add the check that recipient colleciton owner same as each NFT refs owner
         - nft should store appropriate catalog data w/o being too redundant with the catalog
         - double check that metadata form dna is being added and resolved properly via metadata standard
