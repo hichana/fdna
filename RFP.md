@@ -7,8 +7,9 @@
     -x link to view nfts on flowview
 - now build a layout and drop the existing various pieces in
     -x make a nav
-    - make a generic container to be used for cta, build and mint sections
+    -x make a generic container to be used for cta, build and mint sections
         - to start, split out the accordion, dnd and link into three of them
+    - make the dnds be horizontal
 
 
 

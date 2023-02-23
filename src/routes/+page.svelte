@@ -29,8 +29,10 @@
 </Container>
 
 <Container>
-    <DND listName="strandA" items={$strandA} />
-    <DND listName="strandB" items={$strandB} />
+    <div class="flex flex-row">
+        <DND listName="strandA" items={$strandA} />
+        <DND listName="strandB" items={$strandB} />
+    </div>
 </Container>
 
 <Container>
