@@ -278,6 +278,13 @@ func main() {
 		o.WithSigner("account")).
 		Print()
 
+	// get metadata
+	c.Script(
+		"STRANDS/get_nft_metadata",
+		o.WithArg("address", "account"),
+		o.WithArg("id", 0)).
+		Print()
+
 	// // CHECK IF MINTING UNEVENT NUMBER BASE PAIR IS POSSIBLE
 	// strand_c_identifiers_names := []string{
 	// 	"Apples"}

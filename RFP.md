@@ -64,7 +64,7 @@
                 - can't get metadata on generic NFT, can't trust caller to provide collection and nft data
                     - should be up to a frontend to get this data
             - abandoning this, can't figure out
-        - double check that metadata form dna is being added and resolved properly via metadata standard
+        -x double check that metadata form dna is being added and resolved properly via metadata standard
             - add one of the metadata scripts and look at result
 
 
