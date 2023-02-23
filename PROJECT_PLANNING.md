@@ -10,9 +10,8 @@
 -x scaffold app with basic emulator contracts deployment
 -x build overflow emulator setup automation, adding transactions and scrips to confirm basic app requirements
     - develop contracts as much as possible I do this
-- scaffold web app
-- build basic app use case placeholder UI elements
-- circle back to contracts, working on building data for string interpolated version of mint tx in frontend while also connecting UI elements to flow scripts and transactions
+-x scaffold web app while building basic app functionality in smart contracts
+-x circle back to contracts, working on building data for string interpolated version of mint tx in frontend while also connecting UI elements to flow scripts and transactions
 - build out layout, design, artwork
 - create hackathon submission
 - checklist before testnet deploy/submission
@@ -38,7 +37,7 @@
     -x makes a .env available for use in web app and flow.json
     -x integrates prettier, svelte prettier plugin
     -x includes ignore files for git and prettier
-- UI
+- functional UI
     - user can see a CTA to start building a Flow NFT collection -- includes descriptive text about this project and Web3/Flow, links to marketplaces and projects, and to the four OG Bases FLOATS
     - user can login using Blocto and other wallets
     - user can see a list of all NFT projects for which their wallet contains a collection that is registered in the nft catalog
@@ -121,9 +120,12 @@
 - project repo
     - includes instructions for judges to deploy and run the app locally and on testnet
 - project deployment (vercel)
+    - adds devT to package.json
     - includes appropriately scoped env var for flow_env, and any others that may use conditional logic
 
 # ICEBOX/STRETCH REQUIREMENTS
+- add page.ts to grab env var for FLOW_ENV and feed to markup to conditionally render either mainnet or testnet flowview
+- build a double-helix view of NFTs that were just minted into user DNA. can use the strandA and strandB writable store for the data
 - user integration tests
     - can't mint an uneven number base pair
 - if time refactor string interpolation to not make redundant collection borrows

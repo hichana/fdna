@@ -1,11 +1,50 @@
-# SCAFFOLD WEB APP
+# BUILD OUT LAYOUT, DESIGN, ARTWORK
+- start by building functional UI (what remains)
+    -x login/out
+    -x accordion view of user wallet nfts with inner views of nfts
+    -x dnds
+    -x mint button
+    -x link to view nfts on flowview
+- 
+
+
+
+
+```
+# SCAFFOLD APP WITH BASIC EMULATOR CONTRACTS DEPLOYMENT
+-x add .env with testnet, mainnet service accounts and demo user
+-x get deployment working to emulator
+    -x add contracts, set them up in flow.json
+    -x will need an overflow script
+        -x set up overflow
+            -x need to add placeholder smart contract to run a script, use basic from flow playground
+-x register example NFT projects to nft catalog, mint user1 demo NFTs
+    -x make six of them, cats, dogs, apples, oranges, black, white
+        - make tx to give user1 some nfts from each
+            -x steps to swap out name from ExampleNFT.cdc
+                - cmd d all the instances of contract name
+                - change metadata standard supplied data
+                - cmd d all storage path handles
+                - change minter storage path
+            -x now mint nfts to exmaple user and register cats to nft catalog
+                - need to set up initialize and royalty receiver
+            -x now add rest of contracts with same setup in script
+                -x replace things using abov list
+                -x update flow.json
+                - update setup script
+                    - replace thumbnail for each
+    -x register all demo NFT projects in nft catalog
+
+
+ 
+ # SCAFFOLD WEB APP
 -x bootstrap a svelte project into another folder, then drop into this repo
     -x tailwind
     -x confirm prettier, lint, typescript build
     -x fcl config
         - first add user login
     -x aliased paths
-- conduct basic functionality to mint dna
+-x conduct basic functionality to mint dna
     - get and display data
         -x pull user wallet nft data
         -x instead need user nft ids for all their collection views
@@ -67,10 +106,6 @@
         -x double check that metadata form dna is being added and resolved properly via metadata standard
             - add one of the metadata scripts and look at result
 
-
-            
-
-
 # BUILD V1 OF STRANDS CONTRACT
 - fork over example nft and adjust
     -x needs a public minter funciton that accepts payments
@@ -103,34 +138,3 @@
         - minter adds the data to 'metadata' member first
 
 
-
-
-
-```
-# SCAFFOLD APP WITH BASIC EMULATOR CONTRACTS DEPLOYMENT
--x add .env with testnet, mainnet service accounts and demo user
--x get deployment working to emulator
-    -x add contracts, set them up in flow.json
-    -x will need an overflow script
-        -x set up overflow
-            -x need to add placeholder smart contract to run a script, use basic from flow playground
--x register example NFT projects to nft catalog, mint user1 demo NFTs
-    -x make six of them, cats, dogs, apples, oranges, black, white
-        - make tx to give user1 some nfts from each
-            -x steps to swap out name from ExampleNFT.cdc
-                - cmd d all the instances of contract name
-                - change metadata standard supplied data
-                - cmd d all storage path handles
-                - change minter storage path
-            -x now mint nfts to exmaple user and register cats to nft catalog
-                - need to set up initialize and royalty receiver
-            -x now add rest of contracts with same setup in script
-                -x replace things using abov list
-                -x update flow.json
-                - update setup script
-                    - replace thumbnail for each
-    -x register all demo NFT projects in nft catalog
-
-
- 
- 

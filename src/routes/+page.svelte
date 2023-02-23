@@ -37,3 +37,6 @@
     }}
     >Buy NFT
 </button>
+
+
+<a href={`https://testnet.flowview.app/account/${$user.addr}/collection/strandsCollection`} target="_blank" rel="noreferrer">See your STRANDS collection on Flowview</a>
