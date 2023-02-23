@@ -1,3 +1,8 @@
+<script lang="ts">
+    import FaqDetail from "./FAQDetail.svelte";
+    import { faq } from "#lib/appData";
+</script>
+
 <div class="inline-flex items-start justify-start p-2.5">
     <div class="inline-flex flex-col space-y-11 items-center justify-start" style="width: 787px; height: 1251px;">
         <div class="flex flex-col space-y-16 items-center justify-end" style="width: 787px; height: 286px;">
@@ -35,7 +40,9 @@
             <p class="absolute text-6xl leading-10 text-center text-gray-800" style="left: 573px; top: 20px;">faq</p>
             <div class="absolute left-0 bottom-0" style="width: 755px; height: 375px;">
                 <div class="flex items-center justify-center px-72 py-44 bg-gray-300" style="width: 755px; height: 375px;">
-                    <p class="text-xl font-semibold leading-7">(FAQ accordion here)</p>
+                    {#each faq as faqPair}
+                        <FaqDetail {faqPair} />
+                    {/each}
                 </div>
             </div>
         </div>

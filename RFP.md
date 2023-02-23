@@ -11,6 +11,7 @@
         - to start, split out the accordion, dnd and link into three of them
     -x make the dnds be horizontal
     -x add CTA
+    - make the FAQ accordion
 
 
 
