@@ -39,7 +39,7 @@
     -x includes ignore files for git and prettier
 - functional UI
     - user can see a CTA to start building a Flow NFT collection -- includes descriptive text about this project and Web3/Flow, links to marketplaces and projects, and to the four OG Bases FLOATS
-    - user can login using Blocto and other wallets
+    -x user can login using Blocto and other wallets
     - user can see a list of all NFT projects for which their wallet contains a collection that is registered in the nft catalog
     - user can expand the list of NFT projects to reveal the NFTs and their metadata (displays image) from their wallet
     - user can toggle a checkbox next to each of their NFTs to select or deselect any number of their NFTs to include when building their Flow DNA strand

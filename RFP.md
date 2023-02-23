@@ -9,7 +9,8 @@
     -x make a nav
     -x make a generic container to be used for cta, build and mint sections
         - to start, split out the accordion, dnd and link into three of them
-    - make the dnds be horizontal
+    -x make the dnds be horizontal
+    - add CTA
 
 
 

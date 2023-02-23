@@ -3,6 +3,7 @@
 	import { user, strandA, strandB } from '#lib/stores';
 	import { getUserNFTIDs, buySTRAND } from '#lib/actions';
     import Container from '#components/Container.svelte';
+    import CTA from '#components/CTA.svelte';
 	import type { UserNFTIDs } from '../types';
 	import NFTsDetail from '#components/NFTsDetail.svelte';
 	import DND from '#components/DND.svelte';
@@ -17,6 +18,10 @@
 
 	setUserNFTIDs();
 </script>
+
+<Container>
+    <CTA />
+</Container>
 
 <Container>
     <div>
