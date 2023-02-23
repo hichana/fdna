@@ -1,100 +1,4 @@
-# BUILD OUT LAYOUT, DESIGN, ARTWORK
-- start by building functional UI (what remains)
-    -x login/out
-    -x accordion view of user wallet nfts with inner views of nfts
-    -x dnds
-    -x mint button
-    -x link to view nfts on flowview
-- now build a layout and drop the existing various pieces in
-    -x make a nav
-    -x make a generic container to be used for cta, build and mint sections
-        - to start, split out the accordion, dnd and link into three of them
-    -x make the dnds be horizontal
-    -x add CTA
-    -x make the FAQ accordion
-    -x work on the dnd
-        - should have a minimum height
-        - should grow as items are added
-        - should not have scroll
-        - should be two parallel columns that fill in the container with space around
-    -x make the bottom section
-        - an image, borring
-        - no bottom image at all, just some stats, then show ascii, then text pointing to tx. Two easter eggs are
-            - strandA and strandB are now like this
-                  _.--'"'--._A.455569ddf52adebe.STRANDS.3_.--'"'--._A.455569ddf52adebe.STRANDS.3_.--'"'--._A.455569ddf52adebe.STRANDS.3_.--'"'--._A.455569ddf52adebe.STRANDS.3
-
-                    _.--'"`'--.__.--'"`'--._ _.--'"`'--._
-
-                    _.--'^`'--.__.--'^`'--.__.--'^`'--._
-
-                    this one
-                   _.--''``'--.__.--''``'--.__.--''``'--._
-
-                  _.--'"'--._ 
-                  _.--'"'--.__.--'"'--._
-                  _.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'
-
-
-
-                  _.--'"`'--._ 34434455435433'-..,..-'
-                  _.--'"`'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'
-
-
-        let dnaSegment = "_.--'^`'--._"
-        let dnaSegment = "_.--''``'--._"
-
-
-    - do
-        -x make minter get params strandARefs
-        -x change mint tx code
-        -x change strandA and strandB metadata members to be strandAStrings and strandBStrings
-        -x construct the N length dna strands as strandA and strandB
-        -x make a new strandA and strandB that are just N concatenations of the dnaSegment
-        -x run setup script with script to get metadata, inspect manually
-        - etch double helix into tx code
-            - "your unique double helix DNA has been etched onto your transaction to mint your NFT"
-            - will simply be N concatenations of this, but will instead be fully qualified identifiers
-            A: 233892348343
-            - in interpolation helper
-                -x construct the fully qualified identifier in the loop over nfts, append with A.
-                - can do?
-                    -x first
-                        -no add each to own array. Then have two separate but ordered arrays
-                        -x or, add first loop as single member arrays in an array, then second loop can index into the array and append/push
-                            - this gives me array pairs in an array
-                    -x second
-                        - loop over the array of arrays to construct a new array of double helix segment, add each to a new array
-                    -x third
-                        - use same pattern as allImportStrings to construct
-                    -x fourth
-                        - add new flag in cdc interpolated string
-                    -x fifth
-                        - .replace appropriately
-                    -x sixth
-                        - look at dev wallet code to see the constructed tx
-                    
-                    
-
-
-
-
-B: 233892348343
- `-.`. ,',-'
-    _,-'"
- ,-',' `.`-.
-A: 233892348343
-B: 233892348343
- `-.`. ,',-'
-    _,-'"
- ,-',' `.`-.
-        -x construct the double helix in svelte frontend "this unique double helix has also been etched onto your transaction code to mint your NFT"
-
-    -x do
-        - in UI, last section will just be some stats in text form, then some text like "This is the point you might expect a 3D animation of a pack opening and fire spewing out or something like that, but almost everything about STRANDS is on-chain, so what we did was etch the following double helix of DNA onto your transaction code that minted your NFT here (make sure you save the link), and we also add real (but not really) DNA strands to the metadata of your NFT. Check them out here on Flowview. Thanks for minting a STRANDS NFT!!!
-
-
-
-
+# BUILD OUT LAYOUT, DESIGN, ARTWORK 2
 
 
 
@@ -224,5 +128,102 @@ B: 233892348343
     - nft captures all nft-catalog data upon mint???
     - metadata traits view resolver pulls metadata about DNA and returns it
         - minter adds the data to 'metadata' member first
+
+
+# BUILD OUT LAYOUT, DESIGN, ARTWORK
+- start by building functional UI (what remains)
+    -x login/out
+    -x accordion view of user wallet nfts with inner views of nfts
+    -x dnds
+    -x mint button
+    -x link to view nfts on flowview
+- now build a layout and drop the existing various pieces in
+    -x make a nav
+    -x make a generic container to be used for cta, build and mint sections
+        - to start, split out the accordion, dnd and link into three of them
+    -x make the dnds be horizontal
+    -x add CTA
+    -x make the FAQ accordion
+    -x work on the dnd
+        - should have a minimum height
+        - should grow as items are added
+        - should not have scroll
+        - should be two parallel columns that fill in the container with space around
+    -x make the bottom section
+        - an image, borring
+        - no bottom image at all, just some stats, then show ascii, then text pointing to tx. Two easter eggs are
+            - strandA and strandB are now like this
+                  _.--'"'--._A.455569ddf52adebe.STRANDS.3_.--'"'--._A.455569ddf52adebe.STRANDS.3_.--'"'--._A.455569ddf52adebe.STRANDS.3_.--'"'--._A.455569ddf52adebe.STRANDS.3
+
+                    _.--'"`'--.__.--'"`'--._ _.--'"`'--._
+
+                    _.--'^`'--.__.--'^`'--.__.--'^`'--._
+
+                    this one
+                   _.--''``'--.__.--''``'--.__.--''``'--._
+
+                  _.--'"'--._ 
+                  _.--'"'--.__.--'"'--._
+                  _.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'
+
+
+
+                  _.--'"`'--._ 34434455435433'-..,..-'
+                  _.--'"`'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'
+
+
+        let dnaSegment = "_.--'^`'--._"
+        let dnaSegment = "_.--''``'--._"
+
+
+    - do
+        -x make minter get params strandARefs
+        -x change mint tx code
+        -x change strandA and strandB metadata members to be strandAStrings and strandBStrings
+        -x construct the N length dna strands as strandA and strandB
+        -x make a new strandA and strandB that are just N concatenations of the dnaSegment
+        -x run setup script with script to get metadata, inspect manually
+        - etch double helix into tx code
+            - "your unique double helix DNA has been etched onto your transaction to mint your NFT"
+            - will simply be N concatenations of this, but will instead be fully qualified identifiers
+            A: 233892348343
+            - in interpolation helper
+                -x construct the fully qualified identifier in the loop over nfts, append with A.
+                - can do?
+                    -x first
+                        -no add each to own array. Then have two separate but ordered arrays
+                        -x or, add first loop as single member arrays in an array, then second loop can index into the array and append/push
+                            - this gives me array pairs in an array
+                    -x second
+                        - loop over the array of arrays to construct a new array of double helix segment, add each to a new array
+                    -x third
+                        - use same pattern as allImportStrings to construct
+                    -x fourth
+                        - add new flag in cdc interpolated string
+                    -x fifth
+                        - .replace appropriately
+                    -x sixth
+                        - look at dev wallet code to see the constructed tx
+                    
+                    
+
+
+
+
+B: 233892348343
+ `-.`. ,',-'
+    _,-'"
+ ,-',' `.`-.
+A: 233892348343
+B: 233892348343
+ `-.`. ,',-'
+    _,-'"
+ ,-',' `.`-.
+        -x construct the double helix in svelte frontend "this unique double helix has also been etched onto your transaction code to mint your NFT"
+
+    -x do
+        - in UI, last section will just be some stats in text form, then some text like "This is the point you might expect a 3D animation of a pack opening and fire spewing out or something like that, but almost everything about STRANDS is on-chain, so what we did was etch the following double helix of DNA onto your transaction code that minted your NFT here (make sure you save the link), and we also add real (but not really) DNA strands to the metadata of your NFT. Check them out here on Flowview. Thanks for minting a STRANDS NFT!!!
+
+
 
 
