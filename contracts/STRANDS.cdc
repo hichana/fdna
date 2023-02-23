@@ -296,6 +296,7 @@ pub contract STRANDS: NonFungibleToken {
 
         // construct DNA
         let dot = "."
+        let dnaSegment = "_.--''``'--._"
         // strandA
         var strandAStr = ""
         var strandALoop = 0

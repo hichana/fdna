@@ -17,8 +17,55 @@
         - should grow as items are added
         - should not have scroll
         - should be two parallel columns that fill in the container with space around
-    - make the bottom section
-        - an image
+    -x make the bottom section
+        - an image, borring
+        - no bottom image at all, just some stats, then show ascii, then text pointing to tx. Two easter eggs are
+            - strandA and strandB are now like this
+                  _.--'"'--._A.455569ddf52adebe.STRANDS.3_.--'"'--._A.455569ddf52adebe.STRANDS.3_.--'"'--._A.455569ddf52adebe.STRANDS.3_.--'"'--._A.455569ddf52adebe.STRANDS.3
+
+                    _.--'"`'--.__.--'"`'--._ _.--'"`'--._
+
+                    _.--'^`'--.__.--'^`'--.__.--'^`'--._
+
+                    this one
+                   _.--''``'--.__.--''``'--.__.--''``'--._
+
+                  _.--'"'--._ 
+                  _.--'"'--.__.--'"'--._
+                  _.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'_.--'"'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'
+
+
+
+                  _.--'"`'--._ 34434455435433'-..,..-'
+                  _.--'"`'--._ A.455569ddf52adebe.STRANDS.3'-..,..-'
+
+
+        let dnaSegment = "_.--'^`'--._"
+        let dnaSegment = "_.--''``'--._"
+
+
+    - do
+        - change strandA and strandB metadata members to be strandAStrings and strandBStrings
+        - make a new strandA and strandB that are just N concatenations of the dnaSegment
+        - construct the double helix in svelte frontend "this unique double helix has also been etched onto your transaction code to mint your NFT"
+        - etch double helix into tx code
+            - "your unique double helix DNA has been etched onto your transaction to mint your NFT"
+            - will simply be N concatenations of this, but will instead be fully qualified identifiers
+            A: 233892348343
+B: 233892348343
+ `-.`. ,',-'
+    _,-'"
+ ,-',' `.`-.
+A: 233892348343
+B: 233892348343
+ `-.`. ,',-'
+    _,-'"
+ ,-',' `.`-.
+
+
+
+
+
 
 
 
