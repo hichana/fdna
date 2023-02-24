@@ -40,10 +40,12 @@
 </script>
 
 
-{#if strandClaimedCheck !== undefined}
-    {#if strandClaimedCheck === null}
-        <p>{listName} is unique!</p>
-    {:else}
-        <p>{listName}, this sequence of DNA has already been claimed :(</p>
+<div class="flex-1">
+    {#if strandClaimedCheck !== undefined}
+        {#if strandClaimedCheck === null}
+            <p>{listName} is unique!</p>
+        {:else}
+            <p>{listName}, this sequence of DNA has already been claimed :(</p>
+        {/if}
     {/if}
-{/if}
+</div>
