@@ -1,11 +1,3 @@
-# MAKE TX STATUS ELEMENT
--x first, for fun play w/ some colors
-- how might this happen?
-    -x have the buy tx use fcl.subscribe to update a writable
-    -x in the frontend, have a reactive state member (null) watch the writable and set transaction text
-        - own component is better actually
-    -x display the text in frontend
-
 # BUILD OUT LAYOUT, DESIGN, ARTWORK 2
 - probably better to not have a big intro but just start with a title, subtitble, then "Select NFTs from your wallet"?
     - maybe just start off with steps, like 1. If you don't have two or more Flow NFTs, go buy them from one of these awesome marketplaces...
@@ -260,4 +252,12 @@ B: 233892348343
     -x was a logic error incorrectly using Collection instead of NFT
     - now also fix page.svelte
 
+
+# MAKE TX STATUS ELEMENT
+-x first, for fun play w/ some colors
+- how might this happen?
+    -x have the buy tx use fcl.subscribe to update a writable
+    -x in the frontend, have a reactive state member (null) watch the writable and set transaction text
+        - own component is better actually
+    -x display the text in frontend
 
