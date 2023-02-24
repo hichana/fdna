@@ -110,9 +110,9 @@ export const buySTRAND = async (mintPrice: string) => {
 	strandANfts.forEach((nft: any) => {
 		// construct the import string
 		const collectionTypeID = nft.publicLinkedType.type.type.typeID;
-        const collectionTypeMembers = collectionTypeID.split(".")
-        collectionTypeMembers.pop()
-        const fullyQualifiedIdentifier = collectionTypeMembers.join(".").concat(`.NFT.${nft.nftID}`);
+		const collectionTypeMembers = collectionTypeID.split('.');
+		collectionTypeMembers.pop();
+		const fullyQualifiedIdentifier = collectionTypeMembers.join('.').concat(`.NFT.${nft.nftID}`);
 		fullyQualifiedIdentifierPairs.push([fullyQualifiedIdentifier]);
 		const collectionTypeIDParts = collectionTypeID.split('.');
 		const importString = `import ${collectionTypeIDParts[2]} from 0x${collectionTypeIDParts[1]}`;
@@ -133,9 +133,9 @@ export const buySTRAND = async (mintPrice: string) => {
 	strandBNfts.forEach((nft: any, index: number) => {
 		// construct the import string
 		const collectionTypeID = nft.publicLinkedType.type.type.typeID;
-        const collectionTypeMembers = collectionTypeID.split(".")
-        collectionTypeMembers.pop()
-        const fullyQualifiedIdentifier = collectionTypeMembers.join(".").concat(`.NFT.${nft.nftID}`);
+		const collectionTypeMembers = collectionTypeID.split('.');
+		collectionTypeMembers.pop();
+		const fullyQualifiedIdentifier = collectionTypeMembers.join('.').concat(`.NFT.${nft.nftID}`);
 		fullyQualifiedIdentifierPairs[index].push(fullyQualifiedIdentifier);
 		const collectionTypeIDParts = collectionTypeID.split('.');
 		const importString = `import ${collectionTypeIDParts[2]} from 0x${collectionTypeIDParts[1]}`;
@@ -235,8 +235,8 @@ export const buySTRAND = async (mintPrice: string) => {
 		.tx(transactionId)
 		.subscribe(
 			(res: { errorMessage: string | null; statusCode: number | null; status: number | null }) => {
-				console.log('txID:', transactionId,'Buy NFT transaction response:', res);
-                buyTxStatus.set(res)
+				console.log('txID:', transactionId, 'Buy NFT transaction response:', res);
+				buyTxStatus.set(res);
 			}
 		);
 };

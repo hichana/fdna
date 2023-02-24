@@ -1,9 +1,9 @@
 export function resolveImgStr(uri: string) {
-    if (uri.slice(0,4) === "ipfs") {
-        return `https://${uri.split("//")[1]}.ipfs.w3s.link`
-    } else {
-        return uri
-    }
+	if (uri.slice(0, 4) === 'ipfs') {
+		return `https://${uri.split('//')[1]}.ipfs.w3s.link`;
+	} else {
+		return uri;
+	}
 }
 
 export function replaceCDCImports(str: string): string {

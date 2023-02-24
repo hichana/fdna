@@ -12,35 +12,33 @@
 
 	let userNFTIDs: UserNFTIDs | null = null;
 
-	async function setUserNFTIDs2(currentUser: { addr: string; }) {
-        userNFTIDs = await getUserNFTIDs(currentUser?.addr);
+	async function setUserNFTIDs2(currentUser: { addr: string }) {
+		userNFTIDs = await getUserNFTIDs(currentUser?.addr);
 	}
 
-    user.subscribe((userState) => {
-        if (userState !== null) {
-            setUserNFTIDs2(userState);
-        }
-    });
+	user.subscribe((userState) => {
+		if (userState !== null) {
+			setUserNFTIDs2(userState);
+		}
+	});
 
-    function getNFTIdentifier(collectionIdentifier: string, nftID: string) {
-        const collectionTypeMembers = collectionIdentifier.split(".")
-        collectionTypeMembers.pop()
-        const fullyQualifiedIdentifier = collectionTypeMembers.join(".").concat(`.NFT.${nftID}`);
-        return fullyQualifiedIdentifier
-    }
+	function getNFTIdentifier(collectionIdentifier: string, nftID: string) {
+		const collectionTypeMembers = collectionIdentifier.split('.');
+		collectionTypeMembers.pop();
+		const fullyQualifiedIdentifier = collectionTypeMembers.join('.').concat(`.NFT.${nftID}`);
+		return fullyQualifiedIdentifier;
+	}
 
-    let longestDNAStrand: any[] = []
-    $: {
-        if ($strandA.length > $strandB.length) {
-            longestDNAStrand = $strandA;
-        } else {
-            longestDNAStrand = $strandB;
-        }
+	let longestDNAStrand: any[] = [];
+	$: {
+		if ($strandA.length > $strandB.length) {
+			longestDNAStrand = $strandA;
+		} else {
+			longestDNAStrand = $strandB;
+		}
+	}
 
-    }
-
-    $: dnaIterator = Array.from({ length: longestDNAStrand.length}, (_, i) => i);
-
+	$: dnaIterator = Array.from({ length: longestDNAStrand.length }, (_, i) => i);
 </script>
 
 <!-- <Container>
@@ -59,15 +57,15 @@
 
 <Container>
 	<div class="bg-slate-900 flex flex-col">
-        <div class="flex">
-            <DndNotifications listName="strandA" />
-            <DndNotifications listName="strandB" />
-        </div>
-        <div class="flex">
-            <DND listName="strandA" items={$strandA} />
-            <DndConnector />
-            <DND listName="strandB" items={$strandB} />
-        </div>
+		<div class="flex">
+			<DndNotifications listName="strandA" />
+			<DndNotifications listName="strandB" />
+		</div>
+		<div class="flex">
+			<DND listName="strandA" items={$strandA} />
+			<DndConnector />
+			<DND listName="strandB" items={$strandB} />
+		</div>
 	</div>
 </Container>
 
@@ -79,7 +77,7 @@
 		}}
 		>Buy NFT
 	</button>
-    <BuyTxStatus />
+	<BuyTxStatus />
 
 	{#if $user?.addr}
 		<a
@@ -91,16 +89,16 @@
 </Container>
 
 <Container>
-<p>
-	This is the point you might expect a 3D animation of a pack opening and fire spewing out or
-	something like that, but almost everything about STRANDS is on-chain, so what we did was etch the
-	following double helix of DNA onto your transaction code that minted your NFT here (make sure you
-	save the link), and we also add real (but not really) DNA strands to the metadata of your NFT.
-	Check them out here on Flowview. Thanks for minting a STRANDS NFT!!!
-</p>
+	<p>
+		This is the point you might expect a 3D animation of a pack opening and fire spewing out or
+		something like that, but almost everything about STRANDS is on-chain, so what we did was etch
+		the following double helix of DNA onto your transaction code that minted your NFT here (make
+		sure you save the link), and we also add real (but not really) DNA strands to the metadata of
+		your NFT. Check them out here on Flowview. Thanks for minting a STRANDS NFT!!!
+	</p>
 
-<!-- prettier-ignore -->
-<div class="flex flex-col items-center pb-28 pt-12">
+	<!-- prettier-ignore -->
+	<div class="flex flex-col items-center pb-28 pt-12">
     {#if longestDNAStrand.length > 0}
 	{#each dnaIterator as _, i}
 		<div class="flex">
