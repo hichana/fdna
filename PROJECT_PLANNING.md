@@ -84,7 +84,7 @@
     -x NFTCatalog, NFTCatalogAdmin, NFTRetrieval (not deployed to testnet)
         - get nfts in account
         - get nfts in account from ids
-    - Strands
+    -x Strands
         - has appropriate events
         -x can mint nfts
         -x on contract init
@@ -95,20 +95,20 @@
             - start or pause minting (checked by minter)
             - change nft royalty receiver
             - change nft payment receiver
-        - nft stores nft-catalog data for each NFT added to the DNA
-        - integrates DNA data with the metadata standard Traits view
-        - maintains a registry of DNA strands as strings that are comma-separated list of fully qualified identifiers, ex: A.[address].[contract-name].[nft-id]
+        -x nft stores nft-catalog data for each NFT added to the DNA
+        -x integrates DNA data with the metadata standard Traits view
+        -x maintains a registry of DNA strands as strings that are comma-separated list of fully qualified identifiers, ex: A.[address].[contract-name].[nft-id]
             - key is strand string and value is a struct representing minter data, like wallet address, timestamp
-        - admin can set the mint price in Flow tokens
+        -x admin can set the mint price in Flow tokens
         -x NFT resource members include
             - a 'basePairs' [[String]] member to represent the ordered double-stranded/helix in DNA
             - a string representation of each strand ('helix1' and 'helix2'), where the string is a comma-separated list of fully qualified identifiers, ex: A.[address].[contract-name].[nft-id]
         - minter
-            - constructs each DNA strand's concatenated string identifier and checks it against the registry, panicing if it already exists in the registry
-            - when constructing the DNA strands, adds each ref or ref string to a strand1 and strand2 array, checks length of both, panicking if the length of each is different
-        - provides public methods for retrieving DNA records
+            -x constructs each DNA strand's concatenated string identifier and checks it against the registry, panicing if it already exists in the registry
+            -x when constructing the DNA strands, adds each ref or ref string to a strand1 and strand2 array, checks length of both, panicking if the length of each is different (not necessary)
+        -x provides public methods for retrieving DNA records
             - function provides getting data in 'base pairs', [[String]]
-        - metadata
+        -x metadata
             - number of base pairs
     -x ExampleNFTs (Cats, Dogs, etc.)
         - has admin method to add nfts to catalog for emulator

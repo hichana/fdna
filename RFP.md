@@ -1,3 +1,6 @@
+# MAKE TX STATUS ELEMENT
+- first, for fun play w/ some colors
+
 # BUILD OUT LAYOUT, DESIGN, ARTWORK 2
 
 
