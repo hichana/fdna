@@ -63,7 +63,7 @@
         {#if strandClaimedCheck === null}
             <p>{listName} is unique!</p>
         {:else}
-            <p>{listName} has already been claimed :(</p>
+            <p>{listName}, this sequence of DNA has already been claimed :(</p>
         {/if}
     {/if}
     <section
@@ -74,7 +74,7 @@
     >
         {#each items as item (item.id)}
             <div
-                class="w-full inline-flex space-x-3.5 items-center justify-start px-5 py-1.5 border-2 border-pink-400 border-dashed"
+                class="w-full inline-flex space-x-3.5 items-center justify-start px-5 py-1.5 border-2 border-pink-400 rounded-2xl"
                 animate:flip={{ duration: flipDurationMs }}
             >
                 <img class="w-10 h-10 rounded-full" src={`${item.thumbnail}`} alt="Rounded avatar" />
