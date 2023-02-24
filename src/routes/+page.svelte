@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { get } from 'svelte/store';
 	import { user, strandA, strandB } from '#lib/stores';
 	import { getUserNFTIDs, buySTRAND } from '#lib/actions';
 	import Container from '#components/Container.svelte';
@@ -12,14 +11,16 @@
 	import DndConnector from '#components/DNDConnector.svelte';
 
 	let userNFTIDs: UserNFTIDs | null = null;
-	async function setUserNFTIDs() {
-		const currentUser = get(user);
-		if (currentUser !== null) {
-			userNFTIDs = await getUserNFTIDs(currentUser.addr);
-		}
+
+	async function setUserNFTIDs2(currentUser: { addr: string; }) {
+        userNFTIDs = await getUserNFTIDs(currentUser?.addr);
 	}
 
-	setUserNFTIDs();
+    user.subscribe((userState) => {
+        if (userState !== null) {
+            setUserNFTIDs2(userState);
+        }
+    });
 
     function getNFTIdentifier(collectionIdentifier: string, nftID: string) {
         const collectionTypeMembers = collectionIdentifier.split(".")

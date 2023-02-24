@@ -91,7 +91,6 @@ export const getUserNFTs = async (userAddr: string, collectionName: string, nftI
 				...nfts
 			};
 		}
-		console.log('nfts:', nfts);
 
 		return nfts[collectionName];
 	} catch (e) {
