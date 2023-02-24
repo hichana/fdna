@@ -12,7 +12,7 @@
     - develop contracts as much as possible I do this
 -x scaffold web app while building basic app functionality in smart contracts
 -x circle back to contracts, working on building data for string interpolated version of mint tx in frontend while also connecting UI elements to flow scripts and transactions
-- once functionality appears ok, do a testnet deployment 
+-x once functionality appears ok, do a testnet deployment 
 - build out layout, design, artwork
 - create hackathon submission
 - checklist before testnet deploy/submission
@@ -72,7 +72,8 @@
     - list of code used from other projects (ex. ExampleNFT, flow nft catalog scripts and transactions, etc.)
     - in description of challenges talk about wanting to save catalog data on-chian/nft but difficulties due to passing in NFT only ref
 - testnet deployment
-    - script populates test user with exampleNFTs in their wallet
+    -x script populates test user with exampleNFTs in their wallet
+    - do final testnet deployment for submission
 -x emulator
     -x manages accounts and testnet and mainnet deployments
     -x deploys nft catalog with example NFT contracts registered to nft catalog
@@ -115,7 +116,7 @@
         - has admin method to add nfts to catalog for emulator
         - has method to set up royalty receiver
         - has tx to give demo user NFTs
-- project artwork
+-x project artwork
     - NFT art (single image for all)
     - Strand.cdc metadata art
     - ExampleNFT.cdc metadata art
