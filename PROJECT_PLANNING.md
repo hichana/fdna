@@ -46,7 +46,7 @@
     -x user can toggle a checkbox next to each of their NFTs to select or deselect any number of their NFTs to include when building their Flow DNA strand
     -x selected NFTs appear can be arranged inside of two vertical dnd palletes to signify they are "base pairs"
     -x users can click/tap drag NFT data between vertical dnd to build and rearrange base pairs
-    - with each re-arrange of base pairs, user is informed whether or not that permutation of Flow DNA for either side is taken or not
+    -x with each re-arrange of base pairs, user is informed whether or not that permutation of Flow DNA for either side is taken or not
     - user can mint their Flow DNA strand, showing transaction status throughout the process and providing a link to the transaction on flowscan
     - user can see a card representing their Flow DNA strand with a list of the DNA string identifiers from each strand
 - app testing/automation (all use overflow)

@@ -21,8 +21,10 @@
 
 
 
-- when am I using the STRANDS/get_nft_metadata and when amd I usting NFTCatalog/get_nfts_in_ccount_from_ids?
+-x when am I using the STRANDS/get_nft_metadata and when amd I usting NFTCatalog/get_nfts_in_ccount_from_ids?
 - find anywhere I'm using, nft.publicLinkedType.type.type.typeID, make sure it's requiring the Collection identifier, not the nFT
+    -x was a logic error incorrectly using Collection instead of NFT
+    - now also fix page.svelte
 
 
 # BUILD OUT LAYOUT, DESIGN, ARTWORK 2

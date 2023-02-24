@@ -111,7 +111,9 @@ export const buySTRAND = async (mintPrice: string) => {
 	strandANfts.forEach((nft: any) => {
 		// construct the import string
 		const collectionTypeID = nft.publicLinkedType.type.type.typeID;
-		const fullyQualifiedIdentifier = collectionTypeID.concat(`.${nft.nftID}`);
+        const collectionTypeMembers = collectionTypeID.split(".")
+        collectionTypeMembers.pop()
+        const fullyQualifiedIdentifier = collectionTypeMembers.join(".").concat(`.NFT.${nft.nftID}`);
 		fullyQualifiedIdentifierPairs.push([fullyQualifiedIdentifier]);
 		const collectionTypeIDParts = collectionTypeID.split('.');
 		const importString = `import ${collectionTypeIDParts[2]} from 0x${collectionTypeIDParts[1]}`;
@@ -132,7 +134,9 @@ export const buySTRAND = async (mintPrice: string) => {
 	strandBNfts.forEach((nft: any, index: number) => {
 		// construct the import string
 		const collectionTypeID = nft.publicLinkedType.type.type.typeID;
-		const fullyQualifiedIdentifier = collectionTypeID.concat(`.${nft.nftID}`);
+        const collectionTypeMembers = collectionTypeID.split(".")
+        collectionTypeMembers.pop()
+        const fullyQualifiedIdentifier = collectionTypeMembers.join(".").concat(`.NFT.${nft.nftID}`);
 		fullyQualifiedIdentifierPairs[index].push(fullyQualifiedIdentifier);
 		const collectionTypeIDParts = collectionTypeID.split('.');
 		const importString = `import ${collectionTypeIDParts[2]} from 0x${collectionTypeIDParts[1]}`;
