@@ -17,6 +17,14 @@
 	}
 
 	setUserNFTIDs();
+
+    function getNFTIdentifier(collectionIdentifier: string, nftID: string) {
+        const collectionTypeMembers = collectionIdentifier.split(".")
+        collectionTypeMembers.pop()
+        const fullyQualifiedIdentifier = collectionTypeMembers.join(".").concat(`.NFT.${nftID}`);
+        return fullyQualifiedIdentifier
+    }
+
 </script>
 
 <!-- <Container>
@@ -77,8 +85,8 @@
             `-.`. ,',-'
                 _,-'"
             ,-',' `.`-.
-A: {nft.publicLinkedType.type.type.typeID + "." + nft.id}
-B: {$strandB[i] ? $strandB[i].publicLinkedType.type.type.typeID + "." + $strandB[i].id : "(add DNA here)"}
+A: {getNFTIdentifier(nft.publicLinkedType.type.type.typeID, nft.id)}
+B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID, $strandB[i].id) : "(add DNA here)"}
             `-.`. ,',-'
                 _,-'"
             ,-',' `.`-.
