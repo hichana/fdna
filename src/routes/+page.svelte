@@ -7,6 +7,7 @@
 	import type { UserNFTIDs } from '../types';
 	import NFTsDetail from '#components/NFTsDetail.svelte';
 	import DND from '#components/DND.svelte';
+	import BuyTxStatus from '#components/BuyTxStatus.svelte';
 
 	let userNFTIDs: UserNFTIDs | null = null;
 	async function setUserNFTIDs() {
@@ -68,6 +69,7 @@
 		}}
 		>Buy NFT
 	</button>
+    <BuyTxStatus />
 
 	{#if $user?.addr}
 		<a

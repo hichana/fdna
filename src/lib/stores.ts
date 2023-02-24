@@ -14,3 +14,8 @@ export const strandB = writable<any>([]);
 strandB.subscribe((value) => {
 	console.log('strandB Store:', value);
 });
+
+export const buyTxStatus = writable<any>({});
+buyTxStatus.subscribe((value) => {
+	console.log('buyTxStatus Store:', value);
+});
