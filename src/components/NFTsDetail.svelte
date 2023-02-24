@@ -2,28 +2,22 @@
 	import { get } from 'svelte/store';
 	import { slide } from 'svelte/transition';
 	import { user, strandA, strandB } from '#lib/stores';
-
 	import { getUserNFTs } from '#lib/actions';
 
 	export let collectionName: string;
-	$: console.log('collectionName:', collectionName);
 	export let nftIDs: number[];
 
 	let filterIsOpen = false;
 
 	let userNFTs: any[];
-	$: console.log('userNFTs:', userNFTs);
 
-	async function handleHoverTouch() {
-		if (!filterIsOpen && !userNFTs) {
-			const currentUser = get(user);
-			if (currentUser !== null) {
-				userNFTs = await getUserNFTs(currentUser.addr, collectionName, nftIDs);
-			}
-		}
+	async function loadUserNFTs() {
+        const currentUser = get(user);
+        if (currentUser !== null) {
+            userNFTs = await getUserNFTs(currentUser.addr, collectionName, nftIDs);
+        }
 	}
-
-	$: console.log('userNFTs:', userNFTs);
+    loadUserNFTs();
 
 	function handleCheck(event: { target: any }) {
 		const { target } = event;
@@ -44,8 +38,6 @@
 <div class="mx-2 my-3 bg-red-200 rounded-xl">
 	<button
 		on:click={() => (filterIsOpen = !filterIsOpen)}
-		on:touchstart={handleHoverTouch}
-		on:mouseenter={handleHoverTouch}
 		type="button"
 		class="p-2 flex w-full items-center justify-between py-3 text-sm text-gray-400"
 	>
@@ -82,7 +74,7 @@
 	</button>
 
 	{#if filterIsOpen}
-		<div class=" bg-red-300 rounded-b-xl" transition:slide>
+		<div class="bg-red-300 rounded-b-xl" transition:slide>
 			<div class="space-y-6 p-6">
 				{#each userNFTs as nftData}
 					<div class="flex items-center">
