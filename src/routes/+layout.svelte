@@ -15,7 +15,7 @@
 					<button
 						type="button"
 						on:click={unauthenticate}
-						class="text-black bg-slate-700 bg-opacity-30 border-slate-900 border-2 hover:bg-opacity-50 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-full text-sm px-5 py-1.5 text-center mr-3 md:mr-0"
+						class="text-phosgreen bg-slate-600 bg-opacity-30 border-phosgreen border-2 hover:bg-opacity-50 focus:ring-4 focus:outline-none focus:ring-pink-400 font-medium rounded-full text-sm px-5 py-1.5 text-center mr-3 md:mr-0"
 					>
 						<span class="sr-only">Log out</span>
 						Log out
@@ -24,7 +24,7 @@
 					<button
 						type="button"
 						on:click={logIn}
-						class="text-black bg-slate-700 bg-opacity-30 border-slate-900 border-2 hover:bg-opacity-50 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-full text-sm px-5 py-1.5 text-center mr-3 md:mr-0"
+						class="text-phosgreen bg-slate-600 bg-opacity-30 border-phosgreen border-2 hover:bg-opacity-50 focus:ring-4 focus:outline-none focus:ring-pink-400 font-medium rounded-full text-sm px-5 py-1.5 text-center mr-3 md:mr-0"
 					>
 						<span class="sr-only">Log In/Sign Up</span>
 						Log In/Sign Up</button
