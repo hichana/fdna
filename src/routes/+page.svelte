@@ -8,6 +8,7 @@
 	import NFTsDetail from '#components/NFTsDetail.svelte';
 	import DND from '#components/DND.svelte';
 	import BuyTxStatus from '#components/BuyTxStatus.svelte';
+	import DndNotifications from '#components/DNDNotifications.svelte';
 	import DndConnector from '#components/DNDConnector.svelte';
 
 	let userNFTIDs: UserNFTIDs | null = null;
@@ -56,16 +57,16 @@
 </Container>
 
 <Container>
-	<div class="bg-slate-900 flex flex-row">
-		<DND listName="strandA" items={$strandA} />
-        {#if longestDNAStrand}
-            <div class="flex flex-col">
-                {#each longestDNAStrand as _}
-                <DndConnector />
-                {/each}
-            </div>
-        {/if}
-		<DND listName="strandB" items={$strandB} />
+	<div class="bg-slate-900 flex flex-col">
+        <div class="flex">
+            <DndNotifications listName="strandA" />
+            <DndNotifications listName="strandB" />
+        </div>
+        <div class="flex">
+            <DND listName="strandA" items={$strandA} />
+            <DndConnector />
+            <DND listName="strandB" items={$strandB} />
+        </div>
 	</div>
 </Container>
 

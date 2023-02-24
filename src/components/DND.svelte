@@ -2,32 +2,10 @@
 	import { flip } from 'svelte/animate';
 	import { dndzone } from 'svelte-dnd-action';
 	import { strandA, strandB } from '#lib/stores';
-	import { getStrandRegistryTimestamp } from '#lib/actions';
 
 	export let items: any[];
 	export let listName: string;
-    let strandClaimedCheck: undefined | null | string
 	const flipDurationMs = 300;
-
-    async function setStrandClaimedCheck(nfts: any[]) {
-
-        const fullyQualifiedIdentifiers: string[] = [];
-
-        nfts.forEach((nft: any) => {
-
-            // construct the NFT identifier string
-            const collectionTypeID = nft.publicLinkedType.type.type.typeID;
-            const collectionTypeMembers = collectionTypeID.split(".")
-            collectionTypeMembers.pop()
-            const fullyQualifiedIdentifier = collectionTypeMembers.join(".").concat(`.NFT.${nft.nftID}`);
-            
-            fullyQualifiedIdentifiers.push(fullyQualifiedIdentifier);
-        })
-
-        const strand: string = fullyQualifiedIdentifiers.join(",")
-
-        strandClaimedCheck = await getStrandRegistryTimestamp(strand)
-    }
 
 	function handleDndConsider(e: { detail: { items: any[] } }) {
 		items = e.detail.items;
@@ -46,28 +24,11 @@
 		}
 	}
 
-    $: {
-		if (listName === 'strandA') {
-            $strandA.length > 0 && setStrandClaimedCheck($strandA)
-            $strandA.length === 0 && (strandClaimedCheck = undefined)
-		} else if (listName === 'strandB') {
-            $strandB.length > 0 && setStrandClaimedCheck($strandB)
-            $strandB.length === 0 && (strandClaimedCheck = undefined)
-		}
-    }
-
 </script>
 
 <div class="flex flex-col mx-auto w-full">
-    {#if strandClaimedCheck !== undefined}
-        {#if strandClaimedCheck === null}
-            <p>{listName} is unique!</p>
-        {:else}
-            <p>{listName}, this sequence of DNA has already been claimed :(</p>
-        {/if}
-    {/if}
     <section
-        class="w-full h-120 flex-auto space-y-2.5 px-4 py-11 bg-red-200 bg-opacity-30"
+        class="w-full h-120 flex-auto space-y-2.5 px-4 py-11"
         use:dndzone={{ items, flipDurationMs }}
         on:consider={handleDndConsider}
         on:finalize={handleDndFinalize}
