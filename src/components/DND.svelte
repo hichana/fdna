@@ -58,10 +58,6 @@
 
 </script>
 
-        <!-- class="border-2 rounded-2xl border-phosgreen w-full h-120 inline-flex flex-col space-y-2.5 items-center justify-start px-4 py-11 bg-black bg-opacity-30" -->
-        <!-- class="w-full h-120 inline-flex flex-col space-y-2.5 items-center justify-start px-4 py-11 bg-red-200 bg-opacity-30" -->
-        <!-- class="w-full h-120 inline-flex flex-col space-y-2.5 px-4 py-11 bg-red-200 bg-opacity-30" -->
-
 <div class="flex flex-col mx-auto w-full">
     {#if strandClaimedCheck !== undefined}
         {#if strandClaimedCheck === null}
