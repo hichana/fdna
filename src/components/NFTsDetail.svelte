@@ -3,6 +3,7 @@
 	import { slide } from 'svelte/transition';
 	import { user, strandA, strandB } from '#lib/stores';
 	import { getUserNFTs } from '#lib/actions';
+	import { resolveImgStr } from '#lib/helpers';
 
 	export let collectionName: string;
 	export let nftIDs: number[];
@@ -33,6 +34,7 @@
 			strandB.update((prev) => [...prev.filter((nft: { id: string }) => nft.id !== userNFT.id)]);
 		}
 	}
+
 </script>
 
 <div class="mx-2 my-3 border-2 border-pink-400 rounded-xl">
@@ -85,7 +87,7 @@
 							bind:value={nftData.id}
 							class="h-4 w-4 rounded border-gray-300 mr-4"
 						/>
-						<img class="w-10 h-10 rounded-full" src={`${nftData.thumbnail}`} alt="Rounded avatar" />
+						<img class="w-10 h-10 rounded-full" src={`${resolveImgStr(nftData.thumbnail)}`} alt="Rounded avatar" />
 						<label for={nftData.id} class="ml-3 text-sm text-purple-400"
 							>UUID: {nftData.id}, NFT ID: {nftData.nftID}, name: {nftData.name}</label
 						>

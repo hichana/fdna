@@ -138,6 +138,10 @@
 - in my submission, include a dev.to post called 'the story of FLOW DNA' where I talk about over-engineering a solution with my recursive node structure for The FLOASIS, and why I chose to re-do/build it from the ground up and offer to other builders. "Because concatenated strings just looked yucky to me"
 
 # MAINNET
+- figure out how IPFS paths really work for metadata standard
+ipfs://bafybeignscwxzysa25xvw37injizn3nw2af77jfrtnf7xegr5kaisuicne
+https://bafybeigy7cpgakfxdabjb2gxcri3fdojeyvalwq5estarwwjy6qvolzgeu.ipfs.w3s.link/athletian-hat-thumbnail.png
+
 - would need to process tx for mainnet service account to receive royalties
 - OG Bases FLOATs
     - four limited FLOATs ("A", "G", "C", "T") that anyone can get to bootstrap their NFT collection and start building Flow DNA right away

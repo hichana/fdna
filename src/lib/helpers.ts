@@ -1,3 +1,11 @@
+export function resolveImgStr(uri: string) {
+    if (uri.slice(0,4) === "ipfs") {
+        return `https://${uri.split("//")[1]}.ipfs.w3s.link`
+    } else {
+        return uri
+    }
+}
+
 export function replaceCDCImports(str: string): string {
 	const importsToAliases: { [key: string]: string } = {
 		'"../../contracts/core/FlowToken.cdc"': '0xFlowToken',
