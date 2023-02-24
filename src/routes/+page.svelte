@@ -58,7 +58,13 @@
 <Container>
 	<div class="bg-slate-900 flex flex-row">
 		<DND listName="strandA" items={$strandA} />
-        <DndConnector />
+        {#if longestDNAStrand}
+            <div class="flex flex-col">
+                {#each longestDNAStrand as _}
+                <DndConnector />
+                {/each}
+            </div>
+        {/if}
 		<DND listName="strandB" items={$strandB} />
 	</div>
 </Container>
