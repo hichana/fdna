@@ -12,6 +12,7 @@
     - develop contracts as much as possible I do this
 -x scaffold web app while building basic app functionality in smart contracts
 -x circle back to contracts, working on building data for string interpolated version of mint tx in frontend while also connecting UI elements to flow scripts and transactions
+- once functionality appears ok, do a testnet deployment 
 - build out layout, design, artwork
 - create hackathon submission
 - checklist before testnet deploy/submission

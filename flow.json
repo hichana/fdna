@@ -165,7 +165,7 @@
 			"emulator-user1": []
 		},
 		"testnet": {
-			"testnet-account": ["Apples", "Black", "Cats", "Dogs", "Oranges", "White"]
+			"testnet-account": ["STRANDS"]
 		}
 	}
 }

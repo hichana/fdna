@@ -22,11 +22,11 @@ pub contract STRANDS: NonFungibleToken {
     pub let AdminStoragePath: StoragePath
 
     pub struct Base {
-        pub let type: Type
+        pub let identifier: String
         pub let id: UInt64
 
-        init(type: Type, id: UInt64) {
-            self.type = type
+        init(identifier: String, id: UInt64) {
+            self.identifier = identifier
             self.id = id
         }
     }
@@ -303,7 +303,8 @@ pub contract STRANDS: NonFungibleToken {
 
         // construct DNA
         let dot = "."
-        let dnaSegment = "_.--''``'--._"
+        let dnaASegment = "_.--''``'--._"
+        let dnaBSegment = "``'--.__.--''"
         // strandA
         var strandAIdentifiers = ""
         var strandA = ""
@@ -330,7 +331,7 @@ pub contract STRANDS: NonFungibleToken {
             }
 
             // build strandA DNA
-            strandA = strandA.concat(dnaSegment)
+            strandA = strandA.concat(dnaASegment)
         }
 
         // check if the constructed strand already exists in the strands registry
@@ -371,7 +372,7 @@ pub contract STRANDS: NonFungibleToken {
             }
 
             // build strandB DNA
-            strandB = strandB.concat(dnaSegment)
+            strandB = strandB.concat(dnaBSegment)
         }
 
         // check if the constructed strand already exists in the strands registry
@@ -390,11 +391,11 @@ pub contract STRANDS: NonFungibleToken {
         let basePairs: [[Base]] = []
         for strand in strandARefs {
             let strandABase = Base(
-                type: strand.getType(),
+                identifier: strand.getType().identifier,
                 id: strand.id
             )
             let strandBBase = Base(
-                type: strandBRefs[basePairsLoop].getType(),
+                identifier: strandBRefs[basePairsLoop].getType().identifier,
                 id: strandBRefs[basePairsLoop].id
             )
 
