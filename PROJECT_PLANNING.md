@@ -38,14 +38,14 @@
     -x integrates prettier, svelte prettier plugin
     -x includes ignore files for git and prettier
 - functional UI
-    - has project artwork that is image of ascii dna???
+    -x has project artwork that is image of ascii dna???
     - user can see a CTA to start building a Flow NFT collection -- includes descriptive text about this project and Web3/Flow, links to marketplaces and projects, and to the four OG Bases FLOATS
     -x user can login using Blocto and other wallets
-    - user can see a list of all NFT projects for which their wallet contains a collection that is registered in the nft catalog
-    - user can expand the list of NFT projects to reveal the NFTs and their metadata (displays image) from their wallet
-    - user can toggle a checkbox next to each of their NFTs to select or deselect any number of their NFTs to include when building their Flow DNA strand
-    - selected NFTs appear can be arranged inside of two vertical dnd palletes to signify they are "base pairs"
-    - users can click/tap drag NFT data between vertical dnd to build and rearrange base pairs
+    -x user can see a list of all NFT projects for which their wallet contains a collection that is registered in the nft catalog
+    -x user can expand the list of NFT projects to reveal the NFTs and their metadata (displays image) from their wallet
+    -x user can toggle a checkbox next to each of their NFTs to select or deselect any number of their NFTs to include when building their Flow DNA strand
+    -x selected NFTs appear can be arranged inside of two vertical dnd palletes to signify they are "base pairs"
+    -x users can click/tap drag NFT data between vertical dnd to build and rearrange base pairs
     - with each re-arrange of base pairs, user is informed whether or not that permutation of Flow DNA for either side is taken or not
     - user can mint their Flow DNA strand, showing transaction status throughout the process and providing a link to the transaction on flowscan
     - user can see a card representing their Flow DNA strand with a list of the DNA string identifiers from each strand

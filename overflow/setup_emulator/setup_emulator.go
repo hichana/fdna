@@ -285,4 +285,10 @@ func main() {
 		o.WithArg("id", 0)).
 		Print()
 
+	// get metadata
+	c.Script(
+		"STRANDS/get_strand_registry_timestamp",
+		o.WithArg("strandID", "A.f8d6e0586b0a20c7.Apples.NFT.0,A.f8d6e0586b0a20c7.Oranges.NFT.0")).
+		Print()
+
 }

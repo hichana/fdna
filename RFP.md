@@ -1,3 +1,30 @@
+# BUILD PERMUTATION CHECKER
+-x reqs
+    - each side has a check "This DNA strand has already been claimed"
+-x first I'm going to need a script to check if a permutation is taken or not
+    - can use ' getStrandRegistryTimestamp', will return nil if doesn't exist
+    - can construct the string, then feed to a script that takes in the string and does the check
+-x have an unitialized state member 'strandClaimedCheck' as type undefined, null, or string
+-x have a reactive statement
+    - if strand length is greater than 1
+        - construct the string
+        - set the state member (not initialized) with the result (should either be a number or string, or null)
+        - print to console to check
+- in markup, 
+    - if === null, say is available
+    - if !== undefined, say is not available
+- try
+    -x first make the script work in emulator setup
+    - build the above in the DND file
+
+
+
+
+
+- when am I using the STRANDS/get_nft_metadata and when amd I usting NFTCatalog/get_nfts_in_ccount_from_ids?
+- find anywhere I'm using, nft.publicLinkedType.type.type.typeID, make sure it's requiring the Collection identifier, not the nFT
+
+
 # BUILD OUT LAYOUT, DESIGN, ARTWORK 2
 
 

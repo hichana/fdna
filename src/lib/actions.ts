@@ -6,6 +6,7 @@ import { user, strandA, strandB } from './stores';
 import { constructNFTCollectionCode, replaceCDCImports } from './helpers';
 import GET_NFT_IDS_IN_ACCOUNT from '#queries/NFTCatalog/get_nft_ids_in_account.cdc?raw';
 import GET_NFTS_IN_ACCOUNT_FROM_IDS from '#queries/NFTCatalog/get_nfts_in_account_from_ids.cdc?raw';
+import GET_STRAND_REGISTRY_TIMESTAMP from '#queries/STRANDS/get_strand_registry_timestamp.cdc?raw';
 import MINT_NFT_INTERPOLATE from '#mutations/STRANDS/mint_nft_interpolate.cdc?raw';
 
 configureFCL();
@@ -21,6 +22,21 @@ export const unauthenticate = () => {
 };
 export const logIn = async () => {
 	await fcl.logIn();
+};
+
+export const getStrandRegistryTimestamp = async (strand: string) => {
+	const scriptCode = replaceCDCImports(GET_STRAND_REGISTRY_TIMESTAMP);
+
+	try {
+		const getStrandRegistryTimestampResult = await fcl.query({
+			cadence: scriptCode,
+			args: (arg: any, t: any) => [arg(strand, t.String)]
+		});
+		return getStrandRegistryTimestampResult;
+	} catch (e) {
+		const errorMsg = (e as Error).message;
+		console.log('Error when fetching stand registry timestamp:', errorMsg);
+	}
 };
 
 export const getUserNFTIDs = async (address: string) => {
