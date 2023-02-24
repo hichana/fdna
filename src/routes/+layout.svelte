@@ -7,7 +7,7 @@
 <nav class="px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0">
 	<div class="container flex items-center justify-between mx-auto">
 		<a href="https://strands.so/" class="flex items-center">
-			<span class="text-phosgreen font-semibold text-xl tracking-tight">STRANDS 三</span>
+			<span class="font-semibold text-xl tracking-tight">STRANDS 三</span>
 		</a>
 		<div class="flex">
 			{#if $user}
