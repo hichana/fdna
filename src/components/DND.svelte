@@ -71,7 +71,7 @@
         {/if}
     {/if}
     <section
-        class="w-full h-120 flex flex-col space-y-2.5 px-4 py-11 bg-red-200 bg-opacity-30"
+        class="w-full h-120 flex-auto space-y-2.5 px-4 py-11 bg-red-200 bg-opacity-30"
         use:dndzone={{ items, flipDurationMs }}
         on:consider={handleDndConsider}
         on:finalize={handleDndFinalize}
