@@ -10,10 +10,10 @@
         - construct the string
         - set the state member (not initialized) with the result (should either be a number or string, or null)
         - print to console to check
-- in markup, 
+-x in markup, 
     - if === null, say is available
     - if !== undefined, say is not available
-- try
+-x try
     -x first make the script work in emulator setup
     - build the above in the DND file
 
