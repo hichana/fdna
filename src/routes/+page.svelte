@@ -90,6 +90,7 @@
 	{/if}
 </Container>
 
+<Container>
 <p>
 	This is the point you might expect a 3D animation of a pack opening and fire spewing out or
 	something like that, but almost everything about STRANDS is on-chain, so what we did was etch the
@@ -122,3 +123,4 @@ B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID
 	{/each}
     {/if}
 </div>
+</Container>
