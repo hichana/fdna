@@ -67,14 +67,14 @@
         {/if}
     {/if}
     <section
-        class="w-full h-120 inline-flex flex-col space-y-2.5 items-center justify-start px-4 py-11 bg-black bg-opacity-30 border rounded-3xl border-black"
+        class="border-2 rounded-2xl border-phosgreen w-full h-120 inline-flex flex-col space-y-2.5 items-center justify-start px-4 py-11 bg-black bg-opacity-30"
         use:dndzone={{ items, flipDurationMs }}
         on:consider={handleDndConsider}
         on:finalize={handleDndFinalize}
     >
         {#each items as item (item.id)}
             <div
-                class="w-full inline-flex space-x-3.5 items-center justify-center px-5 py-1.5 bg-gray-300 rounded-full"
+                class="w-full inline-flex space-x-3.5 items-center justify-start px-5 py-1.5 border-2 border-pink-400 border-dashed"
                 animate:flip={{ duration: flipDurationMs }}
             >
                 <img class="w-10 h-10 rounded-full" src={`${item.thumbnail}`} alt="Rounded avatar" />

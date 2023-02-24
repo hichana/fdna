@@ -32,7 +32,7 @@
 </Container> -->
 
 <Container>
-	<div class="bg-slate-400 rounded-2xl border-8 border-black">
+	<div class="bg-slate-600 bg-opacity-30 rounded-2xl border-2 border-phosgreen">
 		{#if userNFTIDs}
 			{#each Object.entries(userNFTIDs) as [collectionName, nftIDs]}
 				<NFTsDetail {collectionName} {nftIDs} />
@@ -42,7 +42,7 @@
 </Container>
 
 <Container>
-	<div class="flex flex-row bg-red-400">
+	<div class="flex flex-row">
 		<DND listName="strandA" items={$strandA} />
 		<DND listName="strandB" items={$strandB} />
 	</div>

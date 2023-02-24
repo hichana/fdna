@@ -35,13 +35,13 @@
 	}
 </script>
 
-<div class="mx-2 my-3 bg-red-200 rounded-xl">
+<div class="mx-2 my-3 border-2 border-pink-400 rounded-xl">
 	<button
 		on:click={() => (filterIsOpen = !filterIsOpen)}
 		type="button"
-		class="p-2 flex w-full items-center justify-between py-3 text-sm text-gray-400"
+		class="p-2 flex w-full items-center justify-between py-3 text-sm"
 	>
-		<span class="font-medium text-gray-900">{collectionName}</span>
+		<span class="font-medium">{collectionName}</span>
 		<span class="flex items-center">
 			{#if filterIsOpen}
 				<svg
@@ -74,7 +74,7 @@
 	</button>
 
 	{#if filterIsOpen}
-		<div class="bg-red-300 rounded-b-xl" transition:slide>
+		<div class="border-pink-400 rounded-b-xl" transition:slide>
 			<div class="space-y-6 p-6">
 				{#each userNFTs as nftData}
 					<div class="flex items-center">
@@ -86,7 +86,7 @@
 							class="h-4 w-4 rounded border-gray-300 mr-4"
 						/>
 						<img class="w-10 h-10 rounded-full" src={`${nftData.thumbnail}`} alt="Rounded avatar" />
-						<label for={nftData.id} class="ml-3 text-sm text-gray-600"
+						<label for={nftData.id} class="ml-3 text-sm text-purple-400"
 							>UUID: {nftData.id}, NFT ID: {nftData.nftID}, name: {nftData.name}</label
 						>
 					</div>

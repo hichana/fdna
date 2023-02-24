@@ -3,6 +3,7 @@
 
 # BUILD OUT LAYOUT, DESIGN, ARTWORK 2
 - probably better to not have a big intro but just start with a title, subtitble, then "Select NFTs from your wallet"?
+    - maybe just start off with steps, like 1. If you don't have two or more Flow NFTs, go buy them from one of these awesome marketplaces...
 
 
 
