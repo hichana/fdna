@@ -25,6 +25,18 @@
         return fullyQualifiedIdentifier
     }
 
+    let longestDNAStrand: any[] = []
+    $: {
+        if ($strandA.length > $strandB.length) {
+            longestDNAStrand = $strandA;
+        } else {
+            longestDNAStrand = $strandB;
+        }
+
+    }
+
+    $: dnaIterator = Array.from({ length: longestDNAStrand.length}, (_, i) => i);
+
 </script>
 
 <!-- <Container>
@@ -75,8 +87,11 @@
 </p>
 
 <!-- prettier-ignore -->
+<div class="flex">
 <div class="flex-col">
-	{#each $strandA as nft, i}
+    {#if longestDNAStrand.length > 0}
+        
+	{#each dnaIterator as _, i}
 		<div class="flex">
 			<pre>
             `-.`. ,',-'
@@ -85,8 +100,8 @@
             `-.`. ,',-'
                 _,-'"
             ,-',' `.`-.
-A: {getNFTIdentifier(nft.publicLinkedType.type.type.typeID, nft.id)}
-B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID, $strandB[i].id) : "(add DNA here)"}
+A: {$strandA[i] ? getNFTIdentifier($strandA[i].publicLinkedType.type.type.typeID, $strandA[i].nftID) : "(strand A DNA here)"}
+B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID, $strandB[i].nftID) : "(strand B DNA here)"}
             `-.`. ,',-'
                 _,-'"
             ,-',' `.`-.
@@ -95,4 +110,6 @@ B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID
             ,-',' `.`-.</pre>
 		</div>
 	{/each}
+    {/if}
+</div>
 </div>
