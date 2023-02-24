@@ -1,32 +1,3 @@
-# BUILD PERMUTATION CHECKER
--x reqs
-    - each side has a check "This DNA strand has already been claimed"
--x first I'm going to need a script to check if a permutation is taken or not
-    - can use ' getStrandRegistryTimestamp', will return nil if doesn't exist
-    - can construct the string, then feed to a script that takes in the string and does the check
--x have an unitialized state member 'strandClaimedCheck' as type undefined, null, or string
--x have a reactive statement
-    - if strand length is greater than 1
-        - construct the string
-        - set the state member (not initialized) with the result (should either be a number or string, or null)
-        - print to console to check
--x in markup, 
-    - if === null, say is available
-    - if !== undefined, say is not available
--x try
-    -x first make the script work in emulator setup
-    - build the above in the DND file
-
-
-
-
-
--x when am I using the STRANDS/get_nft_metadata and when amd I usting NFTCatalog/get_nfts_in_ccount_from_ids?
--x find anywhere I'm using, nft.publicLinkedType.type.type.typeID, make sure it's requiring the Collection identifier, not the nFT
-    -x was a logic error incorrectly using Collection instead of NFT
-    - now also fix page.svelte
-
-
 # BUILD OUT LAYOUT, DESIGN, ARTWORK 2
 
 
@@ -254,5 +225,29 @@ B: 233892348343
         - in UI, last section will just be some stats in text form, then some text like "This is the point you might expect a 3D animation of a pack opening and fire spewing out or something like that, but almost everything about STRANDS is on-chain, so what we did was etch the following double helix of DNA onto your transaction code that minted your NFT here (make sure you save the link), and we also add real (but not really) DNA strands to the metadata of your NFT. Check them out here on Flowview. Thanks for minting a STRANDS NFT!!!
 
 
+
+
+# BUILD PERMUTATION CHECKER
+-x reqs
+    - each side has a check "This DNA strand has already been claimed"
+-x first I'm going to need a script to check if a permutation is taken or not
+    - can use ' getStrandRegistryTimestamp', will return nil if doesn't exist
+    - can construct the string, then feed to a script that takes in the string and does the check
+-x have an unitialized state member 'strandClaimedCheck' as type undefined, null, or string
+-x have a reactive statement
+    - if strand length is greater than 1
+        - construct the string
+        - set the state member (not initialized) with the result (should either be a number or string, or null)
+        - print to console to check
+-x in markup, 
+    - if === null, say is available
+    - if !== undefined, say is not available
+-x try
+    -x first make the script work in emulator setup
+    - build the above in the DND file
+-x when am I using the STRANDS/get_nft_metadata and when amd I usting NFTCatalog/get_nfts_in_ccount_from_ids?
+-x find anywhere I'm using, nft.publicLinkedType.type.type.typeID, make sure it's requiring the Collection identifier, not the nFT
+    -x was a logic error incorrectly using Collection instead of NFT
+    - now also fix page.svelte
 
 
