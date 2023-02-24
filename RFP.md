@@ -2,6 +2,7 @@
 - first, for fun play w/ some colors
 
 # BUILD OUT LAYOUT, DESIGN, ARTWORK 2
+- probably better to not have a big intro but just start with a title, subtitble, then "Select NFTs from your wallet"?
 
 
 
