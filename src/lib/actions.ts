@@ -235,7 +235,7 @@ export const buySTRAND = async (mintPrice: string) => {
 		.tx(transactionId)
 		.subscribe(
 			(res: { errorMessage: string | null; statusCode: number | null; status: number | null }) => {
-				console.log('Buy NFT transaction response:', res);
+				console.log('txID:', transactionId,'Buy NFT transaction response:', res);
                 buyTxStatus.set(res)
 			}
 		);
