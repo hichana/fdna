@@ -1,16 +1,3 @@
-# ONCE FUNCTIONALITY APPEARS OK, DO A TESTNET DEPLOYMENT 
--x have a testnet account ready
--x have testnet script set up appropriately
--x deploy contracts
--x run script against testnet (don't need to do this)
--x run devT
-- questions
-    -x make strandB start halfway through in smart contract
-    -x why is base pairs data so huge?
-    -x why can't see tx (b/c need to print to console not the response body but the tx id when running app)
-- get tx link working in frontend
-- re-deploy to testnet
-
 # BUILD OUT LAYOUT, DESIGN, ARTWORK 2
 -x work on DND
     - will need to pull out the notifications for dnd. try
@@ -279,4 +266,17 @@ B: 233892348343
     -x in the frontend, have a reactive state member (null) watch the writable and set transaction text
         - own component is better actually
     -x display the text in frontend
+
+# ONCE FUNCTIONALITY APPEARS OK, DO A TESTNET DEPLOYMENT 
+-x have a testnet account ready
+-x have testnet script set up appropriately
+-x deploy contracts
+-x run script against testnet (don't need to do this)
+-x run devT
+-x questions
+    -x make strandB start halfway through in smart contract
+    -x why is base pairs data so huge?
+    -x why can't see tx (b/c need to print to console not the response body but the tx id when running app)
+-x get tx link working in frontend
+- re-deploy to testnet
 
