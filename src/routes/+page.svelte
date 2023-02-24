@@ -8,6 +8,7 @@
 	import NFTsDetail from '#components/NFTsDetail.svelte';
 	import DND from '#components/DND.svelte';
 	import BuyTxStatus from '#components/BuyTxStatus.svelte';
+	import DndConnector from '#components/DNDConnector.svelte';
 
 	let userNFTIDs: UserNFTIDs | null = null;
 	async function setUserNFTIDs() {
@@ -55,8 +56,9 @@
 </Container>
 
 <Container>
-	<div class="flex flex-row">
+	<div class="bg-slate-900 flex flex-row">
 		<DND listName="strandA" items={$strandA} />
+        <DndConnector />
 		<DND listName="strandB" items={$strandB} />
 	</div>
 </Container>

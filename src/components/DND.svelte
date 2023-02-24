@@ -58,6 +58,10 @@
 
 </script>
 
+        <!-- class="border-2 rounded-2xl border-phosgreen w-full h-120 inline-flex flex-col space-y-2.5 items-center justify-start px-4 py-11 bg-black bg-opacity-30" -->
+        <!-- class="w-full h-120 inline-flex flex-col space-y-2.5 items-center justify-start px-4 py-11 bg-red-200 bg-opacity-30" -->
+        <!-- class="w-full h-120 inline-flex flex-col space-y-2.5 px-4 py-11 bg-red-200 bg-opacity-30" -->
+
 <div class="flex flex-col mx-auto w-full">
     {#if strandClaimedCheck !== undefined}
         {#if strandClaimedCheck === null}
@@ -67,14 +71,14 @@
         {/if}
     {/if}
     <section
-        class="border-2 rounded-2xl border-phosgreen w-full h-120 inline-flex flex-col space-y-2.5 items-center justify-start px-4 py-11 bg-black bg-opacity-30"
+        class="w-full h-120 inline-flex flex-col space-y-2.5 px-4 py-11 bg-red-200 bg-opacity-30"
         use:dndzone={{ items, flipDurationMs }}
         on:consider={handleDndConsider}
         on:finalize={handleDndFinalize}
     >
         {#each items as item (item.id)}
             <div
-                class="w-full inline-flex space-x-3.5 items-center justify-start px-5 py-1.5 border-2 border-pink-400 rounded-2xl"
+                class="w-full inline-flex space-x-3.5 justify-start px-5 py-1.5 border-2 border-pink-400 rounded-2xl"
                 animate:flip={{ duration: flipDurationMs }}
             >
                 <img class="w-10 h-10 rounded-full" src={`${item.thumbnail}`} alt="Rounded avatar" />
