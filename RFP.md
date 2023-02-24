@@ -1,6 +1,7 @@
 # BUILD OUT LAYOUT, DESIGN, ARTWORK 2
 - work on DND
-    - should 
+    - will need to pull out the notifications for dnd. try
+        - pull out components from DVD into a new component that takes in a string id of strand a or b
 
 
 - probably better to not have a big intro but just start with a title, subtitble, then "Select NFTs from your wallet"?
