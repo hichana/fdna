@@ -47,6 +47,39 @@
 			element.scrollIntoView({ behavior: 'smooth' });
 		}
 	}
+
+
+    // check if the strand is ready
+    let strandIsReady: boolean = false;
+    let numBasePairs: number = 0;
+    let numUniqueNFTProjectsInDNA: number = 0;
+    $: {
+        const strandLengthReady = $strandA.length > 0 && $strandB.length > 0;
+        const strandIsEven = ($strandA.length === $strandB.length);
+        (strandLengthReady && strandIsEven) ? (strandIsReady = true) : (strandIsReady = false);
+
+        if (strandIsReady) {
+            numBasePairs = $strandA.length;
+
+            let nftProjects: string[] = [];
+
+            $strandA.forEach((nft: any) => {
+                if (!nftProjects.includes(nft.collectionName)) {
+                    nftProjects.push(nft.collectionName);
+                }
+            })
+            $strandB.forEach((nft: any) => {
+                if (!nftProjects.includes(nft.collectionName)) {
+                    nftProjects.push(nft.collectionName);
+                }
+            })
+
+            numUniqueNFTProjectsInDNA = nftProjects.length;
+
+        }
+
+    }
+
 </script>
 
 <Container>
@@ -143,10 +176,10 @@
 
 
     <!-- prettier-ignore -->
-    <div class="flex flex-col items-center pb-28 pt-12 border-phosgreen border-2 p-6 rounded-xl mx-auto mt-12">
-        {#if longestDNAStrand.length > 0}
-            {#each dnaIterator as _, i}
-                <div class="flex">
+    <div class="flex flex-col items-center mb-28 pt-12 border-phosgreen border-2 p-6 rounded-xl mx-auto mt-12">
+        <div>
+            {#if longestDNAStrand.length > 0}
+                {#each dnaIterator as _, i}
                     <pre>
             `-.`. ,',-'
                 _,-'"
@@ -161,15 +194,32 @@ B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID
             ,-',' `.`-.
             `-.`. ,',-'
                 _,-'"
-            ,-',' `.`-.</pre>
-                </div>
-            {/each}
-        {/if}
+            ,-',' `.`-.
+                    </pre>
+                {/each}
+            {/if}
+        </div>
+        <div class="pt-4 text-pink-300">
+            <p>STRANDS DNA by {$user?.addr}</p>
+            <p>contains {numBasePairs} base pairs</p>
+            <p>from {numUniqueNFTProjectsInDNA} Flow NFT projects.</p>
+        </div>
     </div>
 </Container>
 
 
 <Container>
+
+	<!-- TODO: make a script that pulls mint price from on-chain and displays in UI and uses here -->
+	<button
+        class=" self-center text-phosgreen bg-slate-600 bg-opacity-30 border-phosgreen border-2 hover:bg-opacity-50 focus:ring-4 focus:outline-none focus:ring-pink-400 font-extrabold rounded-full text-lg md:text-6xl px-5 py-1.5 text-center max-w-2xl"
+		on:click={() => {
+			buySTRAND('10.0');
+		}}
+    >
+        Big Mint Button
+	</button>
+	<BuyTxStatus />
 
 	<div class="flex flex-col justify-center items-center">
 		<div>
@@ -184,16 +234,6 @@ B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID
 			them out here on Flowview. Thanks for minting a STRANDS NFT!!!
 		</div>
 	</div>
-
-
-	<!-- TODO: make a script that pulls mint price from on-chain and displays in UI and uses here -->
-	<button
-		on:click={() => {
-			buySTRAND('10.0');
-		}}
-		>Buy NFT
-	</button>
-	<BuyTxStatus />
 
 	{#if $user?.addr}
 		<a
