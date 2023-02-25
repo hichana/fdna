@@ -9,6 +9,7 @@
 	import BuyTxStatus from '#components/BuyTxStatus.svelte';
 	import DndNotifications from '#components/DNDNotifications.svelte';
 	import DndConnector from '#components/DNDConnector.svelte';
+	import Divider from '#components/Divider.svelte';
 
 	let userNFTIDs: UserNFTIDs | null = null;
 
@@ -52,17 +53,22 @@
 	<CTA />
 </Container>
 
+<Divider />
+
 <Container>
-	<div class="flex flex-col">
+	<div class="flex flex-col ">
 		<div class="px-4">
             <div>
+
+            <!-- prettier-ignore -->
             <pre class="leading-3 text-center">
-##  # # ### #   ##      ##  ###  #  
-# # # #  #  #   # #     # # # # # # 
-##  # #  #  #   # #     # # # # ### 
-# # # #  #  #   # #     # # # # # # 
-##  ### ### ### ##      ##  # # # # 
+##  # # ### #   ## 
+# # # #  #  #   # #
+##  # #  #  #   # #
+# # # #  #  #   # #
+##  ### ### ### ## 
             </pre>
+
             </div>
 			<p class="text-pink-300 text-md text-start my-6">
 				Start by learning more
@@ -84,6 +90,11 @@
 </Container>
 
 <Container>
+    
+    <p class="mx-4 text-pink-300 text-md text-start my-6">
+        Now arrange your base pairs in any order that is meaningful to you -- the makeup, pairing and order of your DNA may be useful in future projects on Flow.
+    </p>
+
 	<div class="bg-slate-900 flex flex-col">
 		<div class="flex">
 			<DndNotifications listName="strandA" />
@@ -104,31 +115,32 @@
     </p>
 </Container>
 
+<Divider />
+
 <Container>
-	<div class="flex flex-col justify-center items-center">
-		<div>
-			You may be expecting a slick 3D animation of a pack opening and fire spewing out
-			or something like that 🎉🔥🚀 -- but why try to be like all the other projects out there??
-			🐓💨💨💨
-		</div>
-        <!-- <div
-            class="mx-auto flex items-center w-1/2 h-1/2 py-8"
-        >
-            <iframe
-                title="gify uh no"
-                src="https://giphy.com/embed/l4EoT2T0sf3LQarWU"
-                frameBorder="0"
-                class="giphy-embed"
-                allowFullScreen
-            />
-        </div> -->
-		<div>
-			but almost everything about STRANDS is on-chain, so what we did was etch the following double
-			helix of DNA onto your transaction code that minted your NFT here (make sure you save the
-			link), and we also add real (but not really) DNA strands to the metadata of your NFT. Check
-			them out here on Flowview. Thanks for minting a STRANDS NFT!!!
-		</div>
-	</div>
+
+            <!-- prettier-ignore -->
+            <pre class="leading-3 text-center">
+# # ### ### ###
+###  #  # #  # 
+###  #  # #  # 
+# #  #  # #  # 
+# # ### # #  # 
+
+
+# #  #  # # ## 
+# # # # # # # #
+ #  # # # # ## 
+ #  # # # # # #
+ #   #  ### # #
+
+## ### ##   #  ### ## 
+#   #  # # # # # # # #
+ #  #  ##  ### # # # #
+  # #  # # # # # # # #
+##  #  # # # # # # ## 
+            </pre>
+
 
 	<!-- prettier-ignore -->
 	<div class="flex flex-col items-center pb-28 pt-12">
@@ -158,6 +170,22 @@ B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID
 
 
 <Container>
+
+	<div class="flex flex-col justify-center items-center">
+		<div>
+			You may be expecting a slick 3D animation of a pack opening and fire spewing out
+			or something like that 🎉🔥🚀 -- but why try to be like all the other projects out there??
+			🐓💨💨💨.
+		</div>
+		<div>
+			Almost everything about STRANDS is on-chain, so instead of the fancy dancy, what we did was etch the following double
+			helix of DNA onto your transaction code that minted your NFT here (make sure you save the
+			link), and we also add real (but not really) DNA strands to the metadata of your NFT. Check
+			them out here on Flowview. Thanks for minting a STRANDS NFT!!!
+		</div>
+	</div>
+
+
 	<!-- TODO: make a script that pulls mint price from on-chain and displays in UI and uses here -->
 	<button
 		on:click={() => {
