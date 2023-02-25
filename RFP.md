@@ -25,7 +25,11 @@
         - links to marketplaces
         - faq
         - link to scroll back up to top and "start building DNA"
-
+- try
+    - make a new component called About
+        - move things into About from CTA
+    - in About
+        - build out the elements, componentize the accordion (into its own component to be used with both faq and NFT selection)
 
 
 
