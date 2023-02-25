@@ -92,11 +92,12 @@
 <Divider />
 
 <Container>
-	<div class="flex flex-col">
-		<div class="px-4">
+	<div class="flex flex-col gap-12 ">
+        <div>
+            <div class="px-4">
 
-            <!-- prettier-ignore -->
-            <pre class="leading-3 text-center text-xs">
+                <!-- prettier-ignore -->
+                <pre class="leading-3 text-center text-xs">
 ##  # # ### #   ##  ### ###  ## 
 # # # #  #  #   # #  #  # # #   
 ##  # #  #  #   # #  #  # # # # 
@@ -108,31 +109,31 @@
 ##  #   # # #   ##   #  
 # # #   # # #   # #   # 
 ##  ###  #   ## # # ##  
-            </pre>
+                </pre>
 
-			<p class="text-pink-300 text-md text-start my-6 px-4 md:p-0">
-				Start by learning more
-				<span class="text-blue-500">
-					<!-- svelte-ignore a11y-invalid-attribute -->
-					<a on:click|preventDefault={() => scrollTo('#scroll-to-about')} href="#">HERE,</a>
-				</span>
-				then build your STRAND by selecting two or more of your NFTs as the building blocks of your digital DNA on Flow:
-			</p>
-		</div>
+                <p class="text-pink-300 text-md text-start my-6 px-4 md:p-0">
+                    Start by learning more
+                    <span class="text-blue-500">
+                        <!-- svelte-ignore a11y-invalid-attribute -->
+                        <a on:click|preventDefault={() => scrollTo('#scroll-to-about')} href="#">HERE,</a>
+                    </span>
+                    then build your STRAND by selecting two or more of your NFTs as the building blocks of your digital DNA on Flow:
+                </p>
+            </div>
 
-		<div class="bg-slate-600 bg-opacity-30 rounded-2xl border-2 border-phosgreen mx-4">
-			{#if userNFTIDs}
-				{#each Object.entries(userNFTIDs) as [collectionName, nftIDs]}
-					<NFTsDetail {collectionName} {nftIDs} />
-				{/each}
-			{/if}
-		</div>
-	</div>
-</Container>
+            <div class="bg-slate-600 bg-opacity-30 rounded-2xl border-2 border-phosgreen mx-4">
+                {#if userNFTIDs}
+                    {#each Object.entries(userNFTIDs) as [collectionName, nftIDs]}
+                        <NFTsDetail {collectionName} {nftIDs} />
+                    {/each}
+                {/if}
+            </div>
+        </div>
 
-<Container>
-    <!-- prettier-ignore -->
-    <pre class="leading-3 text-center text-xs">
+        <div>
+        
+            <!-- prettier-ignore -->
+            <pre class="leading-3 text-center text-xs">
 ##   #   ## ### 
 # # # # #   #   
 ##  ###  #  ##  
@@ -152,28 +153,31 @@
  #  ##  # # # # ##  # # #    #  # # # # 
   # #    ## # # #   # # #    #  # # # # 
 ##  ###   # ### ### # #  ## ### # #  ## 
-    </pre>
-    <p class="mx-4 text-pink-300 text-md text-start my-6">
-        Now arrange your base pairs in any order that is meaningful to you -- the makeup, pairing and order of your DNA sequence may be useful in future projects on Flow.
-    </p>
-	<div class="bg-slate-900 flex flex-col border-4 border-phosgreen border-dashed">
-		<div class="flex">
-			<DndNotifications listName="strandA" />
-			<DndNotifications listName="strandB" />
-		</div>
-		<div class="flex">
-			<DND listName="strandA" items={$strandA} />
-			<DndConnector />
-			<DND listName="strandB" items={$strandB} />
-		</div>
+            </pre>
+            <p class="mx-4 text-pink-300 text-md text-start my-6">
+                Now arrange your base pairs in any order that is meaningful to you -- the makeup, pairing and order of your DNA sequence may be useful in future projects on Flow.
+            </p>
+            <div class="bg-slate-900 flex flex-col border-4 border-phosgreen border-dashed">
+                <div class="flex">
+                    <DndNotifications listName="strandA" />
+                    <DndNotifications listName="strandB" />
+                </div>
+                <div class="flex">
+                    <DND listName="strandA" items={$strandA} />
+                    <DndConnector />
+                    <DND listName="strandB" items={$strandB} />
+                </div>
+            </div>
+            <p class="text-xs italic mx-4 text-pink-300 my-2">
+                * make sure you're creating 
+                <span class="font-bold">
+                    base pairs 
+                </span>
+                (so strandA has the same number of NFTs as strandB).
+            </p>
+        </div>
 	</div>
-    <p class="text-xs italic mx-4 text-pink-300 my-2">
-        * make sure you're creating 
-        <span class="font-bold">
-            base pairs 
-        </span>
-        (so strandA has the same number of NFTs as strandB).
-    </p>
+
 </Container>
 
 <Divider />
