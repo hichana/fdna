@@ -26,9 +26,14 @@
 	}
 </script>
 
-<div class="flex flex-col mx-auto w-full">
+<div 
+    style="background-image:linear-gradient(rgba(135, 80, 156, 0.9), rgba(135, 80, 156, 0.9)), url(https://upload.wikimedia.org/wikipedia/commons/0/0c/DNA_animation.gif)"
+    class="flex flex-col mx-auto w-full bg-center bg-cover">
+    <div class="flex h-10 items-center py-6 sm:py-10">
+        <p class="mx-auto text-center font-bold">{listName}</p>
+    </div>
 	<section
-		class="w-full h-120 flex-auto space-y-2.5 px-4 py-11"
+		class="w-full h-120 flex-auto space-y-2.5 px-4 pb-11"
 		use:dndzone={{ items, flipDurationMs }}
 		on:consider={handleDndConsider}
 		on:finalize={handleDndFinalize}

@@ -155,18 +155,18 @@
 ##  ###   # ### ### # #  ## ### # #  ## 
             </pre>
             <p class="mx-4 text-pink-300 text-md text-start my-6">
-                Now arrange your base pairs in any order that is meaningful to you -- the makeup, pairing and order of your DNA sequence may be useful in future projects on Flow.
+                A strand of digital DNA on Flow is itself made of two strands, 'strandA' and 'strandB'. Sequence your base pairs in each strand in any order that is meaningful to you -- the makeup, pairing and order may be useful in future projects on Flow.
             </p>
-            <div class="bg-slate-900 flex flex-col border-4 border-phosgreen border-dashed">
+            <div class="bg-slate-900 flex flex-col border-4 border-phosgreen border-dashed mx-4">
+                <div class="flex">
+                    <DND listName="strandA" items={$strandA} />
+                    <DND listName="strandB" items={$strandB} />
+                </div>
                 <div class="flex">
                     <DndNotifications listName="strandA" />
                     <DndNotifications listName="strandB" />
                 </div>
-                <div class="flex">
-                    <DND listName="strandA" items={$strandA} />
-                    <DndConnector />
-                    <DND listName="strandB" items={$strandB} />
-                </div>
+
             </div>
             <p class="text-xs italic mx-4 text-pink-300 my-2">
                 * make sure you're creating 
