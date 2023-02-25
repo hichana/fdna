@@ -92,7 +92,7 @@
 <Divider />
 
 <Container>
-	<div class="flex flex-col gap-12 ">
+	<div class="flex flex-col gap-12 sm:gap-24">
         <div>
             <div class="px-4">
 
