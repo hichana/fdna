@@ -39,7 +39,17 @@
 	}
 
 	$: dnaIterator = Array.from({ length: longestDNAStrand.length }, (_, i) => i);
+
+
+    function scrollTo(selector: string) {
+        const element = document.querySelector(selector);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
 </script>
+
 
 <!-- <Container>
     <CTA />
@@ -54,6 +64,9 @@
 		{/if}
 	</div>
 </Container>
+
+<!-- svelte-ignore a11y-invalid-attribute -->
+<a on:click|preventDefault={() => scrollTo('#scroll-to-me')} href="#">Scroll to bottom</a>
 
 <Container>
 	<div class="bg-slate-900 flex flex-col">
@@ -122,3 +135,137 @@ B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID
     {/if}
 </div>
 </Container>
+
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+
+
+
+
+
+
+
+<div id="scroll-to-me">scroolll to memmmmm</div>
