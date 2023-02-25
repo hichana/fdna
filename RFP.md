@@ -13,7 +13,7 @@
             - parse down info so one page is ok
             - keep info and make it all work, 
             - minimize info at the top, have a link to the bottom, then have the info at the bottom of the page
-- ok, new layout is
+-x ok, new layout is
     - header
     - sub-header explainer
     - link to scroll to bottom to learn more (about section)
@@ -25,11 +25,14 @@
         - links to marketplaces
         - faq
         - link to scroll back up to top and "start building DNA"
-- try
+-x try
     - make a new component called About
         - move things into About from CTA
     - in About
         - build out the elements, componentize the accordion (into its own component to be used with both faq and NFT selection)
+- now get layout dialed
+    - all components should be nested appropriately
+    - modify for desktop to mobile
 
 
 
