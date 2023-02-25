@@ -8,7 +8,6 @@
 	import DND from '#components/DND.svelte';
 	import BuyTxStatus from '#components/BuyTxStatus.svelte';
 	import DndNotifications from '#components/DNDNotifications.svelte';
-	import DndConnector from '#components/DNDConnector.svelte';
 	import Divider from '#components/Divider.svelte';
 	import About from '#components/About.svelte';
 
@@ -157,17 +156,6 @@
             <p class="mx-4 text-pink-300 text-md text-start my-6">
                 A strand of digital DNA on Flow is itself made of two strands, 'strandA' and 'strandB'. Sequence your base pairs in each strand in any order that is meaningful to you -- the makeup, pairing and order may be useful in future projects on Flow.
             </p>
-            <div class="bg-slate-900 flex flex-col border-4 border-phosgreen border-dashed mx-4">
-                <div class="flex">
-                    <DND listName="strandA" items={$strandA} />
-                    <DND listName="strandB" items={$strandB} />
-                </div>
-                <div class="flex">
-                    <DndNotifications listName="strandA" />
-                    <DndNotifications listName="strandB" />
-                </div>
-
-            </div>
             <p class="text-xs italic mx-4 text-pink-300 my-2">
                 * make sure you're creating 
                 <span class="font-bold">
@@ -175,6 +163,17 @@
                 </span>
                 (so strandA has the same number of NFTs as strandB).
             </p>
+            <div class="bg-slate-900 flex flex-col border-4 border-phosgreen border-dashed mx-4">
+                <div class="flex">
+                    <DND listName="strandA" items={$strandA} />
+                    <DND listName="strandB" items={$strandB} />
+                </div>
+            </div>
+                <div class="flex">
+                    <DndNotifications listName="strandA" />
+                    <DndNotifications listName="strandB" />
+                </div>
+
         </div>
 	</div>
 
