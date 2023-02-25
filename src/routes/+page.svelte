@@ -96,7 +96,7 @@
 		<div class="px-4">
 
             <!-- prettier-ignore -->
-            <pre class="leading-3 text-center">
+            <pre class="leading-3 text-center text-xs">
 ##  # # ### #   ##  ### ###  ## 
 # # # #  #  #   # #  #  # # #   
 ##  # #  #  #   # #  #  # # # # 
@@ -132,7 +132,7 @@
 
 <Container>
     <!-- prettier-ignore -->
-    <pre class="leading-3 text-center">
+    <pre class="leading-3 text-center text-xs">
 ##   #   ## ### 
 # # # # #   #   
 ##  ###  #  ##  
@@ -181,7 +181,7 @@
 <Container>
 
     <!-- prettier-ignore -->
-    <pre class="leading-3 text-center">
+    <pre class="leading-3 text-center text-xs">
 # # ### ### ###
 ###  #  # #  # 
 ###  #  # #  # 
@@ -277,7 +277,7 @@ B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID
 <Container>
     <div id="scroll-to-about">
         <!-- prettier-ignore -->
-        <pre class="leading-3 text-center bg-yellow-400">
+        <pre class="leading-3 text-center text-xs">
  #  ##   #  # # ###
 # # # # # # # #  # 
 ### ##  # # # #  # 
