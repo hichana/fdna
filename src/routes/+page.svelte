@@ -92,6 +92,45 @@
 <Divider />
 
 <Container>
+	<div class="flex flex-col">
+		<div class="px-4">
+
+            <!-- prettier-ignore -->
+            <pre class="leading-3 text-center">
+##  # # ### #   ##  ### ###  ## 
+# # # #  #  #   # #  #  # # #   
+##  # #  #  #   # #  #  # # # # 
+# # # #  #  #   # #  #  # # # # 
+##  ### ### ### ##  ### # #  ## 
+                        
+##  #    #   ## # #  ## 
+# # #   # # #   # # #   
+##  #   # # #   ##   #  
+# # #   # # #   # #   # 
+##  ###  #   ## # # ##  
+            </pre>
+
+			<p class="text-pink-300 text-md text-start my-6 px-4 md:p-0">
+				Start by learning more
+				<span class="text-blue-500">
+					<!-- svelte-ignore a11y-invalid-attribute -->
+					<a on:click|preventDefault={() => scrollTo('#scroll-to-about')} href="#">HERE,</a>
+				</span>
+				then build your STRAND by selecting two or more of your NFTs as the building blocks of your digital DNA on Flow:
+			</p>
+		</div>
+
+		<div class="bg-slate-600 bg-opacity-30 rounded-2xl border-2 border-phosgreen mx-4">
+			{#if userNFTIDs}
+				{#each Object.entries(userNFTIDs) as [collectionName, nftIDs]}
+					<NFTsDetail {collectionName} {nftIDs} />
+				{/each}
+			{/if}
+		</div>
+	</div>
+</Container>
+
+<Container>
     <!-- prettier-ignore -->
     <pre class="leading-3 text-center">
 ##   #   ## ### 
