@@ -88,7 +88,7 @@
 	<CTA />
 </Container>
 
-<div id="scroll-to-build" />
+<div id="scroll-to-build"/>
 <Divider />
 
 <Container>
