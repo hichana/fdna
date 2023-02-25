@@ -61,7 +61,7 @@
 					<!-- svelte-ignore a11y-invalid-attribute -->
 					<a on:click|preventDefault={() => scrollTo('#scroll-to-about')} href="#">HERE,</a>
 				</span>
-				then start building a STRANDS DNA by selecting two or more of your NFTs below:
+				then start building STRANDS DNA by selecting two or more of your NFTs below:
 			</p>
 		</div>
 		<div class="bg-slate-600 bg-opacity-30 rounded-2xl border-2 border-phosgreen">
