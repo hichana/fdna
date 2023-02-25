@@ -354,3 +354,4 @@ pub contract Apples: NonFungibleToken {
         emit ContractInitialized()
     }
 }
+ 

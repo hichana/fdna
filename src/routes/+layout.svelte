@@ -4,7 +4,7 @@
 	import { unauthenticate, logIn } from '#lib/actions';
 </script>
 
-<nav class="px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0">
+<nav class="px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 bg-black">
 	<div class="container flex items-center justify-between mx-auto">
 		<a href="https://strands.so/" class="flex items-center">
 			<span class="font-semibold text-xl tracking-tight">STRANDS 三</span>
