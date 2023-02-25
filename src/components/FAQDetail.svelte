@@ -49,7 +49,7 @@
 	{#if filterIsOpen}
 		<div class="pt-6" transition:slide>
 			<div class="space-y-4">
-				<div class="flex items-center">
+				<div class="flex items-center text-slate-800">
 					{faqPair.a}
 				</div>
 			</div>

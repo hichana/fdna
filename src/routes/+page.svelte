@@ -10,6 +10,7 @@
 	import DndNotifications from '#components/DNDNotifications.svelte';
 	import DndConnector from '#components/DNDConnector.svelte';
 	import Divider from '#components/Divider.svelte';
+	import About from '#components/About.svelte';
 
 	let userNFTIDs: UserNFTIDs | null = null;
 
@@ -250,7 +251,6 @@ B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID
 
 <Container>
     <div id="scroll-to-about">
-
         <!-- prettier-ignore -->
         <pre class="leading-3 text-center">
  #  ##   #  # # ###
@@ -259,7 +259,10 @@ B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID
 # # # # # # # #  # 
 # # ##   #  ###  # 
         </pre>
-
     </div>
+    <About />
 
 </Container>
+
+
+

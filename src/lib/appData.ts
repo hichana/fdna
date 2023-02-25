@@ -21,10 +21,10 @@ export const faq = [
 	},
 	{
 		q: 'What does a STRANDS of Flow DNA look like?',
-		a: "STRANDs of Flow DNA are meant to be simple and extensible to other, future experiences on Flow. So there isn't any kind of 3D rendering that would look old in a few years anyways. It's just an image that represents STRANDS, your chosen base pairs, and other metdata. In blockchain, simple can sometimes be the best because it opens projects up for further composability across other experiences. Projects like loot have proven that. We want creative people to take STRANDS to create cooler stuff on top of the digital Flow DNA."
+		a: "STRANDs of Flow DNA are meant to be simple and extensible to other, future experiences on Flow. So there isn't any kind of 3D rendering that would look old in a few years anyways. It's just an image that represents STRANDS, your chosen base pairs, and other metdata. In blockchain, simple can sometimes be the best because it opens projects up for further composability across other experiences. Projects like loot have proven that. We want creative people to take STRANDS to create cooler stuff on top of the digital Flow DNA. We etch your DNA into the transaction that minted your NFT, and we embed representations of your STRANDS DNA into the metadata of your NFT, on-chain."
 	},
 	{
 		q: "I don't see my question in the FAQ, what do I do?",
-		a: "Shut up, for now :), then go to our Discord and talk to us. Let's make STRANDS into something awesome, for us."
+		a: "Don't shut up, get yo'self into our Discord and talk to us! Let's make STRANDS into something awesome, for us all."
 	}
 ];
