@@ -119,8 +119,8 @@
 
 <Container>
 
-            <!-- prettier-ignore -->
-            <pre class="leading-3 text-center">
+    <!-- prettier-ignore -->
+    <pre class="leading-3 text-center">
 # # ### ### ###
 ###  #  # #  # 
 ###  #  # #  # 
@@ -139,15 +139,15 @@
  #  #  ##  ### # # # #
   # #  # # # # # # # #
 ##  #  # # # # # # ## 
-            </pre>
+    </pre>
 
 
-	<!-- prettier-ignore -->
-	<div class="flex flex-col items-center pb-28 pt-12">
-    {#if longestDNAStrand.length > 0}
-	{#each dnaIterator as _, i}
-		<div class="flex">
-			<pre>
+    <!-- prettier-ignore -->
+    <div class="flex flex-col items-center pb-28 pt-12 border-phosgreen border-2 p-6 rounded-xl mx-auto mt-12">
+        {#if longestDNAStrand.length > 0}
+            {#each dnaIterator as _, i}
+                <div class="flex">
+                    <pre>
             `-.`. ,',-'
                 _,-'"
             ,-',' `.`-.
@@ -162,10 +162,10 @@ B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID
             `-.`. ,',-'
                 _,-'"
             ,-',' `.`-.</pre>
-		</div>
-	{/each}
-    {/if}
-</div>
+                </div>
+            {/each}
+        {/if}
+    </div>
 </Container>
 
 
