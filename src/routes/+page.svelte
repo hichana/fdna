@@ -53,6 +53,8 @@
     let strandIsReady: boolean = false;
     let numBasePairs: number = 0;
     let numUniqueNFTProjectsInDNA: number = 0;
+    console.log("numUniqueNFTProjectsInDNA: ", numUniqueNFTProjectsInDNA);
+    
     $: {
         const strandLengthReady = $strandA.length > 0 && $strandB.length > 0;
         const strandIsEven = ($strandA.length === $strandB.length);
@@ -202,7 +204,7 @@ B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID
         <div class="pt-4 text-pink-300">
             <p>STRANDS DNA by {$user?.addr}</p>
             <p>contains {numBasePairs} base pairs</p>
-            <p>from {numUniqueNFTProjectsInDNA} Flow NFT projects.</p>
+            <p>{`from ${numUniqueNFTProjectsInDNA} Flow NFT project${numUniqueNFTProjectsInDNA > 1 ? "s" : ""}.`}</p>
         </div>
     </div>
 </Container>
