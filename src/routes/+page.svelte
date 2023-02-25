@@ -55,13 +55,22 @@
 <Container>
 	<div class="flex flex-col">
 		<div class="px-4">
+            <div>
+            <pre class="leading-3 text-center">
+##  # # ### #   ##      ##  ###  #  
+# # # #  #  #   # #     # # # # # # 
+##  # #  #  #   # #     # # # # ### 
+# # # #  #  #   # #     # # # # # # 
+##  ### ### ### ##      ##  # # # # 
+            </pre>
+            </div>
 			<p class="text-pink-300 text-md text-start my-6">
 				Start by learning more
 				<span class="text-blue-500">
 					<!-- svelte-ignore a11y-invalid-attribute -->
 					<a on:click|preventDefault={() => scrollTo('#scroll-to-about')} href="#">HERE,</a>
 				</span>
-				then start building STRANDS DNA by selecting two or more of your NFTs below:
+				then start building your STRANDS DNA by selecting two or more of your NFTs below:
 			</p>
 		</div>
 		<div class="bg-slate-600 bg-opacity-30 rounded-2xl border-2 border-phosgreen">
@@ -86,6 +95,13 @@
 			<DND listName="strandB" items={$strandB} />
 		</div>
 	</div>
+    <p class="text-xs italic mx-4 text-pink-300 my-2">
+        * make sure you're creating 
+        <span class="font-bold">
+            base pairs 
+        </span>
+        (so strandA has the same number of NFTs as strandB).
+    </p>
 </Container>
 
 <Container>
@@ -95,7 +111,7 @@
 			or something like that 🎉🔥🚀 -- but why try to be like all the other projects out there??
 			🐓💨💨💨
 		</div>
-        <div
+        <!-- <div
             class="mx-auto flex items-center w-1/2 h-1/2 py-8"
         >
             <iframe
@@ -105,7 +121,7 @@
                 class="giphy-embed"
                 allowFullScreen
             />
-        </div>
+        </div> -->
 		<div>
 			but almost everything about STRANDS is on-chain, so what we did was etch the following double
 			helix of DNA onto your transaction code that minted your NFT here (make sure you save the
