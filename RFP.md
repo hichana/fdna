@@ -4,7 +4,7 @@
         - pull out components from DVD into a new component that takes in a string id of strand a or b
 -x fix data load upon logging in
 -x fix alignment while CTA is hidden
-- probably better to not have a big intro but just start with a title, subtitble, then "Select NFTs from your wallet"?
+-x probably better to not have a big intro but just start with a title, subtitble, then "Select NFTs from your wallet"?
     -x maybe just start off with steps, like 1. If you don't have two or more Flow NFTs, go buy them from one of these awesome marketplaces
     -x the experience should start right away, and for those who want more info they should be able to veer off to get it. So how to handle it?
         -x options
@@ -13,6 +13,19 @@
             - parse down info so one page is ok
             - keep info and make it all work, 
             - minimize info at the top, have a link to the bottom, then have the info at the bottom of the page
+- ok, new layout is
+    - header
+    - sub-header explainer
+    - link to scroll to bottom to learn more (about section)
+    - Collection/selector
+    - DND DNA builder
+    - Minter/view DNA section
+    - About
+        - more explainer text
+        - links to marketplaces
+        - faq
+        - link to scroll back up to top and "start building DNA"
+
 
 
 
