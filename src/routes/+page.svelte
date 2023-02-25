@@ -40,40 +40,38 @@
 
 	$: dnaIterator = Array.from({ length: longestDNAStrand.length }, (_, i) => i);
 
-
-    function scrollTo(selector: string) {
-        const element = document.querySelector(selector);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    }
-
+	function scrollTo(selector: string) {
+		const element = document.querySelector(selector);
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth' });
+		}
+	}
 </script>
 
 <Container>
-    <CTA />
+	<CTA />
 </Container>
 
 <Container>
-    <div class="flex flex-col">
-        <div class="px-4">
-            <p class="text-pink-300 text-md text-start my-6">
-                Start by learning more 
-                <span class="text-blue-500">
-                    <!-- svelte-ignore a11y-invalid-attribute -->
-                    <a on:click|preventDefault={() => scrollTo('#scroll-to-about')} href="#">HERE,</a>
-                </span>
-                then start building a STRANDS DNA by selecting two or more of your NFTs below:
-            </p>
-        </div>
-        <div class="bg-slate-600 bg-opacity-30 rounded-2xl border-2 border-phosgreen">
-            {#if userNFTIDs}
-                {#each Object.entries(userNFTIDs) as [collectionName, nftIDs]}
-                    <NFTsDetail {collectionName} {nftIDs} />
-                {/each}
-            {/if}
-        </div>
-    </div>
+	<div class="flex flex-col">
+		<div class="px-4">
+			<p class="text-pink-300 text-md text-start my-6">
+				Start by learning more
+				<span class="text-blue-500">
+					<!-- svelte-ignore a11y-invalid-attribute -->
+					<a on:click|preventDefault={() => scrollTo('#scroll-to-about')} href="#">HERE,</a>
+				</span>
+				then start building a STRANDS DNA by selecting two or more of your NFTs below:
+			</p>
+		</div>
+		<div class="bg-slate-600 bg-opacity-30 rounded-2xl border-2 border-phosgreen">
+			{#if userNFTIDs}
+				{#each Object.entries(userNFTIDs) as [collectionName, nftIDs]}
+					<NFTsDetail {collectionName} {nftIDs} />
+				{/each}
+			{/if}
+		</div>
+	</div>
 </Container>
 
 <Container>
@@ -110,31 +108,47 @@
 </Container>
 
 <Container>
-    <div class="flex flex-col justify-center items-center">
-        <div>
-            This is the point you might expect a slick 3D animation of a pack opening and fire spewing out or
-            something like that 🎉🔥🚀. But why try to be like all the other projects out there?? 🐓💨💨💨
-        </div>
-        <div class="bg-red-300 flex flex-col w-full justify-center items-center">
-            <div class="mx-auto bg-blue-200" style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/l4EoT2T0sf3LQarWU" width="50%" height="50%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a class="text-black" href="https://giphy.com/gifs/reaction-no-attitude-l4EoT2T0sf3LQarWU">via GIPHY</a></p>
-        </div>
-        <div>
-            but almost everything about STRANDS is on-chain, so what we did was etch
-            the following double helix of DNA onto your transaction code that minted your NFT here (make
-            sure you save the link), and we also add real (but not really) DNA strands to the metadata of
-            your NFT. Check them out here on Flowview. Thanks for minting a STRANDS NFT!!!
-        </div>
-    </div>
+	<div class="flex flex-col justify-center items-center">
+		<div>
+			This is the point you might expect a slick 3D animation of a pack opening and fire spewing out
+			or something like that 🎉🔥🚀. But why try to be like all the other projects out there??
+			🐓💨💨💨
+		</div>
+		<div class="bg-red-300 flex flex-col w-full justify-center items-center">
+			<div
+				class="mx-auto bg-blue-200"
+				style="width:100%;height:0;padding-bottom:56%;position:relative;"
+			>
+				<iframe
+					src="https://giphy.com/embed/l4EoT2T0sf3LQarWU"
+					width="50%"
+					height="50%"
+					style="position:absolute"
+					frameBorder="0"
+					class="giphy-embed"
+					allowFullScreen
+				/>
+			</div>
+			<p>
+				<a class="text-black" href="https://giphy.com/gifs/reaction-no-attitude-l4EoT2T0sf3LQarWU"
+					>via GIPHY</a
+				>
+			</p>
+		</div>
+		<div>
+			but almost everything about STRANDS is on-chain, so what we did was etch the following double
+			helix of DNA onto your transaction code that minted your NFT here (make sure you save the
+			link), and we also add real (but not really) DNA strands to the metadata of your NFT. Check
+			them out here on Flowview. Thanks for minting a STRANDS NFT!!!
+		</div>
+	</div>
 
-
-    <div class="h-screen flex flex-col justify-center items-center">
-        <div>
-        </div>
-    <div>
-	<p>
-	</p>
-    </div>
-    </div>
+	<div class="h-screen flex flex-col justify-center items-center">
+		<div />
+		<div>
+			<p />
+		</div>
+	</div>
 
 	<!-- prettier-ignore -->
 	<div class="flex flex-col items-center pb-28 pt-12">
@@ -287,59 +301,12 @@ B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID
 <p>hi</p>
 <p>hi</p>
 
-
-
 <p>hi</p>
 <p>hi</p>
 <p>hi</p>
 <p>hi</p>
 <p>hi</p>
 <p>hi</p>
-
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-
-
-
 
 <p>hi</p>
 <p>hi</p>
@@ -390,11 +357,47 @@ B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID
 <p>hi</p>
 <p>hi</p>
 
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
 
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
 
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
 
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
 
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
 
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
 
 <div id="scroll-to-about">scroolll to memmmmm</div>
 <p>hi</p>
@@ -446,8 +449,6 @@ B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID
 <p>hi</p>
 <p>hi</p>
 
-
-
 <p>hi</p>
 <p>hi</p>
 <p>hi</p>
@@ -496,8 +497,6 @@ B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID
 <p>hi</p>
 <p>hi</p>
 <p>hi</p>
-
-
 
 <p>hi</p>
 <p>hi</p>
@@ -548,8 +547,6 @@ B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID
 <p>hi</p>
 <p>hi</p>
 
-
-
 <p>hi</p>
 <p>hi</p>
 <p>hi</p>
@@ -598,8 +595,6 @@ B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID
 <p>hi</p>
 <p>hi</p>
 <p>hi</p>
-
-
 
 <p>hi</p>
 <p>hi</p>
@@ -650,58 +645,12 @@ B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID
 <p>hi</p>
 <p>hi</p>
 
-
-
 <p>hi</p>
 <p>hi</p>
 <p>hi</p>
 <p>hi</p>
 <p>hi</p>
 <p>hi</p>
-
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-<p>hi</p>
-
-
 
 <p>hi</p>
 <p>hi</p>
@@ -752,5 +701,44 @@ B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID
 <p>hi</p>
 <p>hi</p>
 
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
 
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
 
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
+<p>hi</p>
