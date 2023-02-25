@@ -1,4 +1,4 @@
-<div class="flex flex-col pt-28 items-center">
+<div class="flex flex-col items-center">
 	<p class="text-5xl md:text-6xl text-center">
         Digital DNA on Flow
     </p>

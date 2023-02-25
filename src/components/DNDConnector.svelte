@@ -17,9 +17,9 @@
 <div class="flex flex-col mx-auto bg-yellow-300 bg-opacity-30">
 	<section class="flex flex-col flex-auto space-y-2.5 py-11">
 		{#each dnaIterator as _}
-			<div class="flex flex-auto space-x-3.5 px-5 py-1.5 items-center justify-center">
+			<div class="flex flex-auto space-x-3.5 px-2 sm:px-5 py-1.5 items-center justify-center">
 				<div class="">
-					<p>-</p>
+					<p class="sm:text-2xl">-</p>
 				</div>
 			</div>
 		{/each}

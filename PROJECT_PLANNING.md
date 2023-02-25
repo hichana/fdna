@@ -148,4 +148,10 @@ https://bafybeigy7cpgakfxdabjb2gxcri3fdojeyvalwq5estarwwjy6qvolzgeu.ipfs.w3s.lin
 - OG Bases FLOATs
     - four limited FLOATs ("A", "G", "C", "T") that anyone can get to bootstrap their NFT collection and start building Flow DNA right away
 
- 
+# HASH TEXT
+##  # # ### #   ## 
+# # # #  #  #   # #
+##  # #  #  #   # #
+# # # #  #  #   # #
+##  ### ### ### ## 
+

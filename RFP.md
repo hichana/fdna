@@ -35,6 +35,8 @@
     - modify for desktop to mobile
 
 
+- make state members that unless not null, will make a section not render. Then once a condition on the previous component is fulfilled, use svelte animation directive to animate the new component in.
+
 
 
 

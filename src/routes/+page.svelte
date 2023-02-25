@@ -88,49 +88,36 @@
 	<CTA />
 </Container>
 
+<div id="scroll-to-build" />
 <Divider />
 
 <Container>
-	<div class="flex flex-col ">
-		<div class="px-4">
-            <div>
+    <!-- prettier-ignore -->
+    <pre class="leading-3 text-center">
+##   #   ## ### 
+# # # # #   #   
+##  ###  #  ##  
+# # # #   # #   
+##  # # ##  ### 
 
-            <!-- prettier-ignore -->
-            <pre class="leading-3 text-center">
-##  # # ### #   ## 
-# # # #  #  #   # #
-##  # #  #  #   # #
-# # # #  #  #   # #
-##  ### ### ### ## 
-            </pre>
+                    
+##   #  ### ##   ## 
+# # # #  #  # # #   
+##  ###  #  ##   #  
+#   # #  #  # #   # 
+#   # # ### # # ##  
 
-            </div>
-			<p class="text-pink-300 text-md text-start my-6">
-				Start by learning more
-				<span class="text-blue-500">
-					<!-- svelte-ignore a11y-invalid-attribute -->
-					<a on:click|preventDefault={() => scrollTo('#scroll-to-about')} href="#">HERE,</a>
-				</span>
-				then start building your STRANDS DNA by selecting two or more of your NFTs below:
-			</p>
-		</div>
-		<div class="bg-slate-600 bg-opacity-30 rounded-2xl border-2 border-phosgreen">
-			{#if userNFTIDs}
-				{#each Object.entries(userNFTIDs) as [collectionName, nftIDs]}
-					<NFTsDetail {collectionName} {nftIDs} />
-				{/each}
-			{/if}
-		</div>
-	</div>
-</Container>
-
-<Container>
-    
+                                        
+ ## ###  #  # # ### ###  ## ### ###  ## 
+#   #   # # # # #   # # #    #  # # #   
+ #  ##  # # # # ##  # # #    #  # # # # 
+  # #    ## # # #   # # #    #  # # # # 
+##  ###   # ### ### # #  ## ### # #  ## 
+    </pre>
     <p class="mx-4 text-pink-300 text-md text-start my-6">
-        Now arrange your base pairs in any order that is meaningful to you -- the makeup, pairing and order of your DNA may be useful in future projects on Flow.
+        Now arrange your base pairs in any order that is meaningful to you -- the makeup, pairing and order of your DNA sequence may be useful in future projects on Flow.
     </p>
-
-	<div class="bg-slate-900 flex flex-col">
+	<div class="bg-slate-900 flex flex-col border-4 border-phosgreen border-dashed">
 		<div class="flex">
 			<DndNotifications listName="strandA" />
 			<DndNotifications listName="strandB" />
@@ -178,7 +165,7 @@
 
 
     <!-- prettier-ignore -->
-    <div class="flex flex-col items-center mb-28 pt-12 border-phosgreen border-2 p-6 rounded-xl mx-auto mt-12">
+    <div class="flex flex-col items-center mb-28 pt-12 border-phosgreen border-2 p-4 rounded-xl mx-auto mt-12">
         <div>
             {#if longestDNAStrand.length > 0}
                 {#each dnaIterator as _, i}
@@ -251,7 +238,7 @@ B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID
 <Container>
     <div id="scroll-to-about">
         <!-- prettier-ignore -->
-        <pre class="leading-3 text-center">
+        <pre class="leading-3 text-center bg-yellow-400">
  #  ##   #  # # ###
 # # # # # # # #  # 
 ### ##  # # # #  # 
@@ -260,7 +247,13 @@ B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID
         </pre>
     </div>
     <About />
-
+    <p class="text-pink-300 text-md text-start my-6 px-4 md:p-0">
+        Thanks for reading about STRANDS, now go 
+        <span class="text-blue-500">
+            <!-- svelte-ignore a11y-invalid-attribute -->
+            <a on:click|preventDefault={() => scrollTo('#scroll-to-build')} href="#">BUILD!!!</a>
+        </span>
+    </p>
 </Container>
 
 

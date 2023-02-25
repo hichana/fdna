@@ -37,6 +37,6 @@
 	</div>
 </nav>
 
-<main>
+<main class="pt-28">
 	<slot />
 </main>
