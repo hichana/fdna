@@ -54,7 +54,6 @@
     let strandIsReady: boolean = false;
     let numBasePairs: number = 0;
     let numUniqueNFTProjectsInDNA: number = 0;
-    console.log("numUniqueNFTProjectsInDNA: ", numUniqueNFTProjectsInDNA);
     
     $: {
         const strandLengthReady = $strandA.length > 0 && $strandB.length > 0;
