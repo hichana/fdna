@@ -89,64 +89,28 @@
 </Container>
 
 <Container>
-	<!-- TODO: make a script that pulls mint price from on-chain and displays in UI and uses here -->
-	<button
-		on:click={() => {
-			buySTRAND('10.0');
-		}}
-		>Buy NFT
-	</button>
-	<BuyTxStatus />
-
-	{#if $user?.addr}
-		<a
-			href={`https://testnet.flowview.app/account/${$user.addr}/collection/strandsCollection`}
-			target="_blank"
-			rel="noreferrer">See your STRANDS collection on Flowview</a
-		>
-	{/if}
-</Container>
-
-<Container>
 	<div class="flex flex-col justify-center items-center">
 		<div>
-			This is the point you might expect a slick 3D animation of a pack opening and fire spewing out
-			or something like that 🎉🔥🚀. But why try to be like all the other projects out there??
+			You may be expecting a slick 3D animation of a pack opening and fire spewing out
+			or something like that 🎉🔥🚀 -- but why try to be like all the other projects out there??
 			🐓💨💨💨
 		</div>
-		<div class="bg-red-300 flex flex-col w-full justify-center items-center">
-			<div
-				class="mx-auto bg-blue-200"
-				style="width:100%;height:0;padding-bottom:56%;position:relative;"
-			>
-				<iframe
-					src="https://giphy.com/embed/l4EoT2T0sf3LQarWU"
-					width="50%"
-					height="50%"
-					style="position:absolute"
-					frameBorder="0"
-					class="giphy-embed"
-					allowFullScreen
-				/>
-			</div>
-			<p>
-				<a class="text-black" href="https://giphy.com/gifs/reaction-no-attitude-l4EoT2T0sf3LQarWU"
-					>via GIPHY</a
-				>
-			</p>
-		</div>
+        <div
+            class="mx-auto flex items-center w-1/2 h-1/2 py-8"
+        >
+            <iframe
+                title="gify uh no"
+                src="https://giphy.com/embed/l4EoT2T0sf3LQarWU"
+                frameBorder="0"
+                class="giphy-embed"
+                allowFullScreen
+            />
+        </div>
 		<div>
 			but almost everything about STRANDS is on-chain, so what we did was etch the following double
 			helix of DNA onto your transaction code that minted your NFT here (make sure you save the
 			link), and we also add real (but not really) DNA strands to the metadata of your NFT. Check
 			them out here on Flowview. Thanks for minting a STRANDS NFT!!!
-		</div>
-	</div>
-
-	<div class="h-screen flex flex-col justify-center items-center">
-		<div />
-		<div>
-			<p />
 		</div>
 	</div>
 
@@ -175,6 +139,28 @@ B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID
     {/if}
 </div>
 </Container>
+
+
+<Container>
+	<!-- TODO: make a script that pulls mint price from on-chain and displays in UI and uses here -->
+	<button
+		on:click={() => {
+			buySTRAND('10.0');
+		}}
+		>Buy NFT
+	</button>
+	<BuyTxStatus />
+
+	{#if $user?.addr}
+		<a
+			href={`https://testnet.flowview.app/account/${$user.addr}/collection/strandsCollection`}
+			target="_blank"
+			rel="noreferrer">See your STRANDS collection on Flowview</a
+		>
+	{/if}
+</Container>
+
+
 
 <p>hi</p>
 <p>hi</p>
