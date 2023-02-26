@@ -120,7 +120,7 @@
                 </p>
             </div>
 
-            <div class="bg-slate-600 bg-opacity-30 rounded-2xl border-2 border-phosgreen mx-4">
+            <div class="bg-slate-600 bg-opacity-30 border-2 border-phosgreen mx-4 rounded-sm">
                 {#if userNFTIDs}
                     {#each Object.entries(userNFTIDs) as [collectionName, nftIDs]}
                         <NFTsDetail {collectionName} {nftIDs} />
@@ -163,7 +163,7 @@
                 </span>
                 (so strandA has the same number of NFTs as strandB).
             </p>
-            <div class="bg-slate-900 flex flex-col border-4 border-phosgreen border-dashed mx-4">
+            <div class="bg-slate-900 flex flex-col border-4 border-phosgreen border-dashed mx-4 rounded-sm">
                 <div 
                     style="background-image:linear-gradient(rgba(135, 80, 156, 0.9), rgba(135, 80, 156, 0.9)), url(https://upload.wikimedia.org/wikipedia/commons/0/0c/DNA_animation.gif)"
                     class="flex bg-center bg-cover"
