@@ -94,28 +94,6 @@
 	<div class="flex flex-col gap-12 sm:gap-24">
         <div>
             <div class="px-4">
-
-                <!-- prettier-ignore -->
-                <!-- <pre class="leading-3 text-center text-xs">
- ## # #  #   #   ## ###
-#   # # # # # # #   #  
-#   ### # # # #  #  ## 
-#   # # # # # #   # #  
- ## # #  #   #  ##  ###
-
-##  # # ### #   ##  ### ###  ## 
-# # # #  #  #   # #  #  # # #   
-##  # #  #  #   # #  #  # # # # 
-# # # #  #  #   # #  #  # # # # 
-##  ### ### ### ##  ### # #  ## 
-                        
-##  #    #   ## # #  ## 
-# # #   # # #   # # #   
-##  #   # # #   ##   #  
-# # #   # # #   # #   # 
-##  ###  #   ## # # ##  
-                </pre> -->
-
                 <p class="text-xl md:text-5xl text-center">
                     <span class="text-blue-100">Choose</span>
                     <span class="text-purple-100">your</span>
@@ -143,29 +121,6 @@
         </div>
 
         <div>
-        
-            <!-- prettier-ignore -->
-            <!-- <pre class="leading-3 text-center text-xs">
-##   #   ## ### 
-# # # # #   #   
-##  ###  #  ##  
-# # # #   # #   
-##  # # ##  ### 
-
-                    
-##   #  ### ##   ## 
-# # # #  #  # # #   
-##  ###  #  ##   #  
-#   # #  #  # #   # 
-#   # # ### # # ##  
-
-                                        
- ## ###  #  # # ### ###  ## ### ###  ## 
-#   #   # # # # #   # # #    #  # # #   
- #  ##  # # # # ##  # # #    #  # # # # 
-  # #    ## # # #   # # #    #  # # # # 
-##  ###   # ### ### # #  ## ### # #  ## 
-            </pre> -->
             <p class="text-xl md:text-5xl text-center">
                 <span class="text-blue-100">Sequence</span>
                 <span class="text-purple-100">your</span>
@@ -204,28 +159,6 @@
 <Divider />
 
 <Container>
-
-    <!-- prettier-ignore -->
-    <!-- <pre class="leading-3 text-center text-xs">
-# # ### ### ###
-###  #  # #  # 
-###  #  # #  # 
-# #  #  # #  # 
-# # ### # #  # 
-
-
-# #  #  # # ## 
-# # # # # # # #
- #  # # # # ## 
- #  # # # # # #
- #   #  ### # #
-
-## ### ##   #  ### ## 
-#   #  # # # # # # # #
- #  #  ##  ### # # # #
-  # #  # # # # # # # #
-##  #  # # # # # # ## 
-    </pre> -->
     <p class="text-xl md:text-5xl text-center">
         <span class="text-blue-100">Mint</span>
         <span class="text-purple-100">your</span>
