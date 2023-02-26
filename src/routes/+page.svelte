@@ -96,7 +96,13 @@
             <div class="px-4">
 
                 <!-- prettier-ignore -->
-                <pre class="leading-3 text-center text-xs">
+                <!-- <pre class="leading-3 text-center text-xs">
+ ## # #  #   #   ## ###
+#   # # # # # # #   #  
+#   ### # # # #  #  ## 
+#   # # # # # #   # #  
+ ## # #  #   #  ##  ###
+
 ##  # # ### #   ##  ### ###  ## 
 # # # #  #  #   # #  #  # # #   
 ##  # #  #  #   # #  #  # # # # 
@@ -108,11 +114,18 @@
 ##  #   # # #   ##   #  
 # # #   # # #   # #   # 
 ##  ###  #   ## # # ##  
-                </pre>
+                </pre> -->
 
-                <p class="text-pink-300 text-md text-start my-6 px-4 md:p-0">
+                <p class="text-xl md:text-5xl text-center">
+                    <span class="text-blue-100">Choose</span>
+                    <span class="text-purple-100">your</span>
+                    <span class="text-pink-100">building</span>
+                    <span class="text-green-100">blocks</span>
+                </p>
+
+                <p class="text-md text-start my-6 px-4 md:px-12">
                     Start by learning more
-                    <span class="text-blue-500">
+                    <span class="text-blue-400">
                         <!-- svelte-ignore a11y-invalid-attribute -->
                         <a on:click|preventDefault={() => scrollTo('#scroll-to-about')} href="#">HERE,</a>
                     </span>
@@ -132,7 +145,7 @@
         <div>
         
             <!-- prettier-ignore -->
-            <pre class="leading-3 text-center text-xs">
+            <!-- <pre class="leading-3 text-center text-xs">
 ##   #   ## ### 
 # # # # #   #   
 ##  ###  #  ##  
@@ -152,7 +165,13 @@
  #  ##  # # # # ##  # # #    #  # # # # 
   # #    ## # # #   # # #    #  # # # # 
 ##  ###   # ### ### # #  ## ### # #  ## 
-            </pre>
+            </pre> -->
+            <p class="text-xl md:text-5xl text-center">
+                <span class="text-blue-100">Sequence</span>
+                <span class="text-purple-100">your</span>
+                <span class="text-pink-100">base</span>
+                <span class="text-green-100">pairs</span>
+            </p>
             <p class="mx-4 text-pink-300 text-md text-start my-6">
                 A strand of digital DNA on Flow is itself made of two strands, 'strandA' and 'strandB'. Sequence your base pairs in each strand in any order that is meaningful to you -- the makeup, pairing and order may be useful in future projects on Flow.
             </p>
@@ -187,7 +206,7 @@
 <Container>
 
     <!-- prettier-ignore -->
-    <pre class="leading-3 text-center text-xs">
+    <!-- <pre class="leading-3 text-center text-xs">
 # # ### ### ###
 ###  #  # #  # 
 ###  #  # #  # 
@@ -206,7 +225,14 @@
  #  #  ##  ### # # # #
   # #  # # # # # # # #
 ##  #  # # # # # # ## 
-    </pre>
+    </pre> -->
+    <p class="text-xl md:text-5xl text-center">
+        <span class="text-blue-100">Mint</span>
+        <span class="text-purple-100">your</span>
+        <span class="text-green-100">STRAND</span>
+    </p>
+
+
 
     <!-- prettier-ignore -->
     <div class="flex flex-col items-center mb-28 pt-12 border-phosgreen border-2 p-4 rounded-xl mx-auto mt-12">
