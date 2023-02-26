@@ -211,7 +211,7 @@
     <!-- prettier-ignore -->
     <div class="flex flex-col items-center mb-28 pt-12 border-phosgreen border-2 p-4 rounded-xl mx-auto mt-12">
 
-        <div>
+        <div class="text-phosgreen">
             {#if longestDNAStrand.length > 0}
                 {#each dnaIterator as _, i}
                     <pre>
@@ -221,8 +221,8 @@
             `-.`. ,',-'
                 _,-'"
             ,-',' `.`-.</pre>
-<p class="break-all">A: {$strandA[i] ? getNFTIdentifier($strandA[i].publicLinkedType.type.type.typeID, $strandA[i].nftID) : "(strand A DNA here)"}</p>
-<p class="break-all">B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID, $strandB[i].nftID) : "(strand B DNA here)"}</p>
+<p class="break-all text-green-300">A: {$strandA[i] ? getNFTIdentifier($strandA[i].publicLinkedType.type.type.typeID, $strandA[i].nftID) : "(strand A DNA here)"}</p>
+<p class="break-all text-green-300">B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID, $strandB[i].nftID) : "(strand B DNA here)"}</p>
             <pre>
             `-.`. ,',-'
                 _,-'"
