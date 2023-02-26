@@ -10,6 +10,7 @@
 	import DndNotifications from '#components/DNDNotifications.svelte';
 	import Divider from '#components/Divider.svelte';
 	import About from '#components/About.svelte';
+	import SeparatorStrand from '#components/SeparatorStrand.svelte';
 
 	let userNFTIDs: UserNFTIDs | null = null;
 
@@ -81,15 +82,53 @@
 
     }
 
+	// let buildSectionIsVisible = false;
+	// let aboutSectionIsVisible = false;
+
+	let buildSectionIsVisible = true;
+	let aboutSectionIsVisible = true;
+
+
 </script>
 
 <Container>
 	<CTA />
+
+    <button
+		on:click={() => {
+            buildSectionIsVisible = !buildSectionIsVisible;
+            scrollTo('#scroll-to-build');
+        }}
+    >
+        <span class="text-blue-400">
+            <!-- svelte-ignore a11y-invalid-attribute -->
+            <!-- <a on:click|preventDefault={() => scrollTo('#scroll-to-about')} href="#">Learn more first</a> -->
+            Start Building!
+        </span>
+    </button>
+
+
+    {#if aboutSectionIsVisible}
+        <button
+            on:click={() => scrollTo('#scroll-to-about')}
+        >
+            Learn more
+        </button>
+    {:else}
+        <button
+            on:click={() => (aboutSectionIsVisible = !aboutSectionIsVisible)}
+        >
+            Learn more first :)
+        </button>
+    {/if}
+
 </Container>
 
-<div id="scroll-to-build"/>
-<Divider />
+<SeparatorStrand />
 
+<div id="scroll-to-build"/>
+
+{#if buildSectionIsVisible}
 <Container>
 	<div class="flex flex-col gap-12 sm:gap-24">
         <div>
@@ -150,11 +189,10 @@
                     <DndNotifications listName="strandA" />
                     <DndNotifications listName="strandB" />
                 </div>
-
         </div>
 	</div>
-
 </Container>
+{/if}
 
 <Divider />
 
@@ -165,33 +203,41 @@
         <span class="text-green-100">STRAND</span>
     </p>
 
+    <p class="text-md text-start my-6 px-4 md:px-12">
+        {numBasePairs > 4 ? "Your STRAND is long, which is great! But make sure to scroll down to see it all" : "Scroll down to see the rest of your STRAND"}
+    </p>
 
 
     <!-- prettier-ignore -->
     <div class="flex flex-col items-center mb-28 pt-12 border-phosgreen border-2 p-4 rounded-xl mx-auto mt-12">
 
+         {#if longestDNAStrand.length > 0}
+            {#each dnaIterator as _, i}
         <div class="text-phosgreen">
-            {#if longestDNAStrand.length > 0}
-                {#each dnaIterator as _, i}
-                    <pre>
-            `-.`. ,',-'
-                _,-'"
-            ,-',' `.`-.
-            `-.`. ,',-'
-                _,-'"
-            ,-',' `.`-.</pre>
-<p class="break-all text-green-300">A: {$strandA[i] ? getNFTIdentifier($strandA[i].publicLinkedType.type.type.typeID, $strandA[i].nftID) : "(strand A DNA here)"}</p>
-<p class="break-all text-green-300">B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID, $strandB[i].nftID) : "(strand B DNA here)"}</p>
             <pre>
-            `-.`. ,',-'
-                _,-'"
-            ,-',' `.`-.
-            `-.`. ,',-'
-                _,-'"
-            ,-',' `.`-.</pre>
-                {/each}
-            {/if}
+`-.`. ,',-'
+    _,-'"
+,-',' `.`-.
+`-.`. ,',-'
+    _,-'"
+,-',' `.`-.</pre>
         </div>
+
+                <div>
+                <p class="break-all text-green-300">A: {$strandA[i] ? getNFTIdentifier($strandA[i].publicLinkedType.type.type.typeID, $strandA[i].nftID) : "(strand A DNA here)"}</p>
+                <p class="break-all text-green-300">B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID, $strandB[i].nftID) : "(strand B DNA here)"}</p>
+                </div>
+        <div class="text-phosgreen">
+            <pre>
+`-.`. ,',-'
+    _,-'"
+,-',' `.`-.
+`-.`. ,',-'
+    _,-'"
+,-',' `.`-.</pre>
+        </div>
+            {/each}
+        {/if}
         <div class="pt-4 text-pink-300">
             <p>STRANDS DNA by {$user?.addr}</p>
             <p>contains {numBasePairs} base pairs</p>
@@ -234,28 +280,27 @@
 	{/if}
 </Container>
 
-<Divider />
+<SeparatorStrand />
 
-<Container>
-    <div id="scroll-to-about">
-        <!-- prettier-ignore -->
-        <pre class="leading-3 text-center text-xs">
+{#if aboutSectionIsVisible}
+    <Container>
+        <div id="scroll-to-about">
+            <!-- prettier-ignore -->
+            <pre class="leading-3 text-center text-xs">
  #  ##   #  # # ###        #    ###  #   # 
 # # # # # # # #  #        #     #   # # # #
 ### ##  # # # #  #       #      ##  ### # #
 # # # # # # # #  #      #       #   # #  ##
 # # ##   #  ###  #     #        #   # #   #
-        </pre>
-    </div>
-    <About />
-    <p class="text-pink-300 text-md text-start my-6 px-4 md:p-0">
-        Thanks for reading about STRANDS, now go 
-        <span class="text-blue-500">
-            <!-- svelte-ignore a11y-invalid-attribute -->
-            <a on:click|preventDefault={() => scrollTo('#scroll-to-build')} href="#">BUILD!!!</a>
-        </span>
-    </p>
-</Container>
-
-
-
+            </pre>
+        </div>
+        <About />
+        <p class="text-pink-300 text-md text-start my-6 px-4 md:p-0">
+            Thanks for reading about STRANDS, now go 
+            <span class="text-blue-500">
+                <!-- svelte-ignore a11y-invalid-attribute -->
+                <a on:click|preventDefault={() => scrollTo('#scroll-to-build')} href="#">BUILD!!!</a>
+            </span>
+        </p>
+    </Container>
+{/if}
