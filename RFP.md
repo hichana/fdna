@@ -39,6 +39,8 @@
 
 
 
+- add svelte confetti, find png w/ alpha layer images of DNA and use those
+https://github.com/Mitcheljager/svelte-confetti
 
 
 
