@@ -172,15 +172,15 @@
                 <span class="text-pink-100">base</span>
                 <span class="text-green-100">pairs</span>
             </p>
-            <p class="mx-4 text-pink-300 text-md text-start my-6">
-                A strand of digital DNA on Flow is itself made of two strands, 'strandA' and 'strandB'. Sequence your base pairs in each strand in any order that is meaningful to you -- the makeup, pairing and order may be useful in future projects on Flow.
+            <p class="text-md text-start my-6 px-4 md:px-12">
+                A strand of digital DNA on Flow is itself made of two strands, 'strandA' and 'strandB'. Sequence your base pairs in each strand in any order that is meaningful to you -- the makeup, pairing and order may be useful in this, or other future projects on Flow.
             </p>
-            <p class="text-xs italic mx-4 text-pink-300 my-2">
+            <p class="text-sm italic mx-4 my-2">
                 * make sure you're creating 
                 <span class="font-bold">
                     base pairs 
                 </span>
-                (so strandA has the same number of NFTs as strandB).
+                (so that strandA has the same number of NFTs as strandB).
             </p>
             <div class="bg-slate-900 flex flex-col border-4 border-phosgreen border-dashed mx-4 rounded-sm">
                 <div 
@@ -282,17 +282,14 @@
 	<BuyTxStatus />
 
 	<div class="flex flex-col justify-center items-center">
-		<div>
-			You may be expecting a slick 3D animation of a pack opening and fire spewing out
-			or something like that 🎉🔥🚀 -- but why try to be like all the other projects out there??
-			🐓💨💨💨.
-		</div>
-		<div>
-			Almost everything about STRANDS is on-chain, so instead of the fancy dancy, what we did was etch the following double
-			helix of DNA onto your transaction code that minted your NFT here (make sure you save the
-			link), and we also add real (but not really) DNA strands to the metadata of your NFT. Check
-			them out here on Flowview. Thanks for minting a STRANDS NFT!!!
-		</div>
+
+        <p class="text-md text-start my-6 px-4 md:px-12">
+            Instead of a slick 3D animation of a pack opening and fire spewing out or something like that, 
+            we etched the following double helix of DNA onto your transaction code that minted your NFT.
+            We also added real (but not really) DNA strands to the metadata of your NFT. 
+            [Flowscan-link] (tx)
+            [Flowview-link] (collection)
+		</p>
 	</div>
 
 	{#if $user?.addr}
@@ -310,11 +307,11 @@
     <div id="scroll-to-about">
         <!-- prettier-ignore -->
         <pre class="leading-3 text-center text-xs">
- #  ##   #  # # ###
-# # # # # # # #  # 
-### ##  # # # #  # 
-# # # # # # # #  # 
-# # ##   #  ###  # 
+ #  ##   #  # # ###        #    ###  #   # 
+# # # # # # # #  #        #     #   # # # #
+### ##  # # # #  #       #      ##  ### # #
+# # # # # # # #  #      #       #   # #  ##
+# # ##   #  ###  #     #        #   # #   #
         </pre>
     </div>
     <About />
