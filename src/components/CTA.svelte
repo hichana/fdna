@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Button from "./Button.svelte";
+
 
 	function scrollTo(selector: string) {
         // solution modified from SO: https://stackoverflow.com/questions/49820013/javascript-scrollintoview-smooth-scroll-and-offset
@@ -43,18 +45,15 @@
 		duplicated, digital on-chain DNA to use across future experiences on Flow.
 	</p> -->
 
-    <button
-		on:click={() => {
-            scrollTo('#scroll-to-build');
-        }}
-    >
-        Start Building!
-    </button>
-
-    <button
-        on:click={() => scrollTo('#scroll-to-about')}
-    >
-        Learn more
-    </button>
+    <div class="flex gap-3 my-6">
+        <Button
+            onClick={() => scrollTo('#scroll-to-build')}
+            buttonText={'Start Building!'}
+        />
+        <Button
+            onClick={() => scrollTo('#scroll-to-about')}
+            buttonText={'Learn More'}
+        />
+    </div>
 
 </div>
