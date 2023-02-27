@@ -18,7 +18,7 @@
 					<Button buttonText="Log In/Sign Up" onClick={logIn} />
 				{/if}
 			{:else}
-				<p>Loading login status##########################</p>
+				<p>Loading login status#########################</p>
 			{/if}
 		</div>
 	</div>
