@@ -21,6 +21,7 @@ export function configureFCL() {
 		});
 	} else if (import.meta.env.VITE_FLOW_ENV === 'testnet') {
 		fcl.config({
+            'app.detail.icon': 'https://bafybeibqwjgwfxk4keropnob73t56vo4fy7yhlf6twdjizl4zgemjotxj4.ipfs.w3s.link/STRANDS_square.png',
 			'accessNode.api': 'https://rest-testnet.onflow.org',
 			'discovery.wallet': 'https://fcl-discovery.onflow.org/testnet/authn',
 			'0xFlowToken': '0x7e60df042a9c0868',
