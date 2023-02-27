@@ -87,7 +87,7 @@
 	<div class="flex flex-col gap-12 sm:gap-24">
 		<div>
 			<div class="px-4">
-				<p class="text-center text-xl md:text-5xl">
+				<p class="text-center text-3xl md:text-5xl">
 					<span class="bg-gradient-to-b from-phosgreen to-white bg-clip-text text-transparent"
 						>Choose your building blocks</span
 					>
@@ -108,13 +108,13 @@
 		</div>
 
 		<div>
-			<p class="text-center text-xl md:text-5xl">
+			<p class="text-center text-3xl md:text-5xl">
 				<span class="">Sequence your base pairs</span>
 			</p>
 
 			<p class="text-md my-6 px-4 text-start md:px-12">
 				A strand of digital DNA on Flow is itself made of two strands, 'strandA' and 'strandB'.
-				Sequence your base pairs in each strand in any order that is meaningful to you -- the
+				Drag the cards below to sequence your base pairs in each strand in any order that is meaningful to you -- the
 				makeup, pairing and order may be useful in this, or other future projects on Flow.
 			</p>
 			<p class="mx-4 my-2 text-sm italic">
@@ -123,17 +123,19 @@
 				(so that strandA has the same number of NFTs as strandB).
 			</p>
 			<div
-				class="mx-4 flex flex-col rounded-sm border-4 border-dashed border-phosgreen bg-slate-900"
+				class="mx-4 flex flex-col bg-slate-900"
 			>
 				<div
-					style="background-image:linear-gradient(rgba(135, 80, 156, 0.9), rgba(135, 80, 156, 0.9)), url(https://upload.wikimedia.org/wikipedia/commons/0/0c/DNA_animation.gif)"
+					style="background-image:linear-gradient(rgba(0, 200, 0, 0.4), rgba(0, 200, 0, 0.4)), url(https://upload.wikimedia.org/wikipedia/commons/0/0c/DNA_animation.gif)"
 					class="flex bg-cover bg-center"
 				>
 					{#if nftsAreSelected}
 						<DND listName="strandA" items={$strandA} />
 						<DND listName="strandB" items={$strandB} />
 					{:else}
-						<p>(Select NFTs Above to start sequencing)</p>
+                        <div class="flex mx-auto h-36 sm:h-96 items-center">
+                            <p class="text-md sm:text-3xl font-normal">(Select NFTs above to start sequencing)</p>
+                        </div>
 					{/if}
 				</div>
 			</div>
@@ -145,12 +147,12 @@
 	</div>
 
 	{#if numBasePairs > 0}
-		<div class="flex flex-col" transition:slide>
-			<p class="text-center text-xl md:text-5xl">
+		<div class="flex flex-col mt-16" transition:slide>
+			<p class="text-center text-3xl md:text-5xl">
 				<span class="">Mint your STRAND</span>
 			</p>
 
-			<p class="text-md my-6 px-4 text-start md:px-12">
+			<p class="text-md mt-6 px-4 text-center md:px-12">
 				{numBasePairs > 4
 					? 'Your STRAND is long, which is great! But make sure to scroll down to see it all'
 					: 'Scroll down to see the rest of your STRAND'}

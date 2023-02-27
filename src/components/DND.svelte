@@ -38,7 +38,7 @@
 	>
 		{#each items as item (item.id)}
 			<div
-				class="flex w-full justify-start space-x-3.5 rounded-2xl border-2 border-pink-400 px-5 py-1.5"
+				class="flex w-full justify-start space-x-3.5 rounded-2xl border-2 border-pink-400 px-5 py-1.5 bg-slate-900 bg-opacity-80"
 				animate:flip={{ duration: flipDurationMs }}
 			>
 				<img
