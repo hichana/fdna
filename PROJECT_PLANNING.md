@@ -38,9 +38,9 @@
     -x makes a .env available for use in web app and flow.json
     -x integrates prettier, svelte prettier plugin
     -x includes ignore files for git and prettier
-- functional UI
+-x functional UI
     -x has project artwork that is image of ascii dna???
-    - user can see a CTA to start building a Flow NFT collection -- includes descriptive text about this project and Web3/Flow, links to marketplaces and projects, and to the four OG Bases FLOATS
+    -x user can see a CTA to start building a Flow NFT collection -- includes descriptive text about this project and Web3/Flow, links to marketplaces and projects, and to the four OG Bases FLOATS
         - (not sure whether to do OG FLOATS or not)
     -x user can login using Blocto and other wallets
     -x user can see a list of all NFT projects for which their wallet contains a collection that is registered in the nft catalog
@@ -49,8 +49,10 @@
     -x selected NFTs appear can be arranged inside of two vertical dnd palletes to signify they are "base pairs"
     -x users can click/tap drag NFT data between vertical dnd to build and rearrange base pairs
     -x with each re-arrange of base pairs, user is informed whether or not that permutation of Flow DNA for either side is taken or not
-    - user can mint their Flow DNA strand, showing transaction status throughout the process and providing a link to the transaction on flowscan
+    -x user can mint their Flow DNA strand, showing transaction status throughout the process and providing a link to the transaction on flowscan
     -x user can see a card representing their Flow DNA strand with a list of the DNA string identifiers from each strand
+- layout and design UI
+    - as needed
 - app testing/automation (all use overflow)
     - has a testing utils that can be used with an integration test
     - basic integration test to test DNA building and minting
@@ -74,6 +76,7 @@
     - in description of challenges talk about wanting to save catalog data on-chian/nft but difficulties due to passing in NFT only ref
 - testnet deployment
     -x script populates test user with exampleNFTs in their wallet
+    - STRANDS has appropriate metadata set before final testnet deployment
     - do final testnet deployment for submission
 -x emulator
     -x manages accounts and testnet and mainnet deployments
@@ -82,13 +85,13 @@
 - repo/docs
     - scripts examples walkthrough for pulling DNA data
     - examples of how DNA data can be leveraged across NFT experiences
-- smart contracts and scripts/transactions
+-x smart contracts and scripts/transactions
     - contracts have sufficient comments to present the abstraction of DNA in a contract for appropriately
     -x NFTCatalog, NFTCatalogAdmin, NFTRetrieval (not deployed to testnet)
         - get nfts in account
         - get nfts in account from ids
-    - Strands
-        - has appropriate events
+    -x Strands
+        -x has appropriate events
         -x can mint nfts
         -x on contract init
             -x sets royalty receiver(s)
