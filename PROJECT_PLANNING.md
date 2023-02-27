@@ -13,12 +13,13 @@
 -x scaffold web app while building basic app functionality in smart contracts
 -x circle back to contracts, working on building data for string interpolated version of mint tx in frontend while also connecting UI elements to flow scripts and transactions
 -x once functionality appears ok, do a testnet deployment 
-- build out layout, design, artwork
-- create hackathon submission
-- checklist before testnet deploy/submission
-    - must have collection and NFT artwork created and links added to STRANDS, all other metadata strings must be right
+-x checklist before testnet deploy/submission
+    -x must have collection and NFT artwork created and links added to STRANDS, all other metadata strings must be right
     -x in minter, update mint strings for thumbnail and thumbnail path
-    - in fcl config, change app.detail.icon
+    -x in fcl config, change app.detail.icon
+- build out layout, design, artwork
+- launch/re-launch to testnet
+- create hackathon submission
 
 # REQUIREMENTS
 -x external
@@ -53,17 +54,6 @@
     -x user can see a card representing their Flow DNA strand with a list of the DNA string identifiers from each strand
 - layout and design UI
     - as needed
-- app testing/automation (all use overflow)
-    - has a testing utils that can be used with an integration test
-    - basic integration test to test DNA building and minting
-        - admin can change payment recipient
-        - admin can change royalty receivers
-        - admin cna change mint price
-    -x setup script registers projects to the nft-catalog and demonstrates the whole minting process
-    -x scripts automate processes on testnet
-    -x has testnet scripts and transactions
-        - setup account to receive royalties
-        - give demo user NFTs 
 - project submission to hackathon
     - precise presentation deck and short/understandable demo video
         - video is 2-3 minutes long
@@ -76,7 +66,7 @@
     - in description of challenges talk about wanting to save catalog data on-chian/nft but difficulties due to passing in NFT only ref
 - testnet deployment
     -x script populates test user with exampleNFTs in their wallet
-    - STRANDS has appropriate metadata set before final testnet deployment
+    -x STRANDS has appropriate metadata set before final testnet deployment
     - do final testnet deployment for submission
 -x emulator
     -x manages accounts and testnet and mainnet deployments
@@ -85,6 +75,7 @@
 - repo/docs
     - scripts examples walkthrough for pulling DNA data
     - examples of how DNA data can be leveraged across NFT experiences
+    - includes instructions for judges to deploy and run the app locally and on testnet
 -x smart contracts and scripts/transactions
     - contracts have sufficient comments to present the abstraction of DNA in a contract for appropriately
     -x NFTCatalog, NFTCatalogAdmin, NFTRetrieval (not deployed to testnet)
@@ -124,23 +115,31 @@
     - NFT art (single image for all)
     - Strand.cdc metadata art
     - ExampleNFT.cdc metadata art
-- project repo
-    - includes instructions for judges to deploy and run the app locally and on testnet
 - project deployment (vercel)
-    - adds devT to package.json
-    - includes appropriately scoped env var for flow_env, and any others that may use conditional logic
+    -x adds devT to package.json
+    - vercel settings for deployment includes appropriately scoped env var for flow_env, and any others that may use conditional logic
 
 # ICEBOX/STRETCH REQUIREMENTS
 - add page.ts to grab env var for FLOW_ENV and feed to markup to conditionally render either mainnet or testnet flowview
 - build a double-helix view of NFTs that were just minted into user DNA. can use the strandA and strandB writable store for the data
-- user integration tests
-    - can't mint an uneven number base pair
 - if time refactor string interpolation to not make redundant collection borrows
 - use AuthAccount (in minter) to verify person minting actually owns the NFTs rather than just checking resource owner and comparing against deposit collection address
 - web app background cylces between green, purple, blue and yellow
 - query params to save user state
 - when minting, uses some kind of confetti with double helix art
 - in my submission, include a dev.to post called 'the story of FLOW DNA' where I talk about over-engineering a solution with my recursive node structure for The FLOASIS, and why I chose to re-do/build it from the ground up and offer to other builders. "Because concatenated strings just looked yucky to me"
+- user integration tests
+    - can't mint an uneven number base pair
+    - has a testing utils that can be used with an integration test
+    - basic integration test to test DNA building and minting
+        - admin can change payment recipient
+        - admin can change royalty receivers
+        - admin cna change mint price
+    -x setup script registers projects to the nft-catalog and demonstrates the whole minting process
+    -x scripts automate processes on testnet
+    -x has testnet scripts and transactions
+        - setup account to receive royalties
+        - give demo user NFTs 
 
 # MAINNET
 - figure out how IPFS paths really work for metadata standard

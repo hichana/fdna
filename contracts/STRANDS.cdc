@@ -28,16 +28,6 @@ pub contract STRANDS: NonFungibleToken {
     pub let CollectionPublicPath: PublicPath
     pub let AdminStoragePath: StoragePath
 
-    pub struct Base {
-        pub let identifier: String
-        pub let id: UInt64
-
-        init(identifier: String, id: UInt64) {
-            self.identifier = identifier
-            self.id = id
-        }
-    }
-
     pub resource NFT: NonFungibleToken.INFT, MetadataViews.Resolver {
         
         pub let id: UInt64
@@ -54,7 +44,7 @@ pub contract STRANDS: NonFungibleToken {
         pub let strandAIdentifiers: String
         pub let strandBIdentifiers: String
 
-        access(self) let basePairs: [[Base]]
+        access(self) let basePairs: [[String]]
     
         init(
             id: UInt64,
@@ -68,7 +58,7 @@ pub contract STRANDS: NonFungibleToken {
             strandB: String,
             strandAIdentifiers: String,
             strandBIdentifiers: String,
-            basePairs: [[Base]]
+            basePairs: [[String]]
         ) {
             self.id = id
             self.name = name
@@ -318,6 +308,7 @@ pub contract STRANDS: NonFungibleToken {
         var strandA = ""
         var strandALoop = 0
         let strandALength = strandARefs.length
+        let basePairs: [[String]] = []
 
         for strandABase in strandARefs {
 
@@ -340,6 +331,9 @@ pub contract STRANDS: NonFungibleToken {
 
             // build strandA DNA
             strandA = strandA.concat(dnaASegment)
+
+            // build base pairs
+            basePairs.append([fullyQualifiedStrandAID])
         }
 
         // check if the constructed strand already exists in the strands registry
@@ -381,6 +375,9 @@ pub contract STRANDS: NonFungibleToken {
 
             // build strandB DNA
             strandB = strandB.concat(dnaBSegment)
+
+            // build base pairs
+            basePairs[strandBLoop -1].append(fullyQualifiedStrandBID)
         }
 
         // check if the constructed strand already exists in the strands registry
@@ -393,24 +390,6 @@ pub contract STRANDS: NonFungibleToken {
         // add to metadata
         metadata["strandBIdentifiers"] = strandBIdentifiers
         metadata["strandB"] = strandB
-
-        // base pairs
-        var basePairsLoop = 0
-        let basePairs: [[Base]] = []
-        for strand in strandARefs {
-            let strandABase = Base(
-                identifier: strand.getType().identifier,
-                id: strand.id
-            )
-            let strandBBase = Base(
-                identifier: strandBRefs[basePairsLoop].getType().identifier,
-                id: strandBRefs[basePairsLoop].id
-            )
-
-            basePairs.append([strandABase, strandBBase])
-
-            basePairsLoop = basePairsLoop + 1
-        }
         metadata["basePairs"] = basePairs
 
         // construct NFT name
