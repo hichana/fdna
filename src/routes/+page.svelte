@@ -10,6 +10,8 @@
 	import DndNotifications from '#components/DNDNotifications.svelte';
 	import About from '#components/About.svelte';
 	import SeparatorStrand from '#components/SeparatorStrand.svelte';
+	import Button from '#components/Button.svelte';
+	import ButtonLink from '#components/ButtonLink.svelte';
 
 	let userNFTIDs: UserNFTIDs | null = null;
 
@@ -106,7 +108,6 @@
 				<span class="">Sequence your base pairs</span>
 			</p>
 
-
 			<p class="text-md my-6 px-4 text-start md:px-12">
 				A strand of digital DNA on Flow is itself made of two strands, 'strandA' and 'strandB'.
 				Sequence your base pairs in each strand in any order that is meaningful to you -- the
@@ -198,17 +199,21 @@
 		<p class="text-md my-6 px-4 text-start md:px-12">
 			Instead of a slick 3D animation of a pack opening and fire spewing out or something like that,
 			we etched the following double helix of DNA onto your transaction code that minted your NFT.
-			We also added real (but not really) DNA strands to the metadata of your NFT. [Flowscan-link]
-			(tx) [Flowview-link] (collection)
+			We also added real (but not really) DNA strands to the metadata of your NFT.
 		</p>
 	</div>
 
 	{#if $user?.addr}
-		<a
-			href={`https://testnet.flowview.app/account/${$user.addr}/collection/strandsCollection`}
-			target="_blank"
-			rel="noreferrer">See your STRANDS collection on Flowview</a
-		>
+        <div class="my-6 flex gap-3 mx-auto">
+            <Button
+                buttonText="Transaction on Flowscan"
+                buttonLink={`https://testnet.flowview.app/account/${$user.addr}/collection/strandsCollection`}
+            />
+            <Button
+                buttonText="Collection on Flowview"
+                buttonLink={`https://testnet.flowview.app/account/${$user.addr}/collection/strandsCollection`}
+            />
+        </div>
 	{/if}
 </Container>
 
