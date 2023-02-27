@@ -217,7 +217,7 @@
 					{#if $user?.addr}
 						<div class="my-6 mx-auto flex gap-3">
 							<a
-								href={`https://testnet.flowscan.org/transaction/${$buyTxID}`}
+								href={`https://testnet.flowscan.org/transaction/${$buyTxID}/script`}
 								target="_blank"
 								rel="noreferrer"
 								class="text-xl font-normal text-phosgreen underline"
