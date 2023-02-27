@@ -115,9 +115,9 @@
     - NFT art (single image for all)
     - Strand.cdc metadata art
     - ExampleNFT.cdc metadata art
-- project deployment (vercel)
+-x project deployment (vercel)
     -x adds devT to package.json
-    - vercel settings for deployment includes appropriately scoped env var for flow_env, and any others that may use conditional logic
+    -x vercel settings for deployment includes appropriately scoped env var for flow_env, and any others that may use conditional logic
 
 # ICEBOX/STRETCH REQUIREMENTS
 - add page.ts to grab env var for FLOW_ENV and feed to markup to conditionally render either mainnet or testnet flowview
