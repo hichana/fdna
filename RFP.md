@@ -30,12 +30,11 @@
         - move things into About from CTA
     - in About
         - build out the elements, componentize the accordion (into its own component to be used with both faq and NFT selection)
-- get login/out button to not flash loading
-
-- handle if user is logged in but has no NFTs from catalog
+-x get login/out button to not flash loading
 - now get layout dialed
     - all components should be nested appropriately
     - modify for desktop to mobile
+- handle if user is logged in but has no NFTs from catalog
 
 
 
