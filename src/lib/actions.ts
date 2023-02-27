@@ -2,7 +2,7 @@ import * as fcl from '@onflow/fcl';
 import { configureFCL } from './config';
 import { browser } from '$app/environment';
 import { get } from 'svelte/store';
-import { user, strandA, strandB, buyTxStatus } from './stores';
+import { user, strandA, strandB, buyTxStatus, buyTxID } from './stores';
 import { constructNFTCollectionCode, replaceCDCImports } from './helpers';
 import GET_NFT_IDS_IN_ACCOUNT from '#queries/NFTCatalog/get_nft_ids_in_account.cdc?raw';
 import GET_NFTS_IN_ACCOUNT_FROM_IDS from '#queries/NFTCatalog/get_nfts_in_account_from_ids.cdc?raw';
@@ -230,6 +230,8 @@ export const buySTRAND = async (mintPrice: string) => {
 		proposer: fcl.authz,
 		authorizations: [fcl.authz]
 	});
+
+    buyTxID.set(transactionId);
 
 	fcl
 		.tx(transactionId)

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { user, strandA, strandB, buyTxStatus } from '#lib/stores';
+	import { user, strandA, strandB, buyTxStatus, buyTxID } from '#lib/stores';
 	import { slide } from 'svelte/transition';
     import { scrollTo } from '#lib/helpers';
 	import { getUserNFTIDs, buySTRAND } from '#lib/actions';
@@ -213,14 +213,22 @@
 
                     {#if $user?.addr}
                         <div class="my-6 flex gap-3 mx-auto">
-                            <Button
-                                buttonText="Transaction on Flowscan"
-                                buttonLink={`https://testnet.flowview.app/account/${$user.addr}/collection/strandsCollection`}
-                            />
-                            <Button
-                                buttonText="Collection on Flowview"
-                                buttonLink={`https://testnet.flowview.app/account/${$user.addr}/collection/strandsCollection`}
-                            />
+                            <a
+                                href={`https://testnet.flowscan.org/transaction/${$buyTxID}`}
+                                target="_blank" 
+                                rel="noreferrer"
+                                class="underline text-phosgreen text-xl font-normal"
+                            >
+                                Transaction on Flowscan
+                            </a>
+                            <a
+                                href={`https://testnet.flowview.app/account/${$user.addr}/collection/strandsCollection`}
+                                target="_blank" 
+                                rel="noreferrer"
+                                class="underline text-phosgreen text-xl font-normal"
+                            >
+                                Collection on Flowview
+                            </a>
                         </div>
                     {/if}
                 </div>
