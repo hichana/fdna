@@ -27,8 +27,10 @@
 </script>
 
 <div class="mx-auto flex w-full flex-col">
-	<div class="flex h-10 items-center py-6 sm:py-10">
-		<p class="mx-auto text-center font-bold">{listName}</p>
+	<div class="flex h-10 items-center py-10">
+        <div class="rounded-2xl px-4 py-1.5  bg-slate-50 bg-opacity-90 mx-auto">
+            <p class="text-slate-900 text-center font-bold text-lg">{listName}</p>
+        </div>
 	</div>
 	<section
 		class="h-120 w-full flex-auto space-y-2.5 px-4 pb-11"
