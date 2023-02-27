@@ -30,26 +30,21 @@
         - move things into About from CTA
     - in About
         - build out the elements, componentize the accordion (into its own component to be used with both faq and NFT selection)
+- get login/out button to not flash loading
 
-
+- handle if user is logged in but has no NFTs from catalog
 - now get layout dialed
     - all components should be nested appropriately
     - modify for desktop to mobile
 
 
-- make state members that unless not null, will make a section not render. Then once a condition on the previous component is fulfilled, use svelte animation directive to animate the new component in.
 
 
 
-- add svelte confetti, find png w/ alpha layer images of DNA and use those
-https://github.com/Mitcheljager/svelte-confetti
 
 
 
-- get login/out button to not flash loading
 
-
-- handle if user is logged in but has no NFTs from catalog
 
 
 

@@ -120,6 +120,8 @@
     -x vercel settings for deployment includes appropriately scoped env var for flow_env, and any others that may use conditional logic
 
 # ICEBOX/STRETCH REQUIREMENTS
+- add svelte confetti, find png w/ alpha layer images of DNA and use those
+    https://github.com/Mitcheljager/svelte-confetti
 - embed the ascii art on-chain as the three pieces separated by <br> -- use metadata standard to say how to display it (like timestamp does)
 - add page.ts to grab env var for FLOW_ENV and feed to markup to conditionally render either mainnet or testnet flowview
 - build a double-helix view of NFTs that were just minted into user DNA. can use the strandA and strandB writable store for the data
