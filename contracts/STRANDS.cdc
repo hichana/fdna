@@ -10,12 +10,19 @@ pub contract STRANDS: NonFungibleToken {
     access(account) var royaltyReceivers: [MetadataViews.Royalty]
     access(account) var mintPrice: UFix64
     access(account) var mintingIsPaused: Bool
+    
+    // key is the DNA strand, value is the timestamp it was claimed
     access(contract) let strands: {String: UFix64}
 
     pub event ContractInitialized()
 
     pub event Withdraw(id: UInt64, from: Address?)
     pub event Deposit(id: UInt64, to: Address?)
+    pub event MintPriceChanged(newMintPrice: UFix64)
+    pub event PaymentRecipientChanged(newPaymentRecipient: Address)
+    pub event RoyaltyReceiversChanged(newRoyaltyReceivers: [Address])
+    pub event MintingPaused()
+    pub event MintingResumed()
 
     pub let CollectionStoragePath: StoragePath
     pub let CollectionPublicPath: PublicPath
@@ -442,6 +449,7 @@ pub contract STRANDS: NonFungibleToken {
 
         pub fun changeMintPrice(newMintPrice: UFix64) {
             STRANDS.mintPrice = newMintPrice
+            emit MintPriceChanged(newMintPrice: newMintPrice)
         }
 
         pub fun changePaymentRecipient(newPaymentRecipient: Address) {
@@ -451,6 +459,7 @@ pub contract STRANDS: NonFungibleToken {
             assert(flowTokenReceiverCap.borrow() != nil, message: "Missing or mis-typed FlowToken receiver")
 
             STRANDS.paymentRecipient = newPaymentRecipient
+            emit PaymentRecipientChanged(newPaymentRecipient: newPaymentRecipient)
         }
 
         pub fun changeRoyaltyReceivers(newRoyaltyReceivers: [Address], newCuts: [UFix64]) {
@@ -460,6 +469,7 @@ pub contract STRANDS: NonFungibleToken {
 
             // update the royalty receivers
             STRANDS.royaltyReceivers = royaltyReceivers
+            emit RoyaltyReceiversChanged(newRoyaltyReceivers: newRoyaltyReceivers)
 
         }
 
@@ -468,6 +478,7 @@ pub contract STRANDS: NonFungibleToken {
                 STRANDS.mintingIsPaused == false: "Minting is already paused!"
             }
             STRANDS.mintingIsPaused = true
+            emit MintingPaused()
         }
 
         pub fun resumeMinting() {
@@ -475,6 +486,7 @@ pub contract STRANDS: NonFungibleToken {
                 STRANDS.mintingIsPaused == true: "Minting is not already paused!"
             }
             STRANDS.mintingIsPaused = false
+            emit MintingResumed()
         }
 
     }

@@ -30,8 +30,6 @@
         - move things into About from CTA
     - in About
         - build out the elements, componentize the accordion (into its own component to be used with both faq and NFT selection)
-- 
-
 
 
 - now get layout dialed

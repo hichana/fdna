@@ -87,7 +87,7 @@
     -x NFTCatalog, NFTCatalogAdmin, NFTRetrieval (not deployed to testnet)
         - get nfts in account
         - get nfts in account from ids
-    -x Strands
+    - Strands
         - has appropriate events
         -x can mint nfts
         -x on contract init
@@ -106,7 +106,7 @@
         -x NFT resource members include
             - a 'basePairs' [[String]] member to represent the ordered double-stranded/helix in DNA
             - a string representation of each strand ('helix1' and 'helix2'), where the string is a comma-separated list of fully qualified identifiers, ex: A.[address].[contract-name].[nft-id]
-        - minter
+        -x minter
             -x constructs each DNA strand's concatenated string identifier and checks it against the registry, panicing if it already exists in the registry
             -x when constructing the DNA strands, adds each ref or ref string to a strand1 and strand2 array, checks length of both, panicking if the length of each is different (not necessary)
         -x provides public methods for retrieving DNA records
