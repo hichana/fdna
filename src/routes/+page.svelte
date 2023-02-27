@@ -82,25 +82,17 @@
 	<div class="flex flex-col gap-12 sm:gap-24">
 		<div>
 			<div class="px-4">
-				<p class="text-center text-xl md:text-5xl">
-					<span class="text-blue-100">Choose</span>
-					<span class="text-purple-100">your</span>
-					<span class="text-pink-100">building</span>
-					<span class="text-green-100">blocks</span>
-				</p>
+			<p class="text-center text-xl md:text-5xl">
+				<span class="text-transparent bg-gradient-to-b from-phosgreen to-white bg-clip-text">Choose your building blocks</span>
+			</p>
 
 				<p class="text-md my-6 px-4 text-start md:px-12">
-					Start by learning more
-					<span class="text-blue-400">
-						<!-- svelte-ignore a11y-invalid-attribute -->
-						<a on:click|preventDefault={() => scrollTo('#scroll-to-about')} href="#">HERE,</a>
-					</span>
-					then build your STRAND by selecting two or more of your NFTs as the building blocks of your
+					Build your STRAND by selecting two or more of your NFTs as the building blocks of your
 					digital DNA on Flow:
 				</p>
 			</div>
 
-			<div class="mx-4 rounded-sm border-2 border-phosgreen bg-slate-600 bg-opacity-30">
+			<div class="mx-4 rounded-2xl border-2 border-phosgreen bg-slate-600 bg-opacity-30">
 				{#if userNFTIDs}
 					{#each Object.entries(userNFTIDs) as [collectionName, nftIDs]}
 						<NFTsDetail {collectionName} {nftIDs} />
@@ -111,11 +103,10 @@
 
 		<div>
 			<p class="text-center text-xl md:text-5xl">
-				<span class="text-blue-100">Sequence</span>
-				<span class="text-purple-100">your</span>
-				<span class="text-pink-100">base</span>
-				<span class="text-green-100">pairs</span>
+				<span class="">Sequence your base pairs</span>
 			</p>
+
+
 			<p class="text-md my-6 px-4 text-start md:px-12">
 				A strand of digital DNA on Flow is itself made of two strands, 'strandA' and 'strandB'.
 				Sequence your base pairs in each strand in any order that is meaningful to you -- the
