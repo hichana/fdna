@@ -1,7 +1,7 @@
  <script lang="ts">
-	import { blur } from 'svelte/transition';
+	import { slide } from 'svelte/transition';
  </script>
 
-<div class="flex flex-col container max-w-4xl min-w-xs mx-auto" transition:blur>
+<div class="flex flex-col container max-w-4xl min-w-xs mx-auto" transition:slide>
     <slot />
 </div>

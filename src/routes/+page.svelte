@@ -93,13 +93,6 @@
 
     }
 
-	let buildSectionIsVisible = false;
-	// let aboutSectionIsVisible = true;
-
-	// let buildSectionIsVisible = true;
-	// let aboutSectionIsVisible = true;
-
-
 </script>
 
 <Container>
@@ -107,17 +100,11 @@
 
     <button
 		on:click={() => {
-            buildSectionIsVisible = !buildSectionIsVisible;
             scrollTo('#scroll-to-build');
         }}
     >
-        <span class="text-blue-400">
-            <!-- svelte-ignore a11y-invalid-attribute -->
-            <!-- <a on:click|preventDefault={() => scrollTo('#scroll-to-about')} href="#">Learn more first</a> -->
-            Start Building!
-        </span>
+        Start Building!
     </button>
-
 
     <button
         on:click={() => scrollTo('#scroll-to-about')}
@@ -125,28 +112,13 @@
         Learn more
     </button>
 
-    <!-- {#if aboutSectionIsVisible}
-        <button
-            on:click={() => scrollTo('#scroll-to-about')}
-        >
-            Learn more
-        </button>
-    {:else}
-        <button
-            on:click={() => (aboutSectionIsVisible = !aboutSectionIsVisible)}
-        >
-            Learn more first :)
-        </button>
-    {/if} -->
-
-<SeparatorStrand />
 </Container>
 
 
 
-<!-- <div id="scroll-to-build"/> -->
-{#if buildSectionIsVisible}
 <Container>
+    <SeparatorStrand />
+    <div id="scroll-to-build"/>
 	<div class="flex flex-col gap-12 sm:gap-24">
         <div>
             <div class="px-4">
@@ -286,11 +258,8 @@
 		>
 	{/if}
 </Container>
+
 <SeparatorStrand />
-{/if}
-
-
-<!-- {#if aboutSectionIsVisible} -->
 <Container>
     <div id="scroll-to-about">
         <!-- prettier-ignore -->
@@ -323,4 +292,3 @@
         Start Building!
     </span>
 </button>
-<!-- {/if} -->

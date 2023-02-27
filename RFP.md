@@ -51,6 +51,7 @@ https://github.com/Mitcheljager/svelte-confetti
 - get login/out button to not flash loading
 
 
+- handle if user is logged in but has no NFTs from catalog
 
 
 

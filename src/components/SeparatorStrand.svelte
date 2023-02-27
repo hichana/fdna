@@ -1,10 +1,6 @@
 <!-- prettier-ignore -->
 <div class="flex flex-col items-center">
-    <!-- <div class="text-green-50 opacity-25"> -->
-    <!-- <div class="font-extrabold text-transparent text-8xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"> -->
-    <!-- <div class="text-transparent bg-clip-text  bg-gradient-to-b from-blue-100 via-pink-100 to-green-100"> -->
-    <!-- <div class="font-extrabold text-8xl text-transparent bg-clip-text bg-gradient-to-b  from-blue-500 via-pink-500 to-green-500"> -->
-    <div class="text-transparent bg-clip-text bg-gradient-to-b  from-blue-500 via-pink-500 to-green-500">
+    <div class="font-extrabold text-2xl text-transparent bg-clip-text bg-gradient-to-b  from-green-500 via-pink-500 to-green-500">
         <pre>
 `-.`. ,',-'
     _,-'"
@@ -74,4 +70,3 @@
 ,-',' `.`-.</pre>
     </div>
 </div>
-<div id="scroll-to-build"/>
