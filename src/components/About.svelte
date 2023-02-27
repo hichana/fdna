@@ -17,7 +17,7 @@
 			rel="noreferrer"
 			class="text-blue-700"
 		>
-			<span class="font-semibold text-xl">Flowverse </span>
+			<span class="text-xl font-semibold">Flowverse </span>
 		</a>
 		to see a list of great marketplaces on Flow.
 	</p>

@@ -36,11 +36,11 @@
 	}
 </script>
 
-<div class="mx-2 my-3 border-2 border-pink-400 rounded-xl">
+<div class="mx-2 my-3 rounded-xl border-2 border-pink-400">
 	<button
 		on:click={() => (filterIsOpen = !filterIsOpen)}
 		type="button"
-		class="p-2 flex w-full items-center justify-between py-3 text-sm"
+		class="flex w-full items-center justify-between p-2 py-3 text-sm"
 	>
 		<span class="font-medium">{collectionName}</span>
 		<span class="flex items-center">
@@ -75,7 +75,7 @@
 	</button>
 
 	{#if filterIsOpen}
-		<div class="border-pink-400 rounded-b-xl" transition:slide>
+		<div class="rounded-b-xl border-pink-400" transition:slide>
 			<div class="space-y-6 p-6">
 				{#each userNFTs as nftData}
 					<div class="flex items-center">
@@ -84,10 +84,10 @@
 							type="checkbox"
 							on:change={handleCheck}
 							bind:value={nftData.id}
-							class="h-4 w-4 rounded border-gray-300 mr-4"
+							class="mr-4 h-4 w-4 rounded border-gray-300"
 						/>
 						<img
-							class="w-10 h-10 rounded-full"
+							class="h-10 w-10 rounded-full"
 							src={`${resolveImgStr(nftData.thumbnail)}`}
 							alt="Rounded avatar"
 						/>

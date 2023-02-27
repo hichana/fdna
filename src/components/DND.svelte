@@ -26,27 +26,27 @@
 	}
 </script>
 
-<div class="flex flex-col mx-auto w-full">
+<div class="mx-auto flex w-full flex-col">
 	<div class="flex h-10 items-center py-6 sm:py-10">
 		<p class="mx-auto text-center font-bold">{listName}</p>
 	</div>
 	<section
-		class="w-full h-120 flex-auto space-y-2.5 px-4 pb-11"
+		class="h-120 w-full flex-auto space-y-2.5 px-4 pb-11"
 		use:dndzone={{ items, flipDurationMs }}
 		on:consider={handleDndConsider}
 		on:finalize={handleDndFinalize}
 	>
 		{#each items as item (item.id)}
 			<div
-				class="w-full flex space-x-3.5 justify-start px-5 py-1.5 border-2 border-pink-400 rounded-2xl"
+				class="flex w-full justify-start space-x-3.5 rounded-2xl border-2 border-pink-400 px-5 py-1.5"
 				animate:flip={{ duration: flipDurationMs }}
 			>
 				<img
-					class="w-10 h-10 rounded-full"
+					class="h-10 w-10 rounded-full"
 					src={`${resolveImgStr(item.thumbnail)}`}
 					alt="Rounded avatar"
 				/>
-				<div class="inline-flex flex-col space-y-0.5 items-start justify-center">
+				<div class="inline-flex flex-col items-start justify-center space-y-0.5">
 					<p class="text-sm font-semibold leading-tight">NFT {item.id}</p>
 					<p class="text-xs font-light leading-none">{item.name}</p>
 				</div>

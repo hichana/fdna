@@ -2,6 +2,6 @@
 	import { slide } from 'svelte/transition';
 </script>
 
-<div class="flex flex-col container max-w-4xl min-w-xs mx-auto" transition:slide>
+<div class="min-w-xs container mx-auto flex max-w-4xl flex-col" transition:slide>
 	<slot />
 </div>
