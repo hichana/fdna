@@ -157,14 +157,14 @@
 				<span class="">Mint your STRAND</span>
 			</p>
 
-			<p class="text-md mt-6 px-4 text-center md:px-12">
+			<!-- <p class="text-md mt-6 px-4 text-center md:px-12">
 				{numBasePairs > 4
 					? 'Your STRAND is long, which is great! But make sure to scroll down to see it all'
 					: 'Scroll down to see the rest of your STRAND'}
-			</p>
+			</p> -->
 
 			<!-- prettier-ignore -->
-			<div class="flex flex-col items-center mb-28 pt-12 border-phosgreen border-2 p-4 rounded-xl mx-auto mt-12">
+			<div class="flex flex-col items-center mb-12 pt-12 border-phosgreen border-2 p-4 rounded-xl mx-4 sm:mx-auto mt-12">
 
                 {#if longestDNAStrand.length > 0}
                     {#each dnaIterator as _, i}
@@ -201,13 +201,14 @@
             </div>
 
 			<!-- TODO: make a script that pulls mint price from on-chain and displays in UI and uses here -->
-
-			<Button
-				buttonText="Mint"
-				onClick={() => {
-					buySTRAND('10.0');
-				}}
-			/>
+            <div class="mx-auto w-48 justify-center flex flex-col">
+                <Button
+                    buttonText="Mint"
+                    onClick={() => {
+                        buySTRAND('10.0');
+                    }}
+                />
+            </div>
 			<BuyTxStatus />
 
 			{#if $buyTxStatus.status === 4 && $buyTxStatus.statusCode === 0}
@@ -249,7 +250,7 @@
 
 <SeparatorStrand />
 <Container>
-	<p id="scroll-to-about" class="text-center text-xl md:text-5xl">
+	<p id="scroll-to-about" class="text-center text-3xl md:text-5xl">
 		<span class="bg-gradient-to-b from-phosgreen to-white bg-clip-text text-transparent"
 			>About / FAQ</span
 		>
