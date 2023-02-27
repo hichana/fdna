@@ -130,7 +130,7 @@ pub contract STRANDS: NonFungibleToken {
                         self.royalties
                     )
                 case Type<MetadataViews.ExternalURL>():
-                    return MetadataViews.ExternalURL("https://strand.id/".concat(self.id.toString()))
+                    return MetadataViews.ExternalURL("https://strands.id/".concat(self.id.toString()))
                 case Type<MetadataViews.NFTCollectionData>():
                     return MetadataViews.NFTCollectionData(
                         storagePath: STRANDS.CollectionStoragePath,
@@ -145,15 +145,16 @@ pub contract STRANDS: NonFungibleToken {
                     )
                 case Type<MetadataViews.NFTCollectionDisplay>():
                     let media = MetadataViews.Media(
-                        file: MetadataViews.HTTPFile(
-                            url: "https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2022/07/what_to_know_apples_green_red_1296x728_header-1024x575.jpg"
+                        file: MetadataViews.IPFSFile(
+                            cid: "bafybeibcy3vbnonzmwiy4vsmkx7qgb3wv2g23ese3ldgjeaudfmfmctmzi",
+                            path: "STRANDS_banner.png"
                         ),
-                        mediaType: "image/jpeg"
+                        mediaType: "image/png"
                     )
                     return MetadataViews.NFTCollectionDisplay(
                         name: "The STRAND Collection -- digital DNA on Flow",
                         description: "With STRANDS, the NFT assets in your wallet allow you to create one-of-a-kind, never duplicated, digital DNA to use across future experiences on Flow.",
-                        externalURL: MetadataViews.ExternalURL("https://strand.id"),
+                        externalURL: MetadataViews.ExternalURL("https://strands.id"),
                         squareImage: media,
                         bannerImage: media,
                         socials: {
@@ -428,8 +429,8 @@ pub contract STRANDS: NonFungibleToken {
             id: STRANDS.totalSupply,
             name: nftName,
             description: "Digital DNA for Flow",
-            thumbnail: "[TODO_ADD-THUMBNAIL-CID]",
-            thumbnailPath:"[TODO_ADD-THUMBNAIL-PATH]",
+            thumbnail: "bafybeibqwjgwfxk4keropnob73t56vo4fy7yhlf6twdjizl4zgemjotxj4",
+            thumbnailPath:"STRANDS_square.png",
             royalties: self.royaltyReceivers,
             metadata: metadata,
             strandA: strandA,
