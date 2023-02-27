@@ -36,7 +36,7 @@
 	}
 </script>
 
-<div class="flex-1 px-4 py-2 text-sm">
+<div class="flex-1 px-4 py-2 text-sm text-center">
 	{#if strandClaimedCheck !== undefined}
 		{#if strandClaimedCheck === null}
 			<p>{listName} is unique!</p>
