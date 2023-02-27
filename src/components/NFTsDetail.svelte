@@ -4,8 +4,6 @@
 	import { user, strandA, strandB } from '#lib/stores';
 	import { getUserNFTs } from '#lib/actions';
 	import { resolveImgStr } from '#lib/helpers';
-	import About from './About.svelte';
-	import Button from './Button.svelte';
 
 	export let collectionName: string;
 	export let nftIDs: number[];
@@ -97,7 +95,7 @@
 						/>
                         <div class="flex flex-col">
                             <label for={nftData.id} class="ml-3 text-sm text-white">
-                                <span class=" font-medium text-purple-400">NFT ID: </span>{nftData.nftID}, 
+                                <span class=" font-medium text-purple-400">ID: </span>{nftData.nftID}, 
                             </label>
                             <p class="ml-3 text-sm">
                                 <span class=" font-medium text-purple-400">Name: </span>{nftData.name}

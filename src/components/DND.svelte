@@ -38,17 +38,17 @@
 	>
 		{#each items as item (item.id)}
 			<div
-				class="flex w-full justify-start space-x-3.5 rounded-2xl border-2 border-pink-400 px-5 py-1.5 bg-slate-900 bg-opacity-80"
+				class="flex flex-col sm:flex-row w-full justify-start space-x-3.5 rounded-2xl border-2 border-pink-400 px-5 py-3 bg-slate-900 bg-opacity-80"
 				animate:flip={{ duration: flipDurationMs }}
 			>
 				<img
-					class="h-10 w-10 rounded-full"
+					class="h-10 w-10 rounded-full self-center sm:self-start mb-2 sm:mb-0"
 					src={`${resolveImgStr(item.thumbnail)}`}
 					alt="Rounded avatar"
 				/>
 				<div class="inline-flex flex-col items-start justify-center space-y-0.5">
-					<p class="text-sm font-semibold leading-tight">NFT {item.id}</p>
-					<p class="text-xs font-light leading-none">{item.name}</p>
+					<p class="text-xs sm:text-lg leading-none font-medium ">{item.name}</p>
+					<p class="text-xs sm:text-md font-light leading-tight">ID: <span>{item.id}</span></p>
 				</div>
 			</div>
 		{/each}
