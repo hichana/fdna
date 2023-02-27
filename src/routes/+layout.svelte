@@ -12,13 +12,11 @@
 		</a>
 		<div class="flex">
 			{#if $user}
-				{#if $user?.loggedIn}
+				{#if $user.loggedIn}
 					<Button buttonText="Log out" onClick={unauthenticate} />
 				{:else}
 					<Button buttonText="Log In/Sign Up" onClick={logIn} />
 				{/if}
-			{:else}
-				<p>Loading login status#########################</p>
 			{/if}
 		</div>
 	</div>
