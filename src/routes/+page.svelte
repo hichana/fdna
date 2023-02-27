@@ -41,25 +41,6 @@
 
 	$: dnaIterator = Array.from({ length: longestDNAStrand.length }, (_, i) => i);
 
-	function scrollTo(selector: string) {
-        // solution modified from SO: https://stackoverflow.com/questions/49820013/javascript-scrollintoview-smooth-scroll-and-offset
-		const element = document.querySelector(selector);
-        const offset = 145;
-        const bodyRect = document.body.getBoundingClientRect().top;
-        if (element !== null) {
-            const elementRect = element.getBoundingClientRect().top;
-            const elementPosition = elementRect - bodyRect;
-            const offsetPosition = elementPosition - offset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-
-        }
-	}
-
-
     // check if the strand is ready
     let strandIsReady: boolean = false;
     let numBasePairs: number = 0;
@@ -96,21 +77,6 @@
 
 <Container>
 	<CTA />
-
-    <button
-		on:click={() => {
-            scrollTo('#scroll-to-build');
-        }}
-    >
-        Start Building!
-    </button>
-
-    <button
-        on:click={() => scrollTo('#scroll-to-about')}
-    >
-        Learn more
-    </button>
-
 </Container>
 
 
