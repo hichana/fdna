@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { user, strandA, strandB } from '#lib/stores';
+	import { user, strandA, strandB, buyTxStatus } from '#lib/stores';
 	import { slide } from 'svelte/transition';
     import { scrollTo } from '#lib/helpers';
 	import { getUserNFTIDs, buySTRAND } from '#lib/actions';
@@ -201,24 +201,28 @@
             />
             <BuyTxStatus />
         
-            <div class="flex flex-col items-center justify-center">
-                <p class="text-md my-6 px-4 text-start md:px-12 text-transparent bg-gradient-to-b from-white to-phosgreen bg-clip-text">
-                    Instead of a slick 3D animation of a pack opening and fire spewing out or something like that,
-                    we etched the following double helix of DNA onto your transaction code that minted your NFT.
-                    We also added real (but not really) DNA strands to the metadata of your NFT.
-                </p>
-            </div>
+            {#if ($buyTxStatus.status === 4) && ($buyTxStatus.statusCode === 0)}
+                <div class="flex flex-col">
+                    <div class="flex flex-col items-center justify-center">
+                        <p class="text-md my-6 px-4 text-start md:px-12 text-phosgreen">
+                            Instead of a slick 3D animation of a pack opening and fire spewing out or something like that,
+                            we etched the following double helix of DNA onto your transaction code that minted your NFT.
+                            We also added real (but not really) DNA strands to the metadata of your NFT.
+                        </p>
+                    </div>
 
-            {#if $user?.addr}
-                <div class="my-6 flex gap-3 mx-auto">
-                    <Button
-                        buttonText="Transaction on Flowscan"
-                        buttonLink={`https://testnet.flowview.app/account/${$user.addr}/collection/strandsCollection`}
-                    />
-                    <Button
-                        buttonText="Collection on Flowview"
-                        buttonLink={`https://testnet.flowview.app/account/${$user.addr}/collection/strandsCollection`}
-                    />
+                    {#if $user?.addr}
+                        <div class="my-6 flex gap-3 mx-auto">
+                            <Button
+                                buttonText="Transaction on Flowscan"
+                                buttonLink={`https://testnet.flowview.app/account/${$user.addr}/collection/strandsCollection`}
+                            />
+                            <Button
+                                buttonText="Collection on Flowview"
+                                buttonLink={`https://testnet.flowview.app/account/${$user.addr}/collection/strandsCollection`}
+                            />
+                        </div>
+                    {/if}
                 </div>
             {/if}
         </div>
