@@ -20,7 +20,7 @@ buyTxStatus.subscribe((value) => {
 	console.log('buyTxStatus Store:', value);
 });
 
-export const buyTxID = writable<string>("");
+export const buyTxID = writable<string>('');
 buyTxID.subscribe((value) => {
 	console.log('buyTxID Store:', value);
 });

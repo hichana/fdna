@@ -231,7 +231,7 @@ export const buySTRAND = async (mintPrice: string) => {
 		authorizations: [fcl.authz]
 	});
 
-    buyTxID.set(transactionId);
+	buyTxID.set(transactionId);
 
 	fcl
 		.tx(transactionId)

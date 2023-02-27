@@ -17,8 +17,8 @@
     -x must have collection and NFT artwork created and links added to STRANDS, all other metadata strings must be right
     -x in minter, update mint strings for thumbnail and thumbnail path
     -x in fcl config, change app.detail.icon
-- build out layout, design, artwork
-- launch/re-launch to testnet
+-x launch/re-launch to testnet
+- complete build out layout, design, artwork
 - create hackathon submission
 
 # REQUIREMENTS
@@ -64,10 +64,10 @@
         - flowscan account with smart contracts
     - list of code used from other projects (ex. ExampleNFT, flow nft catalog scripts and transactions, etc.)
     - in description of challenges talk about wanting to save catalog data on-chian/nft but difficulties due to passing in NFT only ref
-- testnet deployment
+-x testnet deployment
     -x script populates test user with exampleNFTs in their wallet
     -x STRANDS has appropriate metadata set before final testnet deployment
-    - do final testnet deployment for submission
+    -x do final testnet deployment for submission
 -x emulator
     -x manages accounts and testnet and mainnet deployments
     -x deploys nft catalog with example NFT contracts registered to nft catalog

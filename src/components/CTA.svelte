@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Button from './Button.svelte';
-    import { scrollTo } from '#lib/helpers';
+	import { scrollTo } from '#lib/helpers';
 </script>
 
 <div class="flex flex-col items-center">

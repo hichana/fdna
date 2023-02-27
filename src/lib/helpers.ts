@@ -77,18 +77,18 @@ export function constructNFTCollectionCode(
 }
 
 export function scrollTo(selector: string) {
-    // solution modified from SO: https://stackoverflow.com/questions/49820013/javascript-scrollintoview-smooth-scroll-and-offset
-    const element = document.querySelector(selector);
-    const offset = 145;
-    const bodyRect = document.body.getBoundingClientRect().top;
-    if (element !== null) {
-        const elementRect = element.getBoundingClientRect().top;
-        const elementPosition = elementRect - bodyRect;
-        const offsetPosition = elementPosition - offset;
+	// solution modified from SO: https://stackoverflow.com/questions/49820013/javascript-scrollintoview-smooth-scroll-and-offset
+	const element = document.querySelector(selector);
+	const offset = 145;
+	const bodyRect = document.body.getBoundingClientRect().top;
+	if (element !== null) {
+		const elementRect = element.getBoundingClientRect().top;
+		const elementPosition = elementRect - bodyRect;
+		const offsetPosition = elementPosition - offset;
 
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-        });
-    }
+		window.scrollTo({
+			top: offsetPosition,
+			behavior: 'smooth'
+		});
+	}
 }

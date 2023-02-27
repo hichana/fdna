@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { user, strandA, strandB, buyTxStatus, buyTxID } from '#lib/stores';
 	import { slide } from 'svelte/transition';
-    import { scrollTo } from '#lib/helpers';
+	import { scrollTo } from '#lib/helpers';
 	import { getUserNFTIDs, buySTRAND } from '#lib/actions';
 	import Container from '#components/Container.svelte';
 	import CTA from '#components/CTA.svelte';
@@ -49,7 +49,7 @@
 	let numBasePairs: number = 0;
 	let numUniqueNFTProjectsInDNA: number = 0;
 
-    $: nftsAreSelected = $strandA.length > 0 || $strandB.length > 0;
+	$: nftsAreSelected = $strandA.length > 0 || $strandB.length > 0;
 
 	$: {
 		const strandLengthReady = $strandA.length > 0 && $strandB.length > 0;
@@ -87,9 +87,11 @@
 	<div class="flex flex-col gap-12 sm:gap-24">
 		<div>
 			<div class="px-4">
-                <p class="text-center text-xl md:text-5xl">
-                    <span class="text-transparent bg-gradient-to-b from-phosgreen to-white bg-clip-text">Choose your building blocks</span>
-                </p>
+				<p class="text-center text-xl md:text-5xl">
+					<span class="bg-gradient-to-b from-phosgreen to-white bg-clip-text text-transparent"
+						>Choose your building blocks</span
+					>
+				</p>
 				<p class="text-md my-6 px-4 text-start md:px-12">
 					Build your STRAND by selecting two or more of your NFTs as the building blocks of your
 					digital DNA on Flow:
@@ -127,12 +129,12 @@
 					style="background-image:linear-gradient(rgba(135, 80, 156, 0.9), rgba(135, 80, 156, 0.9)), url(https://upload.wikimedia.org/wikipedia/commons/0/0c/DNA_animation.gif)"
 					class="flex bg-cover bg-center"
 				>
-                    {#if nftsAreSelected}
-                        <DND listName="strandA" items={$strandA} />
-                        <DND listName="strandB" items={$strandB} />
-                    {:else}
-                        <p>(Select NFTs Above to start sequencing)</p>
-                    {/if}
+					{#if nftsAreSelected}
+						<DND listName="strandA" items={$strandA} />
+						<DND listName="strandB" items={$strandB} />
+					{:else}
+						<p>(Select NFTs Above to start sequencing)</p>
+					{/if}
 				</div>
 			</div>
 			<div class="flex">
@@ -142,20 +144,20 @@
 		</div>
 	</div>
 
-    {#if numBasePairs > 0}
-        <div class="flex flex-col" transition:slide>
-            <p class="text-center text-xl md:text-5xl">
-                <span class="">Mint your STRAND</span>
-            </p>
+	{#if numBasePairs > 0}
+		<div class="flex flex-col" transition:slide>
+			<p class="text-center text-xl md:text-5xl">
+				<span class="">Mint your STRAND</span>
+			</p>
 
-            <p class="text-md my-6 px-4 text-start md:px-12">
-                {numBasePairs > 4
-                    ? 'Your STRAND is long, which is great! But make sure to scroll down to see it all'
-                    : 'Scroll down to see the rest of your STRAND'}
-            </p>
+			<p class="text-md my-6 px-4 text-start md:px-12">
+				{numBasePairs > 4
+					? 'Your STRAND is long, which is great! But make sure to scroll down to see it all'
+					: 'Scroll down to see the rest of your STRAND'}
+			</p>
 
-            <!-- prettier-ignore -->
-            <div class="flex flex-col items-center mb-28 pt-12 border-phosgreen border-2 p-4 rounded-xl mx-auto mt-12">
+			<!-- prettier-ignore -->
+			<div class="flex flex-col items-center mb-28 pt-12 border-phosgreen border-2 p-4 rounded-xl mx-auto mt-12">
 
                 {#if longestDNAStrand.length > 0}
                     {#each dnaIterator as _, i}
@@ -191,62 +193,60 @@
                 </div>
             </div>
 
-            <!-- TODO: make a script that pulls mint price from on-chain and displays in UI and uses here -->
+			<!-- TODO: make a script that pulls mint price from on-chain and displays in UI and uses here -->
 
-            <Button 
-                buttonText="Mint"
-                onClick={() => {
-                    buySTRAND('10.0');
-                }}
-            />
-            <BuyTxStatus />
-        
-            {#if ($buyTxStatus.status === 4) && ($buyTxStatus.statusCode === 0)}
-                <div class="flex flex-col">
-                    <div class="flex flex-col items-center justify-center">
-                        <p class="text-md my-6 px-4 text-start md:px-12 text-phosgreen">
-                            Instead of a slick 3D animation of a pack opening and fire spewing out or something like that,
-                            we etched the following double helix of DNA onto your transaction code that minted your NFT.
-                            We also added real (but not really) DNA strands to the metadata of your NFT.
-                        </p>
-                    </div>
+			<Button
+				buttonText="Mint"
+				onClick={() => {
+					buySTRAND('10.0');
+				}}
+			/>
+			<BuyTxStatus />
 
-                    {#if $user?.addr}
-                        <div class="my-6 flex gap-3 mx-auto">
-                            <a
-                                href={`https://testnet.flowscan.org/transaction/${$buyTxID}`}
-                                target="_blank" 
-                                rel="noreferrer"
-                                class="underline text-phosgreen text-xl font-normal"
-                            >
-                                Transaction on Flowscan
-                            </a>
-                            <a
-                                href={`https://testnet.flowview.app/account/${$user.addr}/collection/strandsCollection`}
-                                target="_blank" 
-                                rel="noreferrer"
-                                class="underline text-phosgreen text-xl font-normal"
-                            >
-                                Collection on Flowview
-                            </a>
-                        </div>
-                    {/if}
-                </div>
-            {/if}
-        </div>
-    {/if}
+			{#if $buyTxStatus.status === 4 && $buyTxStatus.statusCode === 0}
+				<div class="flex flex-col">
+					<div class="flex flex-col items-center justify-center">
+						<p class="text-md my-6 px-4 text-start text-phosgreen md:px-12">
+							Instead of a slick 3D animation of a pack opening and fire spewing out or something
+							like that, we etched the following double helix of DNA onto your transaction code that
+							minted your NFT. We also added real (but not really) DNA strands to the metadata of
+							your NFT.
+						</p>
+					</div>
 
-
+					{#if $user?.addr}
+						<div class="my-6 mx-auto flex gap-3">
+							<a
+								href={`https://testnet.flowscan.org/transaction/${$buyTxID}`}
+								target="_blank"
+								rel="noreferrer"
+								class="text-xl font-normal text-phosgreen underline"
+							>
+								Transaction on Flowscan
+							</a>
+							<a
+								href={`https://testnet.flowview.app/account/${$user.addr}/collection/strandsCollection`}
+								target="_blank"
+								rel="noreferrer"
+								class="text-xl font-normal text-phosgreen underline"
+							>
+								Collection on Flowview
+							</a>
+						</div>
+					{/if}
+				</div>
+			{/if}
+		</div>
+	{/if}
 </Container>
 
 <SeparatorStrand />
 <Container>
-    <p 
-        id="scroll-to-about"
-        class="text-center text-xl md:text-5xl"
-    >
-        <span class="text-transparent bg-gradient-to-b from-phosgreen to-white bg-clip-text">About / FAQ</span>
-    </p>
+	<p id="scroll-to-about" class="text-center text-xl md:text-5xl">
+		<span class="bg-gradient-to-b from-phosgreen to-white bg-clip-text text-transparent"
+			>About / FAQ</span
+		>
+	</p>
 	<About />
 	<p class="text-md my-6 px-4 text-start text-pink-300 md:p-0">
 		Thanks for reading about STRANDS, now go
