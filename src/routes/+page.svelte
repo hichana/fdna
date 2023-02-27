@@ -8,7 +8,6 @@
 	import DND from '#components/DND.svelte';
 	import BuyTxStatus from '#components/BuyTxStatus.svelte';
 	import DndNotifications from '#components/DNDNotifications.svelte';
-	import Divider from '#components/Divider.svelte';
 	import About from '#components/About.svelte';
 	import SeparatorStrand from '#components/SeparatorStrand.svelte';
 
