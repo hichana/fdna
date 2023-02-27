@@ -161,7 +161,7 @@
 
          {#if longestDNAStrand.length > 0}
             {#each dnaIterator as _, i}
-        <div class="text-phosgreen">
+        <div class="text-phosgreen font-extrabold text-md">
             <pre>
 `-.`. ,',-'
     _,-'"
@@ -172,10 +172,10 @@
         </div>
 
                 <div>
-                <p class="break-all text-green-300">A: {$strandA[i] ? getNFTIdentifier($strandA[i].publicLinkedType.type.type.typeID, $strandA[i].nftID) : "(strand A DNA here)"}</p>
-                <p class="break-all text-green-300">B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID, $strandB[i].nftID) : "(strand B DNA here)"}</p>
+                <p class="break-all text-phosgreen font-medium  text-md">A: {$strandA[i] ? getNFTIdentifier($strandA[i].publicLinkedType.type.type.typeID, $strandA[i].nftID) : "(strand A DNA here)"}</p>
+                <p class="break-all text-phosgreen font-medium  text-md">B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID, $strandB[i].nftID) : "(strand B DNA here)"}</p>
                 </div>
-        <div class="text-phosgreen">
+        <div class="text-phosgreen font-extrabold text-md">
             <pre>
 `-.`. ,',-'
     _,-'"
@@ -186,7 +186,7 @@
         </div>
             {/each}
         {/if}
-        <div class="pt-4 text-pink-300">
+        <div class="pt-4 font-medium text-pink-500">
             <p>STRANDS DNA by {$user?.addr}</p>
             <p>contains {numBasePairs} base pairs</p>
             <p>{`from ${numUniqueNFTProjectsInDNA} Flow NFT project${numUniqueNFTProjectsInDNA > 1 ? "s" : ""}.`}</p>
