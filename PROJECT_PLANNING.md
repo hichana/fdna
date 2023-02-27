@@ -72,7 +72,7 @@
     -x manages accounts and testnet and mainnet deployments
     -x deploys nft catalog with example NFT contracts registered to nft catalog
     -x demo user is issued example NFTs
-- repo/docs
+-x repo/docs
     - scripts examples walkthrough for pulling DNA data
     - examples of how DNA data can be leveraged across NFT experiences
     - includes instructions for judges to deploy and run the app locally and on testnet
