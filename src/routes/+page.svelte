@@ -122,23 +122,28 @@
 				<span class="font-bold"> base pairs </span>
 				(so that strandA has the same number of NFTs as strandB).
 			</p>
-			<div
-				class="mx-4 flex flex-col bg-slate-900"
-			>
-				<div
-					style="background-image:linear-gradient(rgba(0, 200, 0, 0.4), rgba(0, 200, 0, 0.4)), url(https://upload.wikimedia.org/wikipedia/commons/0/0c/DNA_animation.gif)"
-					class="flex bg-cover bg-center"
-				>
-					{#if nftsAreSelected}
-						<DND listName="strandA" items={$strandA} />
-						<DND listName="strandB" items={$strandB} />
-					{:else}
-                        <div class="flex mx-auto h-36 sm:h-96 items-center">
-                            <p class="text-md sm:text-3xl font-normal">(Select NFTs above to start sequencing)</p>
-                        </div>
-					{/if}
-				</div>
-			</div>
+            <div class="flex gap-0">
+                <div
+                    class="ml-4 flex flex-col bg-slate-900 w-full"
+                >
+                    <div
+                        style="background-image:linear-gradient(rgba(0, 200, 0, 0.4), rgba(0, 200, 0, 0.4)), url(https://upload.wikimedia.org/wikipedia/commons/0/0c/DNA_animation.gif)"
+                        class="flex bg-cover bg-center sm:rounded-lg rounded-l-lg"
+                    >
+                        {#if nftsAreSelected}
+                            <DND listName="strandA" items={$strandA} />
+                            <DND listName="strandB" items={$strandB} />
+                        {:else}
+                            <div class="flex mx-auto h-36 sm:h-96 items-center">
+                                <p class="text-md sm:text-3xl font-normal">(Select NFTs above to start sequencing)</p>
+                            </div>
+                        {/if}
+                    </div>
+                </div>
+                <div class="sm:hidden bg-slate-500 mr-4 flex items-center px-1 rounded-r-lg"> 
+                    <p class="text-slate-400 font-semibold">三</p>
+                </div>
+            </div>
 			<div class="flex">
 				<DndNotifications listName="strandA" />
 				<DndNotifications listName="strandB" />
