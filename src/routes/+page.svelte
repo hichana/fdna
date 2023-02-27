@@ -170,12 +170,12 @@
                     {#each dnaIterator as _, i}
                 <div class="text-phosgreen font-extrabold text-md">
                     <pre>
-`-.`. ,',-'
+'-.`. ,`,-'
     _,-'"
-,-',' `.`-.
-`-.`. ,',-'
+,-',` '.`-,
+'-.`. ,`,-'
     _,-'"
-,-',' `.`-.</pre>
+,-',` '.`-,</pre>
                 </div>
 
                         <div>
@@ -184,12 +184,12 @@
                         </div>
                 <div class="text-phosgreen font-extrabold text-md">
                     <pre>
-`-.`. ,',-'
+'-.`. ,`,-'
     _,-'"
-,-',' `.`-.
-`-.`. ,',-'
+,-',` '.`-,
+'-.`. ,`,-'
     _,-'"
-,-',' `.`-.</pre>
+,-',` '.`-,</pre>
                 </div>
                     {/each}
                 {/if}
