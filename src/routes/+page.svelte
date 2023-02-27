@@ -43,10 +43,28 @@
 	$: dnaIterator = Array.from({ length: longestDNAStrand.length }, (_, i) => i);
 
 	function scrollTo(selector: string) {
+		// const element = document.querySelector(selector);
+		// if (element) {
+		// 	// element.scrollIntoView({ behavior: 'smooth' });
+        //     element.scrollIntoView({ behavior: "smooth", block: "center" });
+		// }
+
+        // solution modified from SO: https://stackoverflow.com/questions/49820013/javascript-scrollintoview-smooth-scroll-and-offset
 		const element = document.querySelector(selector);
-		if (element) {
-			element.scrollIntoView({ behavior: 'smooth' });
-		}
+        const offset = 145;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        if (element !== null) {
+            
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+        });
+
+        }
 	}
 
 
@@ -82,11 +100,11 @@
 
     }
 
-	// let buildSectionIsVisible = false;
-	// let aboutSectionIsVisible = false;
+	let buildSectionIsVisible = false;
+	// let aboutSectionIsVisible = true;
 
-	let buildSectionIsVisible = true;
-	let aboutSectionIsVisible = true;
+	// let buildSectionIsVisible = true;
+	// let aboutSectionIsVisible = true;
 
 
 </script>
@@ -108,7 +126,13 @@
     </button>
 
 
-    {#if aboutSectionIsVisible}
+    <button
+        on:click={() => scrollTo('#scroll-to-about')}
+    >
+        Learn more
+    </button>
+
+    <!-- {#if aboutSectionIsVisible}
         <button
             on:click={() => scrollTo('#scroll-to-about')}
         >
@@ -120,14 +144,14 @@
         >
             Learn more first :)
         </button>
-    {/if}
-
-</Container>
+    {/if} -->
 
 <SeparatorStrand />
+</Container>
 
-<div id="scroll-to-build"/>
 
+
+<!-- <div id="scroll-to-build"/> -->
 {#if buildSectionIsVisible}
 <Container>
 	<div class="flex flex-col gap-12 sm:gap-24">
@@ -191,12 +215,6 @@
                 </div>
         </div>
 	</div>
-</Container>
-{/if}
-
-<Divider />
-
-<Container>
     <p class="text-xl md:text-5xl text-center">
         <span class="text-blue-100">Mint</span>
         <span class="text-purple-100">your</span>
@@ -244,10 +262,6 @@
             <p>{`from ${numUniqueNFTProjectsInDNA} Flow NFT project${numUniqueNFTProjectsInDNA > 1 ? "s" : ""}.`}</p>
         </div>
     </div>
-</Container>
-
-
-<Container>
 
 	<!-- TODO: make a script that pulls mint price from on-chain and displays in UI and uses here -->
 	<button
@@ -279,28 +293,41 @@
 		>
 	{/if}
 </Container>
-
 <SeparatorStrand />
+{/if}
 
-{#if aboutSectionIsVisible}
-    <Container>
-        <div id="scroll-to-about">
-            <!-- prettier-ignore -->
-            <pre class="leading-3 text-center text-xs">
- #  ##   #  # # ###        #    ###  #   # 
+
+<!-- {#if aboutSectionIsVisible} -->
+<Container>
+    <div id="scroll-to-about">
+        <!-- prettier-ignore -->
+        <pre class="leading-3 text-center text-xs">
+#  ##   #  # # ###        #    ###  #   # 
 # # # # # # # #  #        #     #   # # # #
 ### ##  # # # #  #       #      ##  ### # #
 # # # # # # # #  #      #       #   # #  ##
 # # ##   #  ###  #     #        #   # #   #
-            </pre>
-        </div>
-        <About />
-        <p class="text-pink-300 text-md text-start my-6 px-4 md:p-0">
-            Thanks for reading about STRANDS, now go 
-            <span class="text-blue-500">
-                <!-- svelte-ignore a11y-invalid-attribute -->
-                <a on:click|preventDefault={() => scrollTo('#scroll-to-build')} href="#">BUILD!!!</a>
-            </span>
-        </p>
-    </Container>
-{/if}
+        </pre>
+    </div>
+    <About />
+    <p class="text-pink-300 text-md text-start my-6 px-4 md:p-0">
+        Thanks for reading about STRANDS, now go 
+        <span class="text-blue-500">
+            <!-- svelte-ignore a11y-invalid-attribute -->
+            <a on:click|preventDefault={() => scrollTo('#scroll-to-build')} href="#">BUILD!!!</a>
+        </span>
+    </p>
+</Container>
+<button
+    on:click={() => {
+        buildSectionIsVisible = !buildSectionIsVisible;
+        scrollTo('#scroll-to-build');
+    }}
+>
+    <span class="text-blue-400">
+        <!-- svelte-ignore a11y-invalid-attribute -->
+        <!-- <a on:click|preventDefault={() => scrollTo('#scroll-to-about')} href="#">Learn more first</a> -->
+        Start Building!
+    </span>
+</button>
+<!-- {/if} -->

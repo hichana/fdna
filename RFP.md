@@ -44,7 +44,7 @@ https://github.com/Mitcheljager/svelte-confetti
 
 
 
-
+- get login/out button to not flash loading
 
 
 
