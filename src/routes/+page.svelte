@@ -84,10 +84,9 @@
 	<div class="flex flex-col gap-12 sm:gap-24">
 		<div>
 			<div class="px-4">
-			<p class="text-center text-xl md:text-5xl">
-				<span class="text-transparent bg-gradient-to-b from-phosgreen to-white bg-clip-text">Choose your building blocks</span>
-			</p>
-
+                <p class="text-center text-xl md:text-5xl">
+                    <span class="text-transparent bg-gradient-to-b from-phosgreen to-white bg-clip-text">Choose your building blocks</span>
+                </p>
 				<p class="text-md my-6 px-4 text-start md:px-12">
 					Build your STRAND by selecting two or more of your NFTs as the building blocks of your
 					digital DNA on Flow:
