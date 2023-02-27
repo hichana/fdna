@@ -1,7 +1,7 @@
- <script lang="ts">
+<script lang="ts">
 	import { slide } from 'svelte/transition';
- </script>
+</script>
 
 <div class="flex flex-col container max-w-4xl min-w-xs mx-auto" transition:slide>
-    <slot />
+	<slot />
 </div>

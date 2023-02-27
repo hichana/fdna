@@ -13,15 +13,9 @@
 		<div class="flex">
 			{#if $user}
 				{#if $user?.loggedIn}
-                    <Button
-                        buttonText="Log out"
-                        onClick={unauthenticate}
-                    />
+					<Button buttonText="Log out" onClick={unauthenticate} />
 				{:else}
-                    <Button
-                        buttonText="Log In/Sign Up"
-                        onClick={logIn}
-                    />
+					<Button buttonText="Log In/Sign Up" onClick={logIn} />
 				{/if}
 			{:else}
 				<p>Loading login status##########################3</p>

@@ -26,11 +26,10 @@
 	}
 </script>
 
-<div 
-    class="flex flex-col mx-auto w-full">
-    <div class="flex h-10 items-center py-6 sm:py-10">
-        <p class="mx-auto text-center font-bold">{listName}</p>
-    </div>
+<div class="flex flex-col mx-auto w-full">
+	<div class="flex h-10 items-center py-6 sm:py-10">
+		<p class="mx-auto text-center font-bold">{listName}</p>
+	</div>
 	<section
 		class="w-full h-120 flex-auto space-y-2.5 px-4 pb-11"
 		use:dndzone={{ items, flipDurationMs }}
