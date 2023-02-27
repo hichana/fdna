@@ -84,7 +84,7 @@
 							type="checkbox"
 							on:change={handleCheck}
 							bind:value={nftData.id}
-							class="mr-4 h-4 w-4 rounded border-gray-300"
+							class="mr-4 h-5 w-5 border-gray-300 shrink-0"
 						/>
 						<img
 							class="h-10 w-10 rounded-full"
@@ -92,7 +92,7 @@
 							alt="Rounded avatar"
 						/>
 						<label for={nftData.id} class="ml-3 text-sm text-purple-400"
-							>UUID: {nftData.id}, NFT ID: {nftData.nftID}, name: {nftData.name}</label
+							>UUID: {nftData.id}, NFT ID: {nftData.nftID}, name: {nftData.name} lskdjf lskjf lkdjf lksdjf lksdjf lkdsjf lkdsjf lksdjf lksjdf lkdsjf lkd</label
 						>
 					</div>
 				{/each}
