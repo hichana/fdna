@@ -281,13 +281,9 @@
 </Container>
 <button
     on:click={() => {
-        buildSectionIsVisible = !buildSectionIsVisible;
         scrollTo('#scroll-to-build');
     }}
 >
-    <span class="text-blue-400">
-        <!-- svelte-ignore a11y-invalid-attribute -->
-        <!-- <a on:click|preventDefault={() => scrollTo('#scroll-to-about')} href="#">Learn more first</a> -->
-        Start Building!
-    </span>
+    Start Building!
+
 </button>
