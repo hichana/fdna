@@ -170,12 +170,12 @@
                     {#each dnaIterator as _, i}
                 <div class="text-phosgreen font-extrabold text-md">
                     <pre>
-'-.`. ,`,-'
+'-.'. ,',-'
     _,-'"
-,-',` '.`-,
-'-.`. ,`,-'
+,-',' '.'-.
+'-.'. ,',-'
     _,-'"
-,-',` '.`-,</pre>
+,-',' '.'-.</pre>
                 </div>
 
                         <div>
@@ -184,12 +184,12 @@
                         </div>
                 <div class="text-phosgreen font-extrabold text-md">
                     <pre>
-'-.`. ,`,-'
+'-.'. ,',-'
     _,-'"
-,-',` '.`-,
-'-.`. ,`,-'
+,-',' '.'-.
+'-.'. ,',-'
     _,-'"
-,-',` '.`-,</pre>
+,-',' '.'-.</pre>
                 </div>
                     {/each}
                 {/if}
@@ -211,39 +211,41 @@
             </div>
 			<BuyTxStatus />
 
-			{#if $buyTxStatus.status === 4 && $buyTxStatus.statusCode === 0}
-				<div class="flex flex-col">
-					<div class="flex flex-col items-center justify-center">
-						<p class="text-md my-6 px-4 text-start text-phosgreen md:px-12">
-							Instead of a slick 3D animation of a pack opening and fire spewing out or something
-							like that, we etched the following double helix of DNA onto your transaction code that
-							minted your NFT. We also added real (but not really) DNA strands to the metadata of
-							your NFT.
-						</p>
-					</div>
+            {#if $buyTxStatus !== null}
+                {#if $buyTxStatus.status === 4 && $buyTxStatus.statusCode === 0}
+                    <div class="flex flex-col">
+                        <div class="flex flex-col items-center justify-center">
+                            <p class="text-md my-6 px-4 text-start text-phosgreen md:px-12">
+                                Instead of a slick 3D animation of a pack opening and fire spewing out or something
+                                like that, we etched the following double helix of DNA onto your transaction code that
+                                minted your NFT. We also added real (but not really) DNA strands to the metadata of
+                                your NFT.
+                            </p>
+                        </div>
 
-					{#if $user?.addr}
-						<div class="my-6 mx-auto flex gap-3">
-							<a
-								href={`https://testnet.flowscan.org/transaction/${$buyTxID}/script`}
-								target="_blank"
-								rel="noreferrer"
-								class="text-xl font-normal text-phosgreen underline"
-							>
-								Transaction on Flowscan
-							</a>
-							<a
-								href={`https://testnet.flowview.app/account/${$user.addr}/collection/strandsCollection`}
-								target="_blank"
-								rel="noreferrer"
-								class="text-xl font-normal text-phosgreen underline"
-							>
-								Collection on Flowview
-							</a>
-						</div>
-					{/if}
-				</div>
-			{/if}
+                        {#if $user?.addr}
+                            <div class="my-6 mx-auto flex gap-3">
+                                <a
+                                    href={`https://testnet.flowscan.org/transaction/${$buyTxID}/script`}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    class="text-xl font-normal text-phosgreen underline"
+                                >
+                                    Transaction on Flowscan
+                                </a>
+                                <a
+                                    href={`https://testnet.flowview.app/account/${$user.addr}/collection/strandsCollection`}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    class="text-xl font-normal text-phosgreen underline"
+                                >
+                                    Collection on Flowview
+                                </a>
+                            </div>
+                        {/if}
+                    </div>
+                {/if}
+            {/if}
 		</div>
 	{/if}
 </Container>
