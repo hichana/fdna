@@ -15,18 +15,6 @@
 
 	let userNFTIDs: UserNFTIDs | null = null;
     let userHasAtLeastTwoNFTs: boolean = false;
-    console.log("userHasAtLeastTwoNFTs: ", userHasAtLeastTwoNFTs);
-    
-    // let userHasAtLeastTwoNFTs: boolean | null = null;
-    // $: {
-    //     if (userNFTIDs) {
-    //         Object.values(userNFTIDs).forEach((nftIDs) => {
-    //             if (nftIDs.length > 1) {
-    //                 userHasAtLeastTwoNFTs = true;
-    //             }
-    //         })
-    //     }
-    // }
 
 	async function setUserNFTIDs2(currentUser: { addr: string }) {
 		userNFTIDs = await getUserNFTIDs(currentUser?.addr);
@@ -250,7 +238,7 @@
                         </div>
 
                         {#if $user?.addr}
-                            <div class="my-6 mx-auto flex gap-3">
+                            <div class="my-6 mx-auto flex gap-3 sm:gap-10 text-center">
                                 <a
                                     href={`https://testnet.flowscan.org/transaction/${$buyTxID}/script`}
                                     target="_blank"

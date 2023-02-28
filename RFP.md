@@ -35,7 +35,7 @@
     - all components should be nested appropriately
     - modify for desktop to mobile
 -x fix any remaining color scheme issues
-- handle all remaining logic, like if user is logged in but has no NFTs from catalog
+-x handle all remaining logic, like if user is logged in but has no NFTs from catalog
     - user does not have any NFTs from catalog
         - point them to monster maker
 - update all copy
