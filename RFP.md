@@ -39,6 +39,7 @@
     - user does not have any NFTs from catalog
         - point them to monster maker
 - update all copy
+- clean up code
 
 
 
