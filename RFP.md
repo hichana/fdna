@@ -1,3 +1,15 @@
+# PROJECT SUBMISSION
+- precise presentation deck and short/understandable demo video
+    - video is 2-3 minutes long
+    - presentation deck is not more than 10 slides long
+- link to github repo
+- link to live version of project
+    - web app
+    - flowscan smart contract
+    - transaction on flowscan
+    - flowview account with metadata showing
+- list of code used from other projects (ex. ExampleNFT, flow nft catalog scripts and transactions, etc.)
+- in description of challenges talk about wanting to save catalog data on-chian/nft but difficulties due to passing in NFT only ref
 
 
 
