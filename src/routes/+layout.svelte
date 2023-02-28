@@ -27,17 +27,23 @@
 	<slot />
 </main>
 
-
-<footer class="p-4 bg-slate-700 rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 max-w-7xl mx-auto mt-28">
-    <div class="flex gap-1">
-        <Hand />
-        <p class="text-sm text-gray-100 sm:text-center ">
-            hichana#7569, made as my solo entry in the 2023 Flow Hackathon. 
-        </p>
-    </div>
-    <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-100 sm:mt-0 pl-5">
-        <li>
-            <a href="https://discord.gg/AMEBbBHSKJ" target="_blank" rel="noreferrer" class="mr-4 hover:underline md:mr-6 font-normal">The FLOASIS/IaNFT Discord</a>
-        </li>
-    </ul>
+<footer
+	class="mx-auto mt-28 max-w-7xl rounded-lg bg-slate-700 p-4 shadow md:flex md:items-center md:justify-between md:p-6"
+>
+	<div class="flex gap-1">
+		<Hand />
+		<p class="text-sm text-gray-100 sm:text-center ">
+			hichana#7569, made as my solo entry in the 2023 Flow Hackathon.
+		</p>
+	</div>
+	<ul class="mt-3 flex flex-wrap items-center pl-5 text-sm text-gray-100 sm:mt-0">
+		<li>
+			<a
+				href="https://discord.gg/AMEBbBHSKJ"
+				target="_blank"
+				rel="noreferrer"
+				class="mr-4 font-normal hover:underline md:mr-6">The FLOASIS/IaNFT Discord</a
+			>
+		</li>
+	</ul>
 </footer>

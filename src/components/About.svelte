@@ -1,12 +1,12 @@
 <script lang="ts">
 	import FaqDetail from './FAQDetail.svelte';
 	import { faq } from '#lib/appData';
-    import { scrollTo } from '#lib/helpers';
+	import { scrollTo } from '#lib/helpers';
 </script>
 
-<div class="flex flex-col gap-14  pt-12 mx-5">
-	<p class="text-md sm:text-lg leading-8">
-		<span class="text-4xl text-phosgreen font-normal mr-1">NFT: </span>
+<div class="mx-5 flex flex-col  gap-14 pt-12">
+	<p class="text-md leading-8 sm:text-lg">
+		<span class="mr-1 text-4xl font-normal text-phosgreen">NFT: </span>
 		STRANDS is an NFT project with the mission to promote the ownership of many and varied NFTs on Flow.
 		We believe many great experiences and brands will come about if we find ways to encourage more composability
 		of NFTs from many different projects. To create it you’ll need to own two or more Flow NFTs. There
@@ -22,24 +22,24 @@
 		</a>
 		to see a list of great marketplaces on Flow.
 	</p>
-	<p class="text-md sm:text-lg leading-8">
-		<span class="text-4xl text-phosgreen font-normal mr-1">FAQ: </span>
+	<p class="text-md leading-8 sm:text-lg">
+		<span class="mr-1 text-4xl font-normal text-phosgreen">FAQ: </span>
 		STRAND DNA, like real DNA, can be totally unique to us, to who we, to our identity. To be a part
 		of this experience, you should first learn more:
 	</p>
-    <div class="rounded-2xl bg-slate-700 bg-opacity-50 p-4">
+	<div class="rounded-2xl bg-slate-700 bg-opacity-50 p-4">
 		{#each faq as faqPair}
-                <FaqDetail {faqPair} />
+			<FaqDetail {faqPair} />
 		{/each}
 	</div>
-    <button
-        on:click={() => {
-            scrollTo('#scroll-to-build');
-        }}
-        class="text-xl"
-    >
-        Thanks for reading about STRANDS. Click
-            <span class="text-phosgreen">HERE</span>
-        to start Building!!!
-    </button>
+	<button
+		on:click={() => {
+			scrollTo('#scroll-to-build');
+		}}
+		class="text-xl"
+	>
+		Thanks for reading about STRANDS. Click
+		<span class="text-phosgreen">HERE</span>
+		to start Building!!!
+	</button>
 </div>

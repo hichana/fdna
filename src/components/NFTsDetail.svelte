@@ -8,7 +8,7 @@
 	export let collectionName: string;
 	export let nftIDs: number[];
 
-    let textMax = 37;
+	let textMax = 37;
 
 	let filterIsOpen = false;
 
@@ -86,29 +86,32 @@
 							type="checkbox"
 							on:change={handleCheck}
 							bind:value={nftData.id}
-							class="mr-4 h-5 w-5 border-gray-300 shrink-0"
+							class="mr-4 h-5 w-5 shrink-0 border-gray-300"
 						/>
 						<img
 							class="h-10 w-10 rounded-full"
 							src={`${resolveImgStr(nftData.thumbnail)}`}
 							alt="Rounded avatar"
 						/>
-                        <div class="flex flex-col">
-                            <label for={nftData.id} class="ml-3 text-sm text-white">
-                                <span class=" font-medium text-purple-400">ID: </span>{nftData.nftID}, 
-                            </label>
-                            <p class="ml-3 text-sm">
-                                <span class=" font-medium text-purple-400">Name: </span>{nftData.name}
-                            </p>
-                            <p class="ml-3 text-sm">
-                                {#if nftData.description.length > textMax}
-                                    <span class="font-medium text-purple-400">Description: </span>{nftData.description.slice(0, textMax)}...
-                                {:else}
-                                    <span class=" font-medium text-purple-400">Description: </span>{nftData.description}
-                                {/if}
-
-                            </p>
-                        </div>
+						<div class="flex flex-col">
+							<label for={nftData.id} class="ml-3 text-sm text-white">
+								<span class=" font-medium text-purple-400">ID: </span>{nftData.nftID},
+							</label>
+							<p class="ml-3 text-sm">
+								<span class=" font-medium text-purple-400">Name: </span>{nftData.name}
+							</p>
+							<p class="ml-3 text-sm">
+								{#if nftData.description.length > textMax}
+									<span class="font-medium text-purple-400"
+										>Description:
+									</span>{nftData.description.slice(0, textMax)}...
+								{:else}
+									<span class=" font-medium text-purple-400"
+										>Description:
+									</span>{nftData.description}
+								{/if}
+							</p>
+						</div>
 					</div>
 				{/each}
 			</div>

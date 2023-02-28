@@ -28,9 +28,9 @@
 
 <div class="mx-auto flex w-full flex-col">
 	<div class="flex h-10 items-center py-10">
-        <div class="rounded-2xl px-4 py-1.5  bg-slate-50 bg-opacity-90 mx-auto">
-            <p class="text-slate-900 text-center font-bold text-lg">{listName}</p>
-        </div>
+		<div class="mx-auto rounded-2xl bg-slate-50  bg-opacity-90 px-4 py-1.5">
+			<p class="text-center text-lg font-bold text-slate-900">{listName}</p>
+		</div>
 	</div>
 	<section
 		class="h-120 w-full flex-auto space-y-2.5 px-4 pb-11"
@@ -40,17 +40,17 @@
 	>
 		{#each items as item (item.id)}
 			<div
-				class="flex flex-col sm:flex-row w-full justify-start space-x-3.5 rounded-2xl border-2 border-pink-400 px-5 py-3 bg-slate-900 bg-opacity-80"
+				class="flex w-full flex-col justify-start space-x-3.5 rounded-2xl border-2 border-pink-400 bg-slate-900 bg-opacity-80 px-5 py-3 sm:flex-row"
 				animate:flip={{ duration: flipDurationMs }}
 			>
 				<img
-					class="h-10 w-10 rounded-full self-center sm:self-start mb-2 sm:mb-0"
+					class="mb-2 h-10 w-10 self-center rounded-full sm:mb-0 sm:self-start"
 					src={`${resolveImgStr(item.thumbnail)}`}
 					alt="Rounded avatar"
 				/>
 				<div class="inline-flex flex-col items-start justify-center space-y-0.5">
-					<p class="text-xs sm:text-lg leading-none font-medium ">{item.name}</p>
-					<p class="text-xs sm:text-md font-light leading-tight">ID: <span>{item.id}</span></p>
+					<p class="text-xs font-medium leading-none sm:text-lg ">{item.name}</p>
+					<p class="sm:text-md text-xs font-light leading-tight">ID: <span>{item.id}</span></p>
 				</div>
 			</div>
 		{/each}
