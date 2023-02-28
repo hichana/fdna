@@ -6,14 +6,14 @@
 	let filterIsOpen = false;
 </script>
 
-<div class="border-b border-gray-200 bg-yellow-200 p-6">
+<div class="p-4 m-3 rounded-xl bg-slate-200 ">
 	<h3 class="-my-3 flow-root">
 		<button
 			on:click={() => (filterIsOpen = !filterIsOpen)}
 			type="button"
-			class="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500"
+			class="flex p-2 w-full items-center justify-between text-sm text-gray-400 hover:text-gray-500"
 		>
-			<span class="font-medium text-gray-900">{faqPair.q}</span>
+			<span class="italic font-medium text-gray-900 text-start">{faqPair.q}</span>
 			<span class="ml-6 flex items-center">
 				{#if filterIsOpen}
 					<svg
@@ -49,7 +49,7 @@
 	{#if filterIsOpen}
 		<div class="pt-6" transition:slide>
 			<div class="space-y-4">
-				<div class="flex items-center text-slate-800">
+				<div class="flex items-center text-slate-900 font-normal">
 					{faqPair.a}
 				</div>
 			</div>
