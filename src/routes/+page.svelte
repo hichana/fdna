@@ -14,11 +14,27 @@
 	import Button from '#components/Button.svelte';
 
 	let userNFTIDs: UserNFTIDs | null = null;
-    $: userHasAtLeastTwoNFTs = userNFTIDs && Object.keys(userNFTIDs).length > 1;
-    $: console.log("userHasAtLeastTwoNFTs", userHasAtLeastTwoNFTs)
+    let userHasAtLeastTwoNFTs: boolean = false;
+    console.log("userHasAtLeastTwoNFTs: ", userHasAtLeastTwoNFTs);
+    
+    // let userHasAtLeastTwoNFTs: boolean | null = null;
+    // $: {
+    //     if (userNFTIDs) {
+    //         Object.values(userNFTIDs).forEach((nftIDs) => {
+    //             if (nftIDs.length > 1) {
+    //                 userHasAtLeastTwoNFTs = true;
+    //             }
+    //         })
+    //     }
+    // }
 
 	async function setUserNFTIDs2(currentUser: { addr: string }) {
 		userNFTIDs = await getUserNFTIDs(currentUser?.addr);
+        userNFTIDs && Object.values(userNFTIDs).forEach((nftIDs) => {
+            if (nftIDs.length > 1) {
+                userHasAtLeastTwoNFTs = true;
+            }
+        })
 	}
 
 	user.subscribe((userState) => {
@@ -98,14 +114,23 @@
 					digital DNA on Flow:
 				</p>
 			</div>
-
-			<div class="mx-4 rounded-2xl border-2 border-phosgreen bg-slate-600 bg-opacity-30">
-				{#if userNFTIDs}
-					{#each Object.entries(userNFTIDs) as [collectionName, nftIDs]}
-						<NFTsDetail {collectionName} {nftIDs} />
-					{/each}
-				{/if}
-			</div>
+            {#if userNFTIDs && (userHasAtLeastTwoNFTs === true)}
+            <!-- {#if userNFTIDs} -->
+                {#each Object.entries(userNFTIDs) as [collectionName, nftIDs]}
+                    <div class="mx-4 rounded-2xl border-2 border-phosgreen bg-slate-600 bg-opacity-30">
+                        <NFTsDetail {collectionName} {nftIDs} />
+                    </div>
+                {/each}
+            {:else if userNFTIDs && (userHasAtLeastTwoNFTs === false)}
+                <div class="mx-4 rounded-2xl border-2 border-phosgreen bg-slate-600 bg-opacity-30">
+                    <div class="flex flex-col items-center gap-8 p-10">
+                        <p class="">Flow Noooo!!! Looks like you don't two or more NFTs that are from smart contracts registered to the 
+                            <span> <a class=" underline text-blue-400 font-normal text-center" href="https://www.flow-nft-catalog.com/" target="_blank" rel="noreferrer">Flow NFT Catalog</a></span>
+                            . Since this app is on testnet for now, you can easily go to MonsterMaker and get some!</p>
+                        <a class=" underline text-blue-400 font-normal text-center" href="https://monster-maker-web-client.vercel.app/view" target="_blank" rel="noreferrer">Monster Maker</a>
+                    </div>
+                </div>
+            {/if}
 		</div>
 
 		<div>
@@ -125,11 +150,11 @@
 			</p>
             <div class="flex gap-0">
                 <div
-                    class="sm:mx-4 flex flex-col bg-slate-900 w-full"
+                    class="sm:mx-4 flex flex-col w-full"
                 >
                     <div
                         style="background-image:linear-gradient(rgba(0, 200, 0, 0.4), rgba(0, 200, 0, 0.4)), url(https://upload.wikimedia.org/wikipedia/commons/0/0c/DNA_animation.gif)"
-                        class="flex bg-cover bg-center sm:rounded-lg rounded-l-lg"
+                        class="flex bg-cover bg-center sm:rounded-lg rounded-l-lg ml-4 sm:ml-0"
                     >
                         {#if nftsAreSelected}
                             <DND listName="strandA" items={$strandA} />
