@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { user, strandA, strandB, buyTxStatus, buyTxID } from '#lib/stores';
 	import { slide } from 'svelte/transition';
-	import { scrollTo } from '#lib/helpers';
 	import { getUserNFTIDs, buySTRAND } from '#lib/actions';
 	import Container from '#components/Container.svelte';
 	import CTA from '#components/CTA.svelte';
@@ -258,18 +257,4 @@
 		>
 	</p>
 	<About />
-	<p class="text-md my-6 px-4 text-start text-pink-300 md:p-0">
-		Thanks for reading about STRANDS, now go
-		<span class="text-blue-500">
-			<!-- svelte-ignore a11y-invalid-attribute -->
-			<a on:click|preventDefault={() => scrollTo('#scroll-to-build')} href="#">BUILD!!!</a>
-		</span>
-	</p>
 </Container>
-<button
-	on:click={() => {
-		scrollTo('#scroll-to-build');
-	}}
->
-	Start Building!
-</button>
