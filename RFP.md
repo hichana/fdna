@@ -1,4 +1,3 @@
-- quick add price
 
 
 
@@ -324,3 +323,5 @@ B: 233892348343
 -x clean up code
 
 
+
+- quick add price
