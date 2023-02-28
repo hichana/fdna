@@ -7,6 +7,7 @@ import { constructNFTCollectionCode, replaceCDCImports } from './helpers';
 import GET_NFT_IDS_IN_ACCOUNT from '#queries/NFTCatalog/get_nft_ids_in_account.cdc?raw';
 import GET_NFTS_IN_ACCOUNT_FROM_IDS from '#queries/NFTCatalog/get_nfts_in_account_from_ids.cdc?raw';
 import GET_STRAND_REGISTRY_TIMESTAMP from '#queries/STRANDS/get_strand_registry_timestamp.cdc?raw';
+import GET_MINT_PRICE from '#queries/STRANDS/get_mint_price.cdc?raw';
 import MINT_NFT_INTERPOLATE from '#mutations/STRANDS/mint_nft_interpolate.cdc?raw';
 
 configureFCL();
@@ -22,6 +23,20 @@ export const unauthenticate = () => {
 };
 export const logIn = async () => {
 	await fcl.logIn();
+};
+
+export const getStrandMintPrice = async () => {
+	const scriptCode = replaceCDCImports(GET_MINT_PRICE);
+
+	try {
+		const getMintPriceResult = await fcl.query({
+			cadence: scriptCode
+		});
+		return getMintPriceResult;
+	} catch (e) {
+		const errorMsg = (e as Error).message;
+		console.log('Error when fetching the mint price:', errorMsg);
+	}
 };
 
 export const getStrandRegistryTimestamp = async (strand: string) => {

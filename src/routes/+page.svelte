@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { user, strandA, strandB, buyTxStatus, buyTxID } from '#lib/stores';
+	import { user, strandA, strandB, buyTxStatus, buyTxID, mintPrice } from '#lib/stores';
 	import { slide } from 'svelte/transition';
-	import { getUserNFTIDs, buySTRAND, logIn } from '#lib/actions';
+	import { getUserNFTIDs, buySTRAND, logIn, getStrandMintPrice } from '#lib/actions';
 	import Container from '#components/Container.svelte';
 	import CTA from '#components/CTA.svelte';
 	import type { UserNFTIDs } from '../types';
@@ -15,6 +15,12 @@
 
 	let userNFTIDs: UserNFTIDs | null = null;
 	let userHasAtLeastTwoNFTs: boolean = false;
+
+    async function setMintPrice() {
+        const mintPriceResult = await getStrandMintPrice();
+        mintPrice.set(mintPriceResult)
+    }
+    setMintPrice()
 
 	async function setUserNFTIDs(currentUser: { addr: string }) {
 		userNFTIDs = await getUserNFTIDs(currentUser?.addr);
@@ -234,7 +240,7 @@
 			<!-- TODO: make a script that pulls mint price from on-chain and displays in UI and uses here -->
 			<div class="mx-auto flex w-48 flex-col justify-center">
 				<Button
-					buttonText="Mint"
+					buttonText={`Mint STRAND for ${$mintPrice?.toString().slice(0,2)} FLOW`}
 					onClick={() => {
 						buySTRAND('10.0');
 					}}

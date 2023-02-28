@@ -24,3 +24,8 @@ export const buyTxID = writable<string>('');
 // buyTxID.subscribe((value) => {
 // 	console.log('buyTxID Store:', value);
 // });
+
+export const mintPrice = writable<number | null>(null);
+// mintPrice.subscribe((value) => {
+// 	console.log('mintPrice Store:', value);
+// });
