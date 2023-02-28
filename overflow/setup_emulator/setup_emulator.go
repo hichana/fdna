@@ -291,4 +291,9 @@ func main() {
 		o.WithArg("strandID", "A.f8d6e0586b0a20c7.Apples.NFT.0,A.f8d6e0586b0a20c7.Oranges.NFT.0")).
 		Print()
 
+	// get mint price
+	c.Script(
+		"STRANDS/get_mint_price").
+		Print()
+
 }

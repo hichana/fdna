@@ -1,48 +1,4 @@
-# BUILD OUT LAYOUT, DESIGN, ARTWORK 2
--x work on DND
-    - will need to pull out the notifications for dnd. try
-        - pull out components from DVD into a new component that takes in a string id of strand a or b
--x fix data load upon logging in
--x fix alignment while CTA is hidden
--x probably better to not have a big intro but just start with a title, subtitble, then "Select NFTs from your wallet"?
-    -x maybe just start off with steps, like 1. If you don't have two or more Flow NFTs, go buy them from one of these awesome marketplaces
-    -x the experience should start right away, and for those who want more info they should be able to veer off to get it. So how to handle it?
-        -x options
-            - modal with about info
-            - second page
-            - parse down info so one page is ok
-            - keep info and make it all work, 
-            - minimize info at the top, have a link to the bottom, then have the info at the bottom of the page
--x ok, new layout is
-    - header
-    - sub-header explainer
-    - link to scroll to bottom to learn more (about section)
-    - Collection/selector
-    - DND DNA builder
-    - Minter/view DNA section
-    - About
-        - more explainer text
-        - links to marketplaces
-        - faq
-        - link to scroll back up to top and "start building DNA"
--x try
-    - make a new component called About
-        - move things into About from CTA
-    - in About
-        - build out the elements, componentize the accordion (into its own component to be used with both faq and NFT selection)
--x get login/out button to not flash loading
--x now get layout dialed
-    - all components should be nested appropriately
-    - modify for desktop to mobile
--x fix any remaining color scheme issues
--x handle all remaining logic, like if user is logged in but has no NFTs from catalog
-    - user does not have any NFTs from catalog
-        - point them to monster maker
--x update all copy
-- clean up code
-
-
-
+- quick add price
 
 
 
@@ -323,4 +279,48 @@ B: 233892348343
     -x why can't see tx (b/c need to print to console not the response body but the tx id when running app)
 -x get tx link working in frontend
 - re-deploy to testnet
+
+# BUILD OUT LAYOUT, DESIGN, ARTWORK 2
+-x work on DND
+    - will need to pull out the notifications for dnd. try
+        - pull out components from DVD into a new component that takes in a string id of strand a or b
+-x fix data load upon logging in
+-x fix alignment while CTA is hidden
+-x probably better to not have a big intro but just start with a title, subtitble, then "Select NFTs from your wallet"?
+    -x maybe just start off with steps, like 1. If you don't have two or more Flow NFTs, go buy them from one of these awesome marketplaces
+    -x the experience should start right away, and for those who want more info they should be able to veer off to get it. So how to handle it?
+        -x options
+            - modal with about info
+            - second page
+            - parse down info so one page is ok
+            - keep info and make it all work, 
+            - minimize info at the top, have a link to the bottom, then have the info at the bottom of the page
+-x ok, new layout is
+    - header
+    - sub-header explainer
+    - link to scroll to bottom to learn more (about section)
+    - Collection/selector
+    - DND DNA builder
+    - Minter/view DNA section
+    - About
+        - more explainer text
+        - links to marketplaces
+        - faq
+        - link to scroll back up to top and "start building DNA"
+-x try
+    - make a new component called About
+        - move things into About from CTA
+    - in About
+        - build out the elements, componentize the accordion (into its own component to be used with both faq and NFT selection)
+-x get login/out button to not flash loading
+-x now get layout dialed
+    - all components should be nested appropriately
+    - modify for desktop to mobile
+-x fix any remaining color scheme issues
+-x handle all remaining logic, like if user is logged in but has no NFTs from catalog
+    - user does not have any NFTs from catalog
+        - point them to monster maker
+-x update all copy
+-x clean up code
+
 

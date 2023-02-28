@@ -52,7 +52,7 @@
     -x with each re-arrange of base pairs, user is informed whether or not that permutation of Flow DNA for either side is taken or not
     -x user can mint their Flow DNA strand, showing transaction status throughout the process and providing a link to the transaction on flowscan
     -x user can see a card representing their Flow DNA strand with a list of the DNA string identifiers from each strand
-- layout and design UI
+-x layout and design UI
     - as needed
 - project submission to hackathon
     - precise presentation deck and short/understandable demo video
