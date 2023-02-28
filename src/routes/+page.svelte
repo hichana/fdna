@@ -14,6 +14,8 @@
 	import Button from '#components/Button.svelte';
 
 	let userNFTIDs: UserNFTIDs | null = null;
+    $: userHasAtLeastTwoNFTs = userNFTIDs && Object.keys(userNFTIDs).length > 1;
+    $: console.log("userHasAtLeastTwoNFTs", userHasAtLeastTwoNFTs)
 
 	async function setUserNFTIDs2(currentUser: { addr: string }) {
 		userNFTIDs = await getUserNFTIDs(currentUser?.addr);
@@ -123,7 +125,7 @@
 			</p>
             <div class="flex gap-0">
                 <div
-                    class="ml-4 flex flex-col bg-slate-900 w-full"
+                    class="sm:mx-4 flex flex-col bg-slate-900 w-full"
                 >
                     <div
                         style="background-image:linear-gradient(rgba(0, 200, 0, 0.4), rgba(0, 200, 0, 0.4)), url(https://upload.wikimedia.org/wikipedia/commons/0/0c/DNA_animation.gif)"
