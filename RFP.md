@@ -31,9 +31,10 @@
     - in About
         - build out the elements, componentize the accordion (into its own component to be used with both faq and NFT selection)
 -x get login/out button to not flash loading
-- now get layout dialed
+-x now get layout dialed
     - all components should be nested appropriately
     - modify for desktop to mobile
+- fix any remaining color scheme issues
 - handle if user is logged in but has no NFTs from catalog
 
 
