@@ -16,7 +16,7 @@
 	let userNFTIDs: UserNFTIDs | null = null;
 	let userHasAtLeastTwoNFTs: boolean = false;
 
-	async function setUserNFTIDs2(currentUser: { addr: string }) {
+	async function setUserNFTIDs(currentUser: { addr: string }) {
 		userNFTIDs = await getUserNFTIDs(currentUser?.addr);
 		userNFTIDs &&
 			Object.values(userNFTIDs).forEach((nftIDs) => {
@@ -28,7 +28,7 @@
 
 	user.subscribe((userState) => {
 		if (userState !== null) {
-			setUserNFTIDs2(userState);
+			setUserNFTIDs(userState);
 		}
 	});
 
@@ -196,15 +196,8 @@
 				<span class="">Mint your STRAND</span>
 			</p>
 
-			<!-- <p class="text-md mt-6 px-4 text-center md:px-12">
-				{numBasePairs > 4
-					? 'Your STRAND is long, which is great! But make sure to scroll down to see it all'
-					: 'Scroll down to see the rest of your STRAND'}
-			</p> -->
-
 			<!-- prettier-ignore -->
 			<div class="flex flex-col items-center mb-12 pt-12 border-phosgreen border-2 p-4 rounded-xl mx-4 sm:mx-auto mt-12">
-
                 {#if longestDNAStrand.length > 0}
                     {#each dnaIterator as _, i}
                 <div class="text-phosgreen font-extrabold text-md">
@@ -216,7 +209,6 @@
     _,-'"
 ,-',' '.'-.</pre>
                 </div>
-
                         <div>
                         <p class="break-all text-phosgreen font-medium  text-md">A: {$strandA[i] ? getNFTIdentifier($strandA[i].publicLinkedType.type.type.typeID, $strandA[i].nftID) : "(strand A DNA here)"}</p>
                         <p class="break-all text-phosgreen font-medium  text-md">B: {$strandB[i] ? getNFTIdentifier($strandB[i].publicLinkedType.type.type.typeID, $strandB[i].nftID) : "(strand B DNA here)"}</p>

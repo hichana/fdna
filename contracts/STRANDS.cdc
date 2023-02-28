@@ -407,7 +407,7 @@ pub contract STRANDS: NonFungibleToken {
         var newNFT <- create NFT(
             id: STRANDS.totalSupply,
             name: nftName,
-            description: "Digital DNA for Flow",
+            description: "On-Chain DNA for Flow",
             thumbnail: "bafybeibqwjgwfxk4keropnob73t56vo4fy7yhlf6twdjizl4zgemjotxj4",
             thumbnailPath:"STRANDS_square.png",
             royalties: self.royaltyReceivers,

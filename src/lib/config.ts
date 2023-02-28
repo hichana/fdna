@@ -3,8 +3,6 @@ import * as fcl from '@onflow/fcl';
 export function configureFCL() {
 	fcl.config({
 		'app.detail.title': 'STRAND',
-		'app.detail.icon':
-			'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg',
 		'fcl.limit': 9999
 	});
 
