@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { user, strandA, strandB, buyTxStatus, buyTxID } from '#lib/stores';
 	import { slide } from 'svelte/transition';
-	import { getUserNFTIDs, buySTRAND } from '#lib/actions';
+	import { getUserNFTIDs, buySTRAND, logIn } from '#lib/actions';
 	import Container from '#components/Container.svelte';
 	import CTA from '#components/CTA.svelte';
 	import type { UserNFTIDs } from '../types';
@@ -103,38 +103,49 @@
 					digital DNA on Flow:
 				</p>
 			</div>
-			{#if userNFTIDs && userHasAtLeastTwoNFTs === true}
-				<!-- {#if userNFTIDs} -->
-				{#each Object.entries(userNFTIDs) as [collectionName, nftIDs]}
-					<div class="mx-4 rounded-2xl border-2 border-phosgreen bg-slate-600 bg-opacity-30">
-						<NFTsDetail {collectionName} {nftIDs} />
-					</div>
-				{/each}
-			{:else if userNFTIDs && userHasAtLeastTwoNFTs === false}
-				<div class="mx-4 rounded-2xl border-2 border-phosgreen bg-slate-600 bg-opacity-30">
-					<div class="flex flex-col items-center gap-8 p-10">
-						<p class="">
-							Flow Noooo!!! Looks like you don't two or more NFTs that are from smart contracts
-							registered to the
-							<span>
-								<a
-									class=" text-center font-normal text-blue-400 underline"
-									href="https://www.flow-nft-catalog.com/"
-									target="_blank"
-									rel="noreferrer">Flow NFT Catalog</a
-								></span
-							>
-							. Since this app is on testnet for now, you can easily go to MonsterMaker and get some!
-						</p>
-						<a
-							class=" text-center font-normal text-blue-400 underline"
-							href="https://monster-maker-web-client.vercel.app/view"
-							target="_blank"
-							rel="noreferrer">Monster Maker</a
-						>
-					</div>
-				</div>
-			{/if}
+            {#if $user?.addr}
+                {#if userNFTIDs && userHasAtLeastTwoNFTs === true}
+                    {#each Object.entries(userNFTIDs) as [collectionName, nftIDs]}
+                        <div class="mx-4 rounded-2xl border-2 border-phosgreen bg-slate-600 bg-opacity-30">
+                            <NFTsDetail {collectionName} {nftIDs} />
+                        </div>
+                    {/each}
+                {:else if userNFTIDs && userHasAtLeastTwoNFTs === false}
+                    <div class="mx-4 rounded-2xl border-2 border-phosgreen bg-slate-600 bg-opacity-30">
+                        <div class="flex flex-col items-center gap-8 p-10">
+                            <p class="">
+                                Flow Noooo!!! Looks like you don't two or more NFTs that are from smart contracts
+                                registered to the
+                                <span>
+                                    <a
+                                        class=" text-center font-normal text-blue-400 underline"
+                                        href="https://www.flow-nft-catalog.com/"
+                                        target="_blank"
+                                        rel="noreferrer">Flow NFT Catalog</a
+                                    ></span
+                                >
+                                . Since this app is on testnet for now, you can easily go to MonsterMaker and get some!
+                            </p>
+                            <a
+                                class=" text-center font-normal text-blue-400 underline"
+                                href="https://monster-maker-web-client.vercel.app/view"
+                                target="_blank"
+                                rel="noreferrer">Monster Maker</a
+                            >
+                        </div>
+                    </div>
+                {/if}
+            {:else}
+                    <div class="mx-4 rounded-2xl border-2 border-phosgreen bg-slate-600 bg-opacity-30">
+                        <div class="flex flex-col items-center gap-8 p-10">
+                            <p class="">
+                                Log In/Sign Up to get started building your STRAND
+                            </p>
+                            <Button buttonText="Log In/Sign Up" onClick={logIn} />
+                        </div>
+                    </div>
+            {/if}
+
 		</div>
 
 		<div>
