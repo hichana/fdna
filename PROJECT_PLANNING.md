@@ -18,7 +18,7 @@
     -x in minter, update mint strings for thumbnail and thumbnail path
     -x in fcl config, change app.detail.icon
 -x launch/re-launch to testnet
-- complete build out layout, design, artwork
+-x complete build out layout, design, artwork
 - create hackathon submission
 
 # REQUIREMENTS
