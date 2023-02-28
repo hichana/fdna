@@ -1,6 +1,6 @@
 <!-- prettier-ignore -->
 <div class="flex flex-col items-center">
-    <div class="font-extrabold text-2xl text-transparent bg-clip-text bg-gradient-to-b from-phosgreen via-pink-500 to-phosgreen">
+    <div class="font-extrabold text-2xl text-transparent bg-clip-text bg-gradient-to-b from-phosgreen via-white to-phosgreen">
         <pre>
 '-.'. ,',-'
     _,-'"
