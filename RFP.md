@@ -38,7 +38,7 @@
 -x handle all remaining logic, like if user is logged in but has no NFTs from catalog
     - user does not have any NFTs from catalog
         - point them to monster maker
-- update all copy
+-x update all copy
 - clean up code
 
 
