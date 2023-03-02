@@ -1,5 +1,9 @@
 export const faq = [
 	{
+		q: 'Is STRANDS on Flow mainnet?',
+		a: 'We will be! But for now, we are on Flow testnet while we await for the final judging to be completed.'
+	},
+	{
 		q: 'How can i get a STRANDS NFT?',
 		a: 'Get two or more Flow NFTs, then build your digital DNA here and mint!'
 	},
